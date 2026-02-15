@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cvyyvlb4xctl6"]
+
+[ext_resource type="PackedScene" uid="uid://i04aicow4204" path="res://scenes/player/player.tscn" id="1_36p3q"]
+[ext_resource type="Script" uid="uid://bj7j3r8yt4hft" path="res://prototypes/world/world.gd" id="1_k00fv"]
+[ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="3_ffohc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffohc"]
+size = Vector2(5000, 32)
+
+[node name="WorldRotationTest" type="Node2D" unique_id=724214759]
+
+[node name="World" type="Node2D" parent="." unique_id=1745509501]
+script = ExtResource("1_k00fv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World" unique_id=706176034]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1882117184]
+position = Vector2(1795, -58)
+shape = SubResource("RectangleShape2D_ffohc")
+
+[node name="Checkpoints" type="Node2D" parent="World" unique_id=61657168]
+
+[node name="Checkpoint" parent="World/Checkpoints" unique_id=2093896556 instance=ExtResource("3_ffohc")]
+position = Vector2(378, 111)
+target_angle = -10.0
+
+[node name="Checkpoint2" parent="World/Checkpoints" unique_id=405769107 instance=ExtResource("3_ffohc")]
+position = Vector2(1182, 111)
+target_angle = -20.0
+
+[node name="Checkpoint3" parent="World/Checkpoints" unique_id=237897858 instance=ExtResource("3_ffohc")]
+position = Vector2(1968, 111)
+target_angle = -30.0
+
+[node name="Checkpoint4" parent="World/Checkpoints" unique_id=1328185809 instance=ExtResource("3_ffohc")]
+position = Vector2(2828, 111)
+target_angle = -45.0
+
+[node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_36p3q")]
+position = Vector2(46, -162)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=173171308]
+
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://de2fa2nnnubdd"]
+
+[ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_2efya"]
+[ext_resource type="Script" uid="uid://umofydvmp7wp" path="res://prototypes/camera/camera_2d.gd" id="3_pbwy2"]
+[ext_resource type="PackedScene" uid="uid://i04aicow4204" path="res://scenes/player/player.tscn" id="3_vmecl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sngo"]
+size = Vector2(5000, 32)
+
+[node name="CameraRotationTest" type="Node2D" unique_id=1951157258]
+
+[node name="World" type="Node2D" parent="." unique_id=88524087]
+position = Vector2(0, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World" unique_id=1222124259]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1457391376]
+position = Vector2(1795, -58)
+shape = SubResource("RectangleShape2D_7sngo")
+
+[node name="Checkpoints" type="Node2D" parent="World" unique_id=158285634]
+
+[node name="Checkpoint" parent="World/Checkpoints" unique_id=2093896556 instance=ExtResource("2_2efya")]
+position = Vector2(378, 111)
+target_angle = -10.0
+
+[node name="Checkpoint2" parent="World/Checkpoints" unique_id=324487220 instance=ExtResource("2_2efya")]
+position = Vector2(1182, 111)
+target_angle = -20.0
+
+[node name="Checkpoint3" parent="World/Checkpoints" unique_id=1905612260 instance=ExtResource("2_2efya")]
+position = Vector2(1968, 111)
+target_angle = -30.0
+
+[node name="Checkpoint4" parent="World/Checkpoints" unique_id=8500296 instance=ExtResource("2_2efya")]
+position = Vector2(2828, 107)
+target_angle = -45.0
+
+[node name="Player" parent="." unique_id=330747409 instance=ExtResource("3_vmecl")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1648908325]
+ignore_rotation = false
+script = ExtResource("3_pbwy2")
+
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="Player/Camera2D" method="_on_checkpoint_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="Player/Camera2D" method="_on_checkpoint_2_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="Player/Camera2D" method="_on_checkpoint_3_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="Player/Camera2D" method="_on_checkpoint_4_player_walked_through"]
