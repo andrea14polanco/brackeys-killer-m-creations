@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://i04aicow4204"]
 
+[ext_resource type="Script" uid="uid://k2dbexs1qdav" path="res://scenes/player/player.gd" id="1_8afob"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
 size = Vector2(15, 35)
 
 [node name="Player" type="CharacterBody2D" unique_id=330747409]
+script = ExtResource("1_8afob")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1809031588]
 offset_top = -35.0
