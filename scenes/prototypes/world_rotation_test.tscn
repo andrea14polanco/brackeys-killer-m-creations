@@ -22,15 +22,19 @@ shape = SubResource("WorldBoundaryShape2D_k00fv")
 
 [node name="Checkpoint" parent="World/Checkpoints" unique_id=2093896556 instance=ExtResource("3_ffohc")]
 position = Vector2(378, 111)
+target_angle = -10.0
 
 [node name="Checkpoint2" parent="World/Checkpoints" unique_id=405769107 instance=ExtResource("3_ffohc")]
 position = Vector2(1182, 111)
+target_angle = -45.0
 
 [node name="Checkpoint3" parent="World/Checkpoints" unique_id=237897858 instance=ExtResource("3_ffohc")]
 position = Vector2(1968, 111)
+target_angle = -75.0
 
 [node name="Checkpoint4" parent="World/Checkpoints" unique_id=1328185809 instance=ExtResource("3_ffohc")]
 position = Vector2(2828, 111)
+target_angle = -90.0
 
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_36p3q")]
 position = Vector2(568, 331)
@@ -38,3 +42,6 @@ position = Vector2(568, 331)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=173171308]
 
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]

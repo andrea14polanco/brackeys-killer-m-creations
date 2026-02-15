@@ -6,5 +6,17 @@ func rotate_self():
 	rotate(2*PI)
 
 
-func _on_checkpoint_player_walked_through() -> void:
-	rotate(-.5)
+func _on_checkpoint_player_walked_through(angle: float) -> void:
+	rotation_degrees = angle
+
+
+func _on_checkpoint_2_player_walked_through(angle: float) -> void:
+	rotation_degrees = angle
+
+
+func _on_checkpoint_3_player_walked_through(angle: float) -> void:
+	rotation_degrees = angle
+
+
+func _on_checkpoint_4_player_walked_through(angle: float) -> void:
+	rotation_degrees = angle
