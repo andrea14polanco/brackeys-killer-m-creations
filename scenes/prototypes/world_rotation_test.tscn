@@ -30,11 +30,11 @@ target_angle = -45.0
 
 [node name="Checkpoint3" parent="World/Checkpoints" unique_id=237897858 instance=ExtResource("3_ffohc")]
 position = Vector2(1968, 111)
-target_angle = -75.0
+target_angle = -65.0
 
 [node name="Checkpoint4" parent="World/Checkpoints" unique_id=1328185809 instance=ExtResource("3_ffohc")]
 position = Vector2(2828, 111)
-target_angle = -90.0
+target_angle = -85.0
 
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_36p3q")]
 position = Vector2(568, 331)
