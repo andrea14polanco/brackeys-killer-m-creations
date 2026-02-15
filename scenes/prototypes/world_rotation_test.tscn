@@ -6,11 +6,16 @@
 
 [node name="WorldRotationTest" type="Node2D" unique_id=724214759]
 
+[node name="World" type="Node2D" parent="." unique_id=1745509501]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World" unique_id=706176034]
+position = Vector2(134, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D" unique_id=1882117184]
+shape = SubResource("WorldBoundaryShape2D_k00fv")
+
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_36p3q")]
 position = Vector2(135, 124)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=706176034]
-position = Vector2(134, 128)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1882117184]
-shape = SubResource("WorldBoundaryShape2D_k00fv")
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=173171308]
+position = Vector2(-135, -124)
