@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://bhcsdg82k8da3"]
+
+[ext_resource type="PackedScene" uid="uid://i04aicow4204" path="res://scenes/player/player.tscn" id="1_eqs6t"]
+[ext_resource type="Script" uid="uid://b7myjcp76j6el" path="res://scenes/levels/titanic/world.gd" id="1_itb0x"]
+[ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_god6p"]
+size = Vector2(351, 40.649414)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5je1"]
+size = Vector2(2500, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7j87"]
+size = Vector2(629, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xke"]
+size = Vector2(4000, 58.665268)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itb0x"]
+size = Vector2(262.5476, 20.972595)
+
+[node name="Titanic" type="Node2D" unique_id=1739797682]
+
+[node name="World" type="Node2D" parent="." unique_id=389389109]
+position = Vector2(818, -857)
+script = ExtResource("1_itb0x")
+
+[node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
+
+[node name="UpperLimit" type="ColorRect" parent="World/Deck1" unique_id=699775216]
+offset_top = 250.0
+offset_right = 350.0
+offset_bottom = 290.0
+
+[node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit" unique_id=129261448]
+position = Vector2(-3, 1)
+scale = Vector2(1, 1.0086254)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/UpperLimit/UpperLimitCollider" unique_id=399088289]
+position = Vector2(178.5, 19.333252)
+scale = Vector2(1, 1.0606145)
+shape = SubResource("RectangleShape2D_god6p")
+
+[node name="UpperLimit2" type="ColorRect" parent="World/Deck1" unique_id=1276798964]
+offset_left = 550.0
+offset_top = 250.0
+offset_right = 3050.0
+offset_bottom = 290.0
+
+[node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit2" unique_id=1033511816]
+position = Vector2(-3, 1)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/UpperLimit2/UpperLimitCollider" unique_id=842930276]
+position = Vector2(1253, 19)
+shape = SubResource("RectangleShape2D_m5je1")
+
+[node name="UpperLimit3" type="ColorRect" parent="World/Deck1" unique_id=212473535]
+offset_left = 3371.0
+offset_top = 250.0
+offset_right = 4001.0
+offset_bottom = 290.0
+
+[node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit3" unique_id=1505980718]
+position = Vector2(-3, 1)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/UpperLimit3/UpperLimitCollider" unique_id=2044291308]
+position = Vector2(317.5, 18.5)
+scale = Vector2(1.0001215, 1)
+shape = SubResource("RectangleShape2D_i7j87")
+
+[node name="LowerLimit" type="ColorRect" parent="World/Deck1" unique_id=1772140192]
+offset_top = 598.0
+offset_right = 4000.0
+offset_bottom = 638.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Deck1/LowerLimit" unique_id=1935835091]
+position = Vector2(-3, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/LowerLimit/StaticBody2D" unique_id=985848045]
+position = Vector2(2003, 20)
+scale = Vector2(1, 0.68183476)
+shape = SubResource("RectangleShape2D_p0xke")
+
+[node name="Deck2" type="Node2D" parent="World" unique_id=642445485]
+
+[node name="ColorRect" type="ColorRect" parent="World/Deck2" unique_id=1394126886]
+offset_top = -90.0
+offset_right = 4000.0
+offset_bottom = -50.0
+
+[node name="Stairs" type="StaticBody2D" parent="World" unique_id=1633418102]
+position = Vector2(3011, 564.0001)
+rotation = -0.7853982
+collision_layer = 2
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="World/Stairs" unique_id=666787617]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.926172, 1)
+color = Color(0.670063, 0.40627286, 0.036969613, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stairs" unique_id=1364159004]
+position = Vector2(240.41675, 3.8894043)
+scale = Vector2(1.8152493, 0.5732037)
+shape = SubResource("RectangleShape2D_itb0x")
+one_way_collision = true
+
+[node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
+position = Vector2(36, 183)
+
+[node name="Camera2D" type="Camera2D" parent="World/Player" unique_id=2008680599]
+
+[node name="Checkpoints" type="Node2D" parent="World" unique_id=2138548016]
+position = Vector2(803, 527)
+
+[node name="Checkpoint" parent="World/Checkpoints" unique_id=2093896556 instance=ExtResource("2_18k4y")]
+position = Vector2(378, 111)
+target_angle = -10.0
+
+[node name="Checkpoint2" parent="World/Checkpoints" unique_id=92993232 instance=ExtResource("2_18k4y")]
+position = Vector2(1182, 111)
+target_angle = -20.0
+
+[node name="Checkpoint3" parent="World/Checkpoints" unique_id=1226359733 instance=ExtResource("2_18k4y")]
+position = Vector2(1968, 111)
+target_angle = -30.0
+
+[node name="Checkpoint4" parent="World/Checkpoints" unique_id=232646504 instance=ExtResource("2_18k4y")]
+position = Vector2(2828, 111)
+target_angle = -45.0
+
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
