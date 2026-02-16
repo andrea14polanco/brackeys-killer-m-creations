@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://i04aicow4204" path="res://scenes/player/player.tscn" id="1_36p3q"]
 [ext_resource type="Script" uid="uid://bj7j3r8yt4hft" path="res://prototypes/world/world.gd" id="1_k00fv"]
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="3_ffohc"]
+[ext_resource type="Script" uid="uid://di56o3vy10q26" path="res://prototypes/world/camera_2d.gd" id="4_d7hcv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffohc"]
 size = Vector2(5000, 32)
@@ -27,20 +28,22 @@ target_angle = -10.0
 
 [node name="Checkpoint2" parent="World/Checkpoints" unique_id=405769107 instance=ExtResource("3_ffohc")]
 position = Vector2(1182, 111)
-target_angle = -20.0
+target_angle = -35.0
 
 [node name="Checkpoint3" parent="World/Checkpoints" unique_id=237897858 instance=ExtResource("3_ffohc")]
 position = Vector2(1968, 111)
-target_angle = -30.0
+target_angle = -55.0
 
 [node name="Checkpoint4" parent="World/Checkpoints" unique_id=1328185809 instance=ExtResource("3_ffohc")]
 position = Vector2(2828, 111)
-target_angle = -45.0
+target_angle = -75.0
 
-[node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_36p3q")]
+[node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_36p3q")]
+position = Vector2(46, -74)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=173171308]
 position = Vector2(46, -162)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=173171308]
+script = ExtResource("4_d7hcv")
 
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
