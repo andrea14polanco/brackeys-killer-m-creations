@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://byy8chrg0m4ho"]
+
+[ext_resource type="Texture2D" uid="uid://dwok4c4sr52th" path="res://assets/ui/tables/2.png" id="1_ut4mo"]
+[ext_resource type="Script" uid="uid://b77lu7823siia" path="res://scenes/cutscenes/text_panel.gd" id="1_vt0ad"]
+[ext_resource type="Script" uid="uid://t63u84uufydm" path="res://scenes/cutscenes/text_label.gd" id="2_mxbvo"]
+[ext_resource type="Texture2D" uid="uid://kxqtc7opk17g" path="res://assets/ui/icons/text_next_button.png" id="3_vt0ad"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27kh3"]
+texture = ExtResource("1_ut4mo")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[node name="Text_Panel" type="Control" unique_id=1245832575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vt0ad")
+
+[node name="bg_Panel" type="Panel" parent="." unique_id=1353678976]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -202.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_27kh3")
+
+[node name="name_label" type="Label" parent="bg_Panel" unique_id=1844072274]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.017
+anchor_right = 0.002
+anchor_bottom = 0.017
+offset_left = 29.696
+offset_top = 13.94
+offset_right = 173.696
+offset_bottom = 36.94
+theme_override_font_sizes/font_size = 26
+text = "CHARACTERNAME"
+
+[node name="text_label" type="Label" parent="bg_Panel" unique_id=2140155533]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 55.0
+offset_right = 1087.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 24
+text = "TEXT GOES HERE "
+script = ExtResource("2_mxbvo")
+
+[node name="next_button" type="TextureButton" parent="bg_Panel" unique_id=889574382]
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 48.0
+offset_right = 1133.0
+offset_bottom = 132.0
+texture_normal = ExtResource("3_vt0ad")
+
+[connection signal="pressed" from="bg_Panel/next_button" to="." method="_on_next_button_pressed"]
