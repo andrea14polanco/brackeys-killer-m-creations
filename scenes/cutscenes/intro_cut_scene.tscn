@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://categ7jywyy4n"]
+
+[ext_resource type="Script" uid="uid://bc6w0sai26heq" path="res://scenes/cutscenes/intro_cut_scene.gd" id="1_4ckvm"]
+[ext_resource type="Texture2D" uid="uid://dxq6roxqb81ey" path="res://assets/backgrounds/intro_background.png" id="1_c4ryo"]
+[ext_resource type="PackedScene" uid="uid://byy8chrg0m4ho" path="res://scenes/cutscenes/text_panel.tscn" id="3_cxay5"]
+
+[node name="Intro_cut_scene" type="Control" unique_id=630923112]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ckvm")
+
+[node name="IntroBackground" type="Sprite2D" parent="." unique_id=318698596]
+position = Vector2(578, 320)
+texture = ExtResource("1_c4ryo")
+
+[node name="Text_Panel" parent="." unique_id=1245832575 instance=ExtResource("3_cxay5")]
+layout_mode = 1
+offset_top = -2.0
+offset_bottom = -2.0
