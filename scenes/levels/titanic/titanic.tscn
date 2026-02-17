@@ -12,6 +12,36 @@ load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a232
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7j87"]
 load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fit6c"]
+size = Vector2(2245.5747, 37.256927)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ceux"]
+size = Vector2(1847.5913, 37.256927)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmxbi"]
+size = Vector2(890.0177, 29.849842)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl2br"]
+size = Vector2(897.6812, 36.705654)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8upj"]
+size = Vector2(2082.5786, 45.202675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bg27"]
+size = Vector2(1661.6405, 34.224148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa72x"]
+size = Vector2(343.48495, 41.66326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo0ks"]
+size = Vector2(109.19596, 29.938164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btq3c"]
+size = Vector2(276.30862, 29.487423)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ratq"]
+size = Vector2(181.79456, 24.239166)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_god6p"]
 size = Vector2(351, 40.649414)
 
@@ -30,33 +60,144 @@ size = Vector2(262.5476, 20.972595)
 [node name="Titanic" type="Node2D" unique_id=1739797682]
 
 [node name="World" type="Node2D" parent="." unique_id=389389109]
-position = Vector2(818, -857)
+position = Vector2(2825, -857)
 script = ExtResource("1_itb0x")
 
 [node name="Sprite2D" type="Sprite2D" parent="World" unique_id=2049143091]
-position = Vector2(1911, 0)
 texture = ExtResource("2_p0xke")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="World" unique_id=469774204]
-position = Vector2(7560, 0)
+position = Vector2(5682, -20)
 texture = SubResource("CompressedTexture2D_m5je1")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="World" unique_id=1223370641]
-position = Vector2(12453, 0)
+position = Vector2(10585, -219)
 texture = SubResource("CompressedTexture2D_i7j87")
-metadata/_edit_lock_ = true
 
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
+position = Vector2(-2, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Deck1" unique_id=790379749]
+position = Vector2(-922, 58)
+rotation = 0.03610947
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D" unique_id=1734527930]
+shape = SubResource("RectangleShape2D_fit6c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="World/Deck1" unique_id=1927146843]
+position = Vector2(-1152, 389)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D2" unique_id=2012381219]
+rotation = 0.042218376
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_0ceux")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="World/Deck1" unique_id=386433326]
+position = Vector2(-1644, 651)
+rotation = 0.04780758
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D3" unique_id=2017711455]
+position = Vector2(-6.088765, -1.7109737)
+shape = SubResource("RectangleShape2D_rmxbi")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="World/Deck1" unique_id=1108850264]
+position = Vector2(-696, 689.00006)
+rotation = 0.038885903
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D4" unique_id=150352998]
+position = Vector2(8.110619, 2.6866605)
+rotation = 0.01174506
+shape = SubResource("RectangleShape2D_wl2br")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="World/Deck1" unique_id=2111894808]
+position = Vector2(-1631, 929)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D5" unique_id=609248773]
+position = Vector2(597.2373, 43.5176)
+rotation = 0.04324836
+shape = SubResource("RectangleShape2D_y8upj")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="World/Deck1" unique_id=1405621631]
+position = Vector2(-736, 1299)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D6" unique_id=994104230]
+position = Vector2(385.0481, 29.389496)
+rotation = 0.0358153
+shape = SubResource("RectangleShape2D_1bg27")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="World/Deck1" unique_id=1284262089]
+position = Vector2(-736, 1299)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D7" unique_id=819864993]
+position = Vector2(-270.64722, 586.88367)
+rotation = 0.20963883
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_pa72x")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="World/Deck1" unique_id=1612798191]
+position = Vector2(-618, 1958)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D8" unique_id=82233499]
+position = Vector2(-90, -28)
+rotation = 0.03739632
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_eo0ks")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="World/Deck1" unique_id=1144660628]
+position = Vector2(-618, 1958)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D9" unique_id=1194904545]
+position = Vector2(129.8894, 6.4125977)
+rotation = 0.20236017
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_btq3c")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="World/Deck1" unique_id=292188487]
+position = Vector2(-270, 2001)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D10" unique_id=1390357066]
+position = Vector2(79, -4.628174)
+shape = SubResource("RectangleShape2D_4ratq")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="World/Deck1" unique_id=449815791]
+position = Vector2(3, 2017.0001)
+rotation = 0.2627161
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D11" unique_id=2020677261]
+position = Vector2(11.515108, -7.2390194)
+rotation = -0.03867354
+shape = SubResource("RectangleShape2D_4ratq")
 
 [node name="UpperLimit" type="ColorRect" parent="World/Deck1" unique_id=699775216]
+visible = false
 offset_top = 250.0
 offset_right = 350.0
 offset_bottom = 290.0
 
 [node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit" unique_id=129261448]
-position = Vector2(-3, 1)
+position = Vector2(-41, 961.00006)
 scale = Vector2(1, 1.0086254)
 collision_layer = 2
 collision_mask = 0
@@ -67,6 +208,7 @@ scale = Vector2(1, 1.0606145)
 shape = SubResource("RectangleShape2D_god6p")
 
 [node name="UpperLimit2" type="ColorRect" parent="World/Deck1" unique_id=1276798964]
+visible = false
 offset_left = 550.0
 offset_top = 250.0
 offset_right = 3050.0
@@ -82,6 +224,7 @@ position = Vector2(1253, 19)
 shape = SubResource("RectangleShape2D_m5je1")
 
 [node name="UpperLimit3" type="ColorRect" parent="World/Deck1" unique_id=212473535]
+visible = false
 offset_left = 3371.0
 offset_top = 250.0
 offset_right = 4001.0
@@ -98,6 +241,7 @@ scale = Vector2(1.0001215, 1)
 shape = SubResource("RectangleShape2D_i7j87")
 
 [node name="LowerLimit" type="ColorRect" parent="World/Deck1" unique_id=1772140192]
+visible = false
 offset_top = 598.0
 offset_right = 4000.0
 offset_bottom = 638.0
@@ -113,6 +257,7 @@ scale = Vector2(1, 0.68183476)
 shape = SubResource("RectangleShape2D_p0xke")
 
 [node name="Deck2" type="Node2D" parent="World" unique_id=642445485]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="World/Deck2" unique_id=1394126886]
 offset_top = -90.0
@@ -138,22 +283,22 @@ shape = SubResource("RectangleShape2D_itb0x")
 one_way_collision = true
 
 [node name="Checkpoints" type="Node2D" parent="World" unique_id=2138548016]
-position = Vector2(803, 527)
+position = Vector2(2389, 2238)
 
 [node name="Checkpoint" parent="World/Checkpoints" unique_id=2093896556 instance=ExtResource("2_18k4y")]
 position = Vector2(378, 111)
 target_angle = -10.0
 
 [node name="Checkpoint2" parent="World/Checkpoints" unique_id=92993232 instance=ExtResource("2_18k4y")]
-position = Vector2(1182, 111)
+position = Vector2(5781, 111)
 target_angle = -20.0
 
 [node name="Checkpoint3" parent="World/Checkpoints" unique_id=1226359733 instance=ExtResource("2_18k4y")]
-position = Vector2(1968, 111)
+position = Vector2(10736, 288)
 target_angle = -30.0
 
 [node name="Checkpoint4" parent="World/Checkpoints" unique_id=232646504 instance=ExtResource("2_18k4y")]
-position = Vector2(2828, 111)
+position = Vector2(11596, 288)
 target_angle = -45.0
 
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_eqs6t")]
