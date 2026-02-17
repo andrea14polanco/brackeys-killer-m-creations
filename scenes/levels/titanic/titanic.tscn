@@ -42,17 +42,11 @@ size = Vector2(276.30862, 29.487423)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ratq"]
 size = Vector2(181.79456, 24.239166)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_god6p"]
-size = Vector2(351, 40.649414)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xke"]
+size = Vector2(475.0745, 24.238014)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5je1"]
-size = Vector2(2500, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7j87"]
-size = Vector2(629, 41)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xke"]
-size = Vector2(4000, 58.665268)
+size = Vector2(2155.8545, 25.250862)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itb0x"]
 size = Vector2(262.5476, 20.972595)
@@ -186,75 +180,40 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D11" unique_id=2020677261]
-position = Vector2(11.515108, -7.2390194)
+position = Vector2(11.774813, -6.273331)
 rotation = -0.03867354
 shape = SubResource("RectangleShape2D_4ratq")
 
-[node name="UpperLimit" type="ColorRect" parent="World/Deck1" unique_id=699775216]
-visible = false
-offset_top = 250.0
-offset_right = 350.0
-offset_bottom = 290.0
-
-[node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit" unique_id=129261448]
-position = Vector2(-41, 961.00006)
-scale = Vector2(1, 1.0086254)
+[node name="StaticBody2D12" type="StaticBody2D" parent="World/Deck1" unique_id=1389391918]
+position = Vector2(281, 2042.0001)
+rotation = 0.2627161
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/UpperLimit/UpperLimitCollider" unique_id=399088289]
-position = Vector2(178.5, 19.333252)
-scale = Vector2(1, 1.0606145)
-shape = SubResource("RectangleShape2D_god6p")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D12" unique_id=1230906693]
+position = Vector2(-4.3821936, -0.8926765)
+rotation = -0.26533476
+shape = SubResource("RectangleShape2D_4ratq")
 
-[node name="UpperLimit2" type="ColorRect" parent="World/Deck1" unique_id=1276798964]
-visible = false
-offset_left = 550.0
-offset_top = 250.0
-offset_right = 3050.0
-offset_bottom = 290.0
-
-[node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit2" unique_id=1033511816]
-position = Vector2(-3, 1)
+[node name="StaticBody2D13" type="StaticBody2D" parent="World/Deck1" unique_id=1405833897]
+position = Vector2(596, 2037)
+rotation = -0.0045421496
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/UpperLimit2/UpperLimitCollider" unique_id=842930276]
-position = Vector2(1253, 19)
-shape = SubResource("RectangleShape2D_m5je1")
-
-[node name="UpperLimit3" type="ColorRect" parent="World/Deck1" unique_id=212473535]
-visible = false
-offset_left = 3371.0
-offset_top = 250.0
-offset_right = 4001.0
-offset_bottom = 290.0
-
-[node name="UpperLimitCollider" type="StaticBody2D" parent="World/Deck1/UpperLimit3" unique_id=1505980718]
-position = Vector2(-3, 1)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/UpperLimit3/UpperLimitCollider" unique_id=2044291308]
-position = Vector2(317.5, 18.5)
-scale = Vector2(1.0001215, 1)
-shape = SubResource("RectangleShape2D_i7j87")
-
-[node name="LowerLimit" type="ColorRect" parent="World/Deck1" unique_id=1772140192]
-visible = false
-offset_top = 598.0
-offset_right = 4000.0
-offset_bottom = 638.0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Deck1/LowerLimit" unique_id=1935835091]
-position = Vector2(-3, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/LowerLimit/StaticBody2D" unique_id=985848045]
-position = Vector2(2003, 20)
-scale = Vector2(1, 0.68183476)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D13" unique_id=955288761]
+position = Vector2(44.321777, 3.163086)
 shape = SubResource("RectangleShape2D_p0xke")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="World/Deck1" unique_id=235001690]
+position = Vector2(1833, 2041)
+rotation = 0.0035211872
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/StaticBody2D14" unique_id=1857816667]
+position = Vector2(128.02686, -2.6209717)
+shape = SubResource("RectangleShape2D_m5je1")
 
 [node name="Deck2" type="Node2D" parent="World" unique_id=642445485]
 visible = false
