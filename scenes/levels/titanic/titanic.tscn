@@ -3,7 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://i04aicow4204" path="res://scenes/player/player.tscn" id="1_eqs6t"]
 [ext_resource type="Script" uid="uid://b7myjcp76j6el" path="res://scenes/levels/titanic/world.gd" id="1_itb0x"]
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
+[ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5je1"]
+load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a2326c2721eaf5a617a1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7j87"]
+load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_god6p"]
 size = Vector2(351, 40.649414)
@@ -25,6 +32,21 @@ size = Vector2(262.5476, 20.972595)
 [node name="World" type="Node2D" parent="." unique_id=389389109]
 position = Vector2(818, -857)
 script = ExtResource("1_itb0x")
+
+[node name="Sprite2D" type="Sprite2D" parent="World" unique_id=2049143091]
+position = Vector2(1911, 0)
+texture = ExtResource("2_p0xke")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="World" unique_id=469774204]
+position = Vector2(7560, 0)
+texture = SubResource("CompressedTexture2D_m5je1")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="World" unique_id=1223370641]
+position = Vector2(12453, 0)
+texture = SubResource("CompressedTexture2D_i7j87")
+metadata/_edit_lock_ = true
 
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
 
