@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://7r3dc777wsuv"]
+
+[ext_resource type="Script" uid="uid://bi1081qycrdi3" path="res://scenes/ui/stamina_bar/stamina_bar.gd" id="1_pjgtd"]
+
+[node name="StaminaBar" type="CanvasLayer" unique_id=126409719]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1960133258]
+offset_right = 300.0
+offset_bottom = 27.0
+script = ExtResource("1_pjgtd")
