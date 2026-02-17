@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://i04aicow4204" path="res://scenes/player/player.tscn" id="1_eqs6t"]
 [ext_resource type="Script" uid="uid://b7myjcp76j6el" path="res://scenes/levels/titanic/world.gd" id="1_itb0x"]
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
+[ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_god6p"]
 size = Vector2(351, 40.649414)
@@ -114,11 +115,6 @@ scale = Vector2(1.8152493, 0.5732037)
 shape = SubResource("RectangleShape2D_itb0x")
 one_way_collision = true
 
-[node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
-position = Vector2(36, 183)
-
-[node name="Camera2D" type="Camera2D" parent="World/Player" unique_id=2008680599]
-
 [node name="Checkpoints" type="Node2D" parent="World" unique_id=2138548016]
 position = Vector2(803, 527)
 
@@ -137,6 +133,13 @@ target_angle = -30.0
 [node name="Checkpoint4" parent="World/Checkpoints" unique_id=232646504 instance=ExtResource("2_18k4y")]
 position = Vector2(2828, 111)
 target_angle = -45.0
+
+[node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_eqs6t")]
+position = Vector2(854, -674)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2008680599]
+
+[node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
