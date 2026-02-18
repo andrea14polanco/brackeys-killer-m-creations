@@ -5,15 +5,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nr6p"]
 size = Vector2(126, 6230)
 
-[node name="Checkpoint" type="Node2D" unique_id=2093896556]
+[node name="Checkpoint" type="Area2D" unique_id=2120023032 groups=["checkpoint"]]
+collision_layer = 2
 script = ExtResource("1_w77t2")
 
-[node name="StaticBody2D" type="Area2D" parent="." unique_id=2120023032]
-position = Vector2(0, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=201370367 groups=["checkpoint"]]
-position = Vector2(72, -3105)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=201370367]
 shape = SubResource("RectangleShape2D_2nr6p")
 debug_color = Color(0.59301597, 0.37486184, 1, 0.41960785)
 
-[connection signal="body_exited" from="StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
