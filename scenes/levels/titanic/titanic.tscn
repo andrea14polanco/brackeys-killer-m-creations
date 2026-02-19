@@ -152,9 +152,6 @@ size = Vector2(924.999, 37.54275)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmjcm"]
 size = Vector2(589.51904, 37.54275)
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_m5je1"]
-points = PackedVector2Array(0, 0, 51.095215, 35.86487)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxphn"]
 size = Vector2(1038.5278, 25.995497)
 
@@ -323,7 +320,6 @@ size = Vector2(303.0747, 23.994713)
 [node name="Titanic" type="Node2D" unique_id=1739797682]
 
 [node name="World" type="Node2D" parent="." unique_id=389389109]
-rotation = 1.5707964
 script = ExtResource("1_itb0x")
 
 [node name="Background" type="Node2D" parent="World" unique_id=747145777]
@@ -331,19 +327,23 @@ metadata/_edit_lock_ = true
 
 [node name="TitanicSection1Tileset" type="Sprite2D" parent="World/Background" unique_id=2049143091]
 texture = ExtResource("2_p0xke")
+metadata/_edit_lock_ = true
 
 [node name="TitanicSection2Tileset" type="Sprite2D" parent="World/Background" unique_id=469774204]
 position = Vector2(5682, -20)
 texture = SubResource("CompressedTexture2D_m5je1")
+metadata/_edit_lock_ = true
 
 [node name="TitanicSection3Tileset" type="Sprite2D" parent="World/Background" unique_id=1223370641]
 position = Vector2(10585, -227)
 texture = SubResource("CompressedTexture2D_i7j87")
+metadata/_edit_lock_ = true
 
 [node name="TitanicSection4Tileset" type="Sprite2D" parent="World/Background" unique_id=775595578]
 position = Vector2(16645.002, -237)
 rotation = 0.0035211872
 texture = ExtResource("3_m5je1")
+metadata/_edit_lock_ = true
 
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
 position = Vector2(-2, 0)
@@ -659,12 +659,6 @@ position = Vector2(2623.6084, 1941.4781)
 rotation = 0.019659799
 scale = Vector2(1.0000006, 1.0000006)
 shape = SubResource("RectangleShape2D_rmjcm")
-
-[node name="Polygonedit" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=455496576]
-position = Vector2(2361.1604, 1127.3387)
-rotation = 0.019659799
-scale = Vector2(1.0000006, 1.0000006)
-shape = SubResource("ConvexPolygonShape2D_m5je1")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=1612906870]
 position = Vector2(2619.3906, 2173.8838)
@@ -1096,17 +1090,25 @@ position = Vector2(18259, 100)
 target_angle = -65.0
 
 [node name="Portals" type="Node2D" parent="World" unique_id=1677388707]
-visible = false
 
 [node name="Portal" parent="World/Portals" unique_id=1988836095 instance=ExtResource("5_i7j87")]
+position = Vector2(-616, 0)
+self_portal_position = Vector2(-625, 0)
+next_portal_position = Vector2(5850, -1368)
+
+[node name="Portal2" parent="World/Portals" unique_id=1935425047 instance=ExtResource("5_i7j87")]
+position = Vector2(5739, -1368)
+self_portal_position = Vector2(5850, -1368)
+next_portal_position = Vector2(-625, 0)
 
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_eqs6t")]
-position = Vector2(-14, -499)
+position = Vector2(-936, 6)
 collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2008680599]
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
+visible = false
 
 [connection signal="area_entered" from="World/Deck1/Stairs" to="Player" method="_on_stairs_area_entered"]
 [connection signal="area_exited" from="World/Deck1/Stairs" to="Player" method="_on_stairs_area_exited"]
