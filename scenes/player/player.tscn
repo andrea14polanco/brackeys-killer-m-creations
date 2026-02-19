@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
 size = Vector2(25, 75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
+size = Vector2(25, 23)
+
 [node name="Player" type="CharacterBody2D" unique_id=330747409 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_8afob")
@@ -16,3 +19,10 @@ offset_right = 25.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129302553]
 position = Vector2(12.5, -37.5)
 shape = SubResource("RectangleShape2D_x7p2l")
+
+[node name="GrabArea" type="Area2D" parent="." unique_id=877180602]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=89080764]
+position = Vector2(12.5, -63.5)
+shape = SubResource("RectangleShape2D_8afob")
+debug_color = Color(0.28645247, 0.63035685, 0.04283432, 0.41960785)

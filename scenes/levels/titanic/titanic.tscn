@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="3_m5je1"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
+[ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="5_i7j87"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5je1"]
 load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a2326c2721eaf5a617a1.ctex"
@@ -13,11 +14,8 @@ load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a232
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7j87"]
 load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_itb0x"]
-size = Vector2(193.22739, 14.29686)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0m0e"]
-size = Vector2(193.22739, 14.29686)
+size = Vector2(42.00003, 379.00018)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fit6c"]
 size = Vector2(2245.5747, 37.256927)
@@ -77,7 +75,7 @@ size = Vector2(1661.6405, 34.224148)
 size = Vector2(343.48495, 41.66326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j41kr"]
-size = Vector2(297.3762, 36.00534)
+size = Vector2(539.1269, 33.127747)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxlmn"]
 size = Vector2(335.28455, 36.00534)
@@ -111,6 +109,9 @@ size = Vector2(725.9093, 32.67543)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pt5kc"]
 size = Vector2(118.33722, 32.67543)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egcyd"]
+size = Vector2(1011.6079, 24.790834)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esc6i"]
 size = Vector2(1903.6396, 42.28633)
@@ -150,6 +151,9 @@ size = Vector2(924.999, 37.54275)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmjcm"]
 size = Vector2(589.51904, 37.54275)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_m5je1"]
+points = PackedVector2Array(0, 0, 51.095215, 35.86487)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxphn"]
 size = Vector2(1038.5278, 25.995497)
@@ -319,9 +323,11 @@ size = Vector2(303.0747, 23.994713)
 [node name="Titanic" type="Node2D" unique_id=1739797682]
 
 [node name="World" type="Node2D" parent="." unique_id=389389109]
+rotation = 1.5707964
 script = ExtResource("1_itb0x")
 
 [node name="Background" type="Node2D" parent="World" unique_id=747145777]
+metadata/_edit_lock_ = true
 
 [node name="TitanicSection1Tileset" type="Sprite2D" parent="World/Background" unique_id=2049143091]
 texture = ExtResource("2_p0xke")
@@ -342,28 +348,15 @@ texture = ExtResource("3_m5je1")
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
 position = Vector2(-2, 0)
 
-[node name="Stairs" type="StaticBody2D" parent="World/Deck1" unique_id=1633418102]
-position = Vector2(-58, 558.00006)
-rotation = 2.3884864
+[node name="Stairs" type="Area2D" parent="World/Deck1" unique_id=1770190822]
 scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 2
-collision_mask = 0
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=1364159004]
-position = Vector2(-101.589676, -34.92198)
-rotation = -1.4629582
-scale = Vector2(1.8152497, 0.5732038)
-shape = SubResource("RectangleShape2D_itb0x")
-one_way_collision = true
-debug_color = Color(0.91165984, 0.25227565, 0.40190464, 0.41960785)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=177968655]
-position = Vector2(311.14737, -452.21378)
-rotation = -0.14092627
-scale = Vector2(1.8152497, 0.5732037)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=1452970308]
+position = Vector2(61.999992, -151.4999)
+scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_r0m0e")
-one_way_collision = true
-debug_color = Color(0.91165984, 0.25227565, 0.40190464, 0.41960785)
+debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
 [node name="PlatformsCollisions" type="StaticBody2D" parent="World/Deck1" unique_id=790379749]
 position = Vector2(-922, 58)
@@ -504,9 +497,9 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_pa72x")
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=1293633815]
-position = Vector2(2094.9949, -14.931122)
-rotation = -0.018953267
-scale = Vector2(1.0000001, 1.0000001)
+position = Vector2(2097.1184, -13.53228)
+rotation = -0.018953262
+scale = Vector2(1.0000004, 1.0000004)
 shape = SubResource("RectangleShape2D_j41kr")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=465812242]
@@ -575,6 +568,12 @@ rotation = -0.018104425
 scale = Vector2(1.0000023, 1.0000023)
 shape = SubResource("RectangleShape2D_pt5kc")
 
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=617499557]
+position = Vector2(2337.5603, -705.3496)
+rotation = -0.018104423
+scale = Vector2(1.0000026, 1.0000026)
+shape = SubResource("RectangleShape2D_egcyd")
+
 [node name="CollisionShape2D36" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=1339384355]
 position = Vector2(3812.8132, -412.5879)
 rotation = -0.029771648
@@ -592,6 +591,7 @@ position = Vector2(888.3744, -450.1881)
 rotation = -0.02550942
 scale = Vector2(1.0000014, 1.0000014)
 shape = SubResource("RectangleShape2D_rvfp7")
+one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=82233499]
 position = Vector2(281.4428, 1863.0542)
@@ -659,6 +659,12 @@ position = Vector2(2623.6084, 1941.4781)
 rotation = 0.019659799
 scale = Vector2(1.0000006, 1.0000006)
 shape = SubResource("RectangleShape2D_rmjcm")
+
+[node name="Polygonedit" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=455496576]
+position = Vector2(2361.1604, 1127.3387)
+rotation = 0.019659799
+scale = Vector2(1.0000006, 1.0000006)
+shape = SubResource("ConvexPolygonShape2D_m5je1")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=1612906870]
 position = Vector2(2619.3906, 2173.8838)
@@ -1089,13 +1095,21 @@ target_angle = -50.0
 position = Vector2(18259, 100)
 target_angle = -65.0
 
+[node name="Portals" type="Node2D" parent="World" unique_id=1677388707]
+visible = false
+
+[node name="Portal" parent="World/Portals" unique_id=1988836095 instance=ExtResource("5_i7j87")]
+
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_eqs6t")]
-position = Vector2(390, 98)
+position = Vector2(-14, -499)
+collision_mask = 6
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2008680599]
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
+[connection signal="area_entered" from="World/Deck1/Stairs" to="Player" method="_on_stairs_area_entered"]
+[connection signal="area_exited" from="World/Deck1/Stairs" to="Player" method="_on_stairs_area_exited"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
