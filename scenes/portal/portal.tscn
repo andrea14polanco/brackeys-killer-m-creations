@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b3npx73rkmpc5"]
+
+[ext_resource type="Script" uid="uid://cuuis64k4ga01" path="res://scenes/portal/portal.gd" id="1_2pe5p"]
+[ext_resource type="Shader" uid="uid://dnwctny1d7l6x" path="res://scenes/portal/portal.gdshader" id="2_8j420"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_umpx7"]
+shader = ExtResource("2_8j420")
+shader_parameter/portal_tint = Color(1, 1, 1, 1)
+shader_parameter/vortex_effect_radius = 0.5
+shader_parameter/twist_strength = 8.0
+shader_parameter/pulsation_speed = 0.7
+shader_parameter/breath_magnitude = 0.05
+shader_parameter/overall_rotation_speed = 0.25
+shader_parameter/texture_scroll_speed_x = 0.08
+shader_parameter/texture_scroll_speed_y = 0.03
+shader_parameter/edge_softness = 0.1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pe5p"]
+radius = 12.0
+height = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8j420"]
+shader = ExtResource("2_8j420")
+shader_parameter/portal_tint = Color(1, 1, 1, 1)
+shader_parameter/vortex_effect_radius = 0.5
+shader_parameter/twist_strength = 8.0
+shader_parameter/pulsation_speed = 0.7
+shader_parameter/breath_magnitude = 0.05
+shader_parameter/overall_rotation_speed = 0.25
+shader_parameter/texture_scroll_speed_x = 0.08
+shader_parameter/texture_scroll_speed_y = 0.03
+shader_parameter/edge_softness = 0.1
+
+[node name="Portal" type="Area2D" unique_id=1988836095]
+script = ExtResource("1_2pe5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069411008]
+material = SubResource("ShaderMaterial_umpx7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312806211]
+shape = SubResource("CapsuleShape2D_2pe5p")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2024658543]
+material = SubResource("ShaderMaterial_8j420")
+offset_left = 28.0
+offset_top = -20.0
+offset_right = 68.0
+offset_bottom = 20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

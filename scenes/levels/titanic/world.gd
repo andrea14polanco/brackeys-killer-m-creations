@@ -2,8 +2,6 @@ extends Node2D
 
 
 
-func _on_checkpoint_player_walked_through(angle: Variant) -> void:
-	rotate_smoothly(angle)
 
 
 func _on_checkpoint_2_player_walked_through(angle: Variant) -> void:
@@ -19,5 +17,9 @@ func _on_checkpoint_4_player_walked_through(angle: Variant) -> void:
 
 func rotate_smoothly(angle):
 	var tween = get_tree().create_tween()
-	tween.tween_property($".", "rotation_degrees", angle, 1.0)
+	tween.tween_property($".", "rotation_degrees", angle, 10.0)
 	
+
+
+func _on_checkpoint_player_walked_through(angle: Variant) -> void:
+	rotate_smoothly(angle)
