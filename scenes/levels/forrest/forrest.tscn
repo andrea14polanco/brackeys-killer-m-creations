@@ -6,10 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dahnydpdqp6ko" path="res://assets/tilesets/ForestTiles16x16.png" id="4_hhiep"]
 [ext_resource type="Texture2D" uid="uid://c53q4t6jwnhuq" path="res://assets/tilesets/ForestTilesBG16x16.png" id="5_ummo1"]
 [ext_resource type="Texture2D" uid="uid://bpwuji0wpec1v" path="res://assets/tilesets/detail_0013_stones3.png" id="6_b5vmn"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="Texture2D" uid="uid://cr68p72nkgbke" path="res://assets/tilesets/Grassy_Trees.png" id="6_b8k4h"]
->>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4jpq"]
 texture = ExtResource("2_b5vmn")
@@ -1365,8 +1362,6 @@ texture = ExtResource("5_ummo1")
 sources/0 = SubResource("TileSetAtlasSource_2gn6l")
 sources/1 = SubResource("TileSetAtlasSource_ogtiq")
 
-<<<<<<< Updated upstream
-=======
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhiep"]
 texture = ExtResource("6_b8k4h")
 4:0/0 = 0
@@ -1449,7 +1444,6 @@ texture = ExtResource("6_b8k4h")
 [sub_resource type="TileSet" id="TileSet_ummo1"]
 sources/0 = SubResource("TileSetAtlasSource_hhiep")
 
->>>>>>> Stashed changes
 [node name="forrest" type="Node2D" unique_id=1622900961]
 
 [node name="BG3" type="Node2D" parent="." unique_id=686983713]
@@ -1497,15 +1491,12 @@ position = Vector2(642, -174)
 
 [node name="Scrubs" type="Node2D" parent="." unique_id=1115725615]
 
-<<<<<<< Updated upstream
-=======
 [node name="TileMapLayer" type="TileMapLayer" parent="Scrubs" unique_id=1467628320]
 position = Vector2(0, -32)
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAGAPv/AAAAAAEAAAAGAPz/AAAAAAIAAAAGAP3/AAAAAAMAAAAGAP7/AAAAAAQAAAAHAPv/AAABAAEAAAAHAPz/AAABAAIAAAAHAP3/AAABAAMAAAAHAP7/AAABAAQAAAAHAP//AAABAAUAAAAHAAAAAAABAAYAAAAIAPv/AAACAAEAAAAIAPz/AAACAAIAAAAIAP3/AAACAAMAAAAIAP7/AAACAAQAAAAIAP//AAACAAUAAAAIAAAAAAACAAYAAAAJAPv/AAADAAEAAAAJAPz/AAADAAIAAAAJAP3/AAADAAMAAAAJAP7/AAADAAQAAAAQAPr/AAAEAAAAAAAQAPv/AAAEAAEAAAAQAPz/AAAEAAIAAAARAPr/AAAFAAAAAAARAPv/AAAFAAEAAAARAPz/AAAFAAIAAAARAP3/AAAFAAMAAAARAP7/AAAFAAQAAAARAP//AAAFAAUAAAARAAAAAAAFAAYAAAASAPr/AAAGAAAAAAASAPv/AAAGAAEAAAASAPz/AAAGAAIAAAASAP3/AAAGAAMAAAASAP7/AAAGAAQAAAASAP//AAAGAAUAAAASAAAAAAAGAAYAAAATAPr/AAAHAAAAAAATAPv/AAAHAAEAAAATAPz/AAAHAAIAAAATAP3/AAAHAAMAAAA=")
 tile_set = SubResource("TileSet_ummo1")
 
->>>>>>> Stashed changes
 [node name="Detail0013Stones3" type="Sprite2D" parent="Scrubs" unique_id=489704339]
 position = Vector2(323, 48)
 texture = ExtResource("6_b5vmn")
