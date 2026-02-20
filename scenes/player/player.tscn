@@ -262,8 +262,5 @@ position = Vector2(27, -151)
 sprite_frames = SubResource("SpriteFrames_wva7c")
 animation = &"climb"
 autoplay = "idle_right"
-<<<<<<< Updated upstream
 frame_progress = 0.94804484
-=======
-frame_progress = 0.7085203
->>>>>>> Stashed changes
+
