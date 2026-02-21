@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bi55f8u5kpc1l"]
 
 [ext_resource type="Script" uid="uid://cxf7b2mrfisou" path="res://scenes/mainmenu/main_menu.gd" id="1_ysd44"]
+[ext_resource type="Texture2D" uid="uid://feniy04h51we" path="res://assets/backgrounds/main_menu.png" id="2_sq05c"]
 
 [node name="main_menu" type="Control" unique_id=143165144]
 layout_mode = 3
@@ -28,13 +29,16 @@ offset_bottom = 187.0
 theme_override_font_sizes/font_size = 65
 text = "TITLE OF GAME"
 
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=166494481]
+position = Vector2(639, 362)
+texture = ExtResource("2_sq05c")
+
 [node name="Start_Game_button" type="Button" parent="." unique_id=472672011]
 layout_mode = 0
-offset_left = 441.0
-offset_top = 306.0
-offset_right = 683.0
-offset_bottom = 373.0
+offset_left = 296.0
+offset_top = 410.0
+offset_right = 982.0
+offset_bottom = 553.0
 theme_override_font_sizes/font_size = 43
-text = "Start Game"
 
 [connection signal="pressed" from="Start_Game_button" to="." method="_on_start_game_button_pressed"]

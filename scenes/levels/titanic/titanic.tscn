@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
 [ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="3_m5je1"]
+[ext_resource type="PackedScene" uid="uid://di2slgx3gxnhw" path="res://scenes/levels/titanic/illusion_layer.tscn" id="4_fit6c"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
 [ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="5_i7j87"]
 
@@ -751,6 +752,11 @@ metadata/_edit_lock_ = true
 position = Vector2(16554.64, -247.51685)
 rotation = 0.0035211872
 texture = ExtResource("3_m5je1")
+metadata/_edit_lock_ = true
+
+[node name="illusion_layer" parent="World/Background/TitanicSection4Tileset" unique_id=1259653005 instance=ExtResource("4_fit6c")]
+position = Vector2(-0.69140625, -14.480804)
+rotation = 1.130943
 metadata/_edit_lock_ = true
 
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
