@@ -243,13 +243,14 @@ animations = [{
 size = Vector2(55, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
-size = Vector2(54.5, 44.5)
+size = Vector2(54.5, 19)
 
 [node name="Player" type="CharacterBody2D" unique_id=330747409 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_8afob")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=375379785]
+z_index = 1
 position = Vector2(29, -71)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_wva7c")
@@ -261,9 +262,10 @@ position = Vector2(27.5, -52)
 shape = SubResource("RectangleShape2D_x7p2l")
 
 [node name="GrabArea" type="Area2D" parent="." unique_id=877180602]
+position = Vector2(0, 45)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=89080764]
-position = Vector2(27.75, -82.25)
+position = Vector2(27.75, -77.5)
 shape = SubResource("RectangleShape2D_8afob")
 debug_color = Color(0.28645247, 0.63035685, 0.04283432, 0.41960785)

@@ -5,7 +5,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const CLIMBING_SPEED = 100
 
-@onready var stamina_bar: ProgressBar = $"../StaminaBar/ProgressBar"
+@onready var stamina_bar: ProgressBar = $"../../StaminaBar/ProgressBar"
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 signal player_take_stairs
 
@@ -14,6 +15,7 @@ var is_on_stairs: bool = false
 var is_jumping: bool = false
 var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
+var teleporting = false
 
 
 func _physics_process(delta: float) -> void:
@@ -27,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if is_on_floor():
 		is_jumping = false
+		print(stamina_bar)
 		if stamina_bar.value > 1 and Input.is_action_just_pressed("jump"):
 				is_jumping = false
 				velocity.y = JUMP_VELOCITY
@@ -72,6 +75,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("idle_left")
 	
+
+func start_teleport():
+	pass
+
+func stop_teleport():
+	pass
 
 func _on_stairs_area_entered(area: Area2D) -> void:
 	is_on_ladder = true

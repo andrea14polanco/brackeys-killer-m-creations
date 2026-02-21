@@ -1,113 +1,71 @@
 shader_type canvas_item;
 
-// The texture that will be distorted and scrolled for the portal effect
-uniform sampler2D portal_texture : source_color, filter_linear_mipmap_anisotropic;
+// Academia-themed colors based on character design
+uniform vec4 inner_color : source_color = vec4(0.15, 0.08, 0.35, 1.0);  // deep purple
+uniform vec4 mid_color : source_color = vec4(0.05, 0.35, 0.4, 1.0);     // teal (like collider)
+uniform vec4 edge_color : source_color = vec4(0.55, 0.2, 0.75, 1.0);    // soft purple glow
+uniform float swirl_speed = 1.2;
+uniform float ring_count = 5.0;
+uniform float pulse_speed = 1.8;
+uniform float open_progress : hint_range(0.0, 1.0) = 1.0;
+uniform sampler2D noise_texture : hint_default_white;
+// Capsule shape controls
+uniform float capsule_radius : hint_range(0.0, 0.5) = 0.35; // half-width
+uniform float capsule_height : hint_range(0.0, 1.0) = 0.25; // half of straight section
 
-// --- Effect Configuration ---
-
-// General color tint for the portal
-uniform vec4 portal_tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-
-// Vortex Shape and Twist
-// Defines the radius from the center where the vortex effects (like twist) are prominent.
-uniform float vortex_effect_radius : hint_range(0.01, 1.0, 0.01) = 0.5;
-// Strength of the twisting effect. Higher values mean more spiraling.
-uniform float twist_strength : hint_range(0.0, 30.0, 0.1) = 8.0;
-
-// Pulsation (Timing and Magnitude)
-// Speed of the pulsation cycle. Affects how fast the portal twists and breathes.
-uniform float pulsation_speed : hint_range(0.0, 5.0, 0.01) = 0.7;
-// Magnitude of the shrink/expand "breathing" effect.
-uniform float breath_magnitude : hint_range(-0.3, 0.3, 0.005) = 0.05;
-
-// Overall Rotation
-// Constant rotation speed for the entire portal.
-uniform float overall_rotation_speed : hint_range(-2.0, 2.0, 0.01) = 0.25;
-
-// Texture Scrolling
-// Speed at which the portal_texture scrolls in the X direction.
-uniform float texture_scroll_speed_x : hint_range(-1.0, 1.0, 0.01) = 0.08;
-// Speed at which the portal_texture scrolls in the Y direction.
-uniform float texture_scroll_speed_y : hint_range(-1.0, 1.0, 0.01) = 0.03;
-
-// Appearance
-// How soft the edge of the portal fades to transparency.
-uniform float edge_softness : hint_range(0.01, 0.5, 0.005) = 0.1;
-
-
-// --- Utility Functions ---
-
-// Rotation matrix function
-mat2 rotate(float angle) {
-    float s = sin(angle);
-    float c = cos(angle);
-    return mat2(vec2(c, -s), vec2(s, c));
+float capsule_sdf(vec2 uv, float radius, float half_height) {
+    // uv is centered (-1 to 1 range)
+    vec2 p = uv;
+    p.y = abs(p.y) - half_height;
+    p.y = max(p.y, 0.0);
+    return length(p) - radius;
 }
 
-// --- Fragment Shader Logic ---
+vec2 rotate2D(vec2 uv, float angle) {
+    float s = sin(angle);
+    float c = cos(angle);
+    return vec2(uv.x * c - uv.y * s, uv.x * s + uv.y * c);
+}
 
 void fragment() {
-    // --- 1. UV Preparation and Aspect Correction ---
-    vec2 node_pixel_size = 1.0 / TEXTURE_PIXEL_SIZE;
-    vec2 uv = UV - 0.5;
+    vec2 uv = UV * 2.0 - 1.0;
+    // Adjust aspect — if your sprite is not square, tweak this
+    uv.y *= 1.6; // match capsule tall shape
 
-    if (node_pixel_size.x > node_pixel_size.y) {
-        uv.x *= node_pixel_size.x / node_pixel_size.y;
-    } else if (node_pixel_size.y > node_pixel_size.x) {
-        uv.y *= node_pixel_size.y / node_pixel_size.x;
-    }
+    float dist_sdf = capsule_sdf(uv, capsule_radius * open_progress, capsule_height * open_progress);
 
-    // --- 2. Time-based Progress for Pulsation ---
-    float time_progress = sin(TIME * pulsation_speed);
+    // Clip outside capsule
+    if (dist_sdf > 0.03) discard;
 
-    // --- 3. Overall Rotation ---
-    if (overall_rotation_speed != 0.0) {
-        uv = rotate(TIME * overall_rotation_speed) * uv;
-    }
+    float dist_from_center = length(uv);
+    float t = clamp(dist_from_center / (capsule_radius + capsule_height * 0.5), 0.0, 1.0);
 
-    // --- 4. Calculate Distance and Angle (Polar Coordinates) ---
-    float distance_from_center = length(uv);
+    // Swirl — stronger near center
+    float angle = atan(uv.y, uv.x);
+    float swirl = angle + dist_from_center * 4.0 - TIME * swirl_speed;
+    vec2 swirled = rotate2D(uv * 0.5 + 0.5, swirl * 0.35);
 
-    // --- 5. Vortex/Twist Effect ---
-    float twist_spatial_factor = smoothstep(0.0, vortex_effect_radius, vortex_effect_radius - distance_from_center);
-    float current_animated_twist = twist_strength * time_progress;
-    float twist_angle = twist_spatial_factor * current_animated_twist;
+    // Noise
+    float noise  = texture(noise_texture, swirled + TIME * 0.03).r;
+    float noise2 = texture(noise_texture, swirled * 1.6 - TIME * 0.05).r;
+    float n = mix(noise, noise2, 0.5);
 
-    if (distance_from_center < vortex_effect_radius) {
-        uv = rotate(twist_angle) * uv;
-    }
+    // Rings
+    float rings = sin((t * ring_count - TIME * pulse_speed) * 3.14159 * 2.0) * 0.5 + 0.5;
+    rings = pow(rings, 3.0);
 
-    // --- 6. Pulsating Shrink/Expand ("Breathing") Effect ---
-    float breath_value = breath_magnitude * time_progress;
-    if (distance_from_center > 0.0001) {
-        float new_radial_distance = max(0.0, distance_from_center + breath_value);
-        uv *= (new_radial_distance / distance_from_center);
-    }
+    // Edge glow near SDF boundary
+    float edge_glow = 1.0 - smoothstep(-0.08, 0.0, dist_sdf);
+    float inner_glow = 1.0 - smoothstep(0.0, 0.5, t);
 
-    // --- 7. Texture Scrolling ---
-    // Combine the X and Y scroll speed uniforms into a vec2
-    vec2 texture_scroll_speed = vec2(texture_scroll_speed_x, texture_scroll_speed_y);
-    vec2 scroll_offset = TIME * texture_scroll_speed;
-    vec2 final_scrolling_uv = uv + scroll_offset;
+    vec3 base = mix(inner_color.rgb, mid_color.rgb, t);
+    base = mix(base, edge_color.rgb, edge_glow);
 
-    // --- 8. Revert Aspect Correction and De-center for Texture Sampling ---
-    if (node_pixel_size.x > node_pixel_size.y) {
-        final_scrolling_uv.x /= (node_pixel_size.x / node_pixel_size.y);
-    } else if (node_pixel_size.y > node_pixel_size.x) {
-        final_scrolling_uv.y /= (node_pixel_size.y / node_pixel_size.x);
-    }
-    final_scrolling_uv += 0.5;
+    float brightness = inner_glow * 1.4 + rings * 0.6 + n * 0.25 + edge_glow * 2.0;
+    float pulse = sin(TIME * pulse_speed) * 0.07 + 0.93;
 
-    // --- 9. Alpha Calculation for Portal Edge ---
-    float alpha = smoothstep(vortex_effect_radius, vortex_effect_radius - edge_softness, distance_from_center);
+    vec3 final_color = base * brightness * pulse;
+    float alpha = smoothstep(0.03, -0.01, dist_sdf) * open_progress;
 
-    // --- 10. Texture Sampling and Final Color ---
-    vec4 texture_color = texture(portal_texture, fract(final_scrolling_uv));
-    
-    COLOR = texture_color * portal_tint;
-    COLOR.a *= alpha;
-
-    if (UV.x < 0.0 || UV.x > 1.0 || UV.y < 0.0 || UV.y > 1.0) {
-        COLOR.a = 0.0;
-    }
+    COLOR = vec4(final_color, alpha);
 }
