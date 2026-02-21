@@ -5,6 +5,14 @@
 [ext_resource type="AudioStream" uid="uid://b7hroe5kdi2m3" path="res://assets/bgm/Cutscene.mp3" id="3_yknyo"]
 [ext_resource type="AudioStream" uid="uid://cxuga07bldmqi" path="res://assets/bgm/forest.mp3" id="4_ihifr"]
 [ext_resource type="AudioStream" uid="uid://dssn0xpdk0cw5" path="res://assets/bgm/Titanic music.mp3" id="5_nnvwk"]
+[ext_resource type="AudioStream" uid="uid://dx1sfvp6ni7u4" path="res://assets/sfx/Climbing.ogg" id="6_0mw3o"]
+[ext_resource type="AudioStream" uid="uid://cfmuq7grgrh12" path="res://assets/sfx/Confirmation.ogg" id="7_sa3du"]
+[ext_resource type="AudioStream" uid="uid://dl5w1el3pbylr" path="res://assets/sfx/MenuClick.ogg" id="8_ep5b4"]
+[ext_resource type="AudioStream" uid="uid://t5qp7d640usx" path="res://assets/sfx/MetalDoorClosing.ogg" id="9_qqdue"]
+[ext_resource type="AudioStream" uid="uid://dm18ys0mx7rnc" path="res://assets/sfx/PageTurning.ogg" id="10_xhpbq"]
+[ext_resource type="AudioStream" uid="uid://c41li1268tha3" path="res://assets/sfx/Portal.ogg" id="11_1r4kc"]
+[ext_resource type="AudioStream" uid="uid://grttqsiwyujn" path="res://assets/sfx/WalkingGround.ogg" id="12_qn1ld"]
+[ext_resource type="AudioStream" uid="uid://khvylk2s66fd" path="res://assets/sfx/WalkingMetal.ogg" id="13_cdkeo"]
 
 [node name="AudioManager" type="Node" unique_id=881960081]
 script = ExtResource("1_xskna")
@@ -24,3 +32,28 @@ bus = &"Music"
 [node name="TitanicMusic" type="AudioStreamPlayer" parent="." unique_id=1074182793]
 stream = ExtResource("5_nnvwk")
 bus = &"Music"
+
+[node name="Climbing" type="AudioStreamPlayer" parent="." unique_id=1262538329]
+stream = ExtResource("6_0mw3o")
+
+[node name="Confirmation" type="AudioStreamPlayer" parent="." unique_id=31650930]
+stream = ExtResource("7_sa3du")
+
+[node name="MenuClick" type="AudioStreamPlayer" parent="." unique_id=1022516648]
+stream = ExtResource("8_ep5b4")
+
+[node name="MetalDoorClosing" type="AudioStreamPlayer" parent="." unique_id=1765513596]
+stream = ExtResource("9_qqdue")
+
+[node name="PageTurning" type="AudioStreamPlayer" parent="." unique_id=860543680]
+stream = ExtResource("10_xhpbq")
+
+[node name="Portal" type="AudioStreamPlayer" parent="." unique_id=257194521]
+stream = ExtResource("11_1r4kc")
+
+[node name="WalkingGround" type="AudioStreamPlayer" parent="." unique_id=1486160510]
+stream = ExtResource("12_qn1ld")
+
+[node name="WalkingMetal" type="AudioStreamPlayer" parent="." unique_id=598974580]
+stream = ExtResource("13_cdkeo")
+parameters/looping = true

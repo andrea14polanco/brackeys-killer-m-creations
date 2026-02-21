@@ -8,3 +8,6 @@ func play(sound_name):
 
 func stop(sound_name):
 	get_node(sound_name).stop()
+
+func pause(sound_name, flag):
+	get_node(sound_name).set_stream_paused(flag)
