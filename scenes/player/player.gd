@@ -21,14 +21,17 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor() and not is_on_ladder:
 		velocity += gravity * delta
+		is_jumping = true
+		
 
 	# Handle jump.
-	if stamina_bar.value > 1 and Input.is_action_just_pressed("jump") and not is_jumping:
-			is_jumping = true
-			velocity.y = JUMP_VELOCITY
-			stamina_bar.reduce_after_jump()
-	else:
+	if is_on_floor():
 		is_jumping = false
+		if stamina_bar.value > 1 and Input.is_action_just_pressed("jump"):
+				is_jumping = false
+				velocity.y = JUMP_VELOCITY
+				stamina_bar.reduce_after_jump()
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
