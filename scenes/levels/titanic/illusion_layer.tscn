@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://di2slgx3gxnhw"]
+
+[ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="1_hewvq"]
+
+[node name="illusion_layer" type="Node2D" unique_id=1259653005]
+rotation = 1.134464
+
+[node name="TitanicSection4Tileset" type="Sprite2D" parent="." unique_id=1916344362]
+rotation = -1.134464
+texture = ExtResource("1_hewvq")
+
+[node name="Plants" type="Node2D" parent="." unique_id=1283154540]
+rotation = -1.134464
