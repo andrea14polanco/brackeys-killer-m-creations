@@ -19,13 +19,18 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if can_teleport:
-		teleport(body)
-		is_portal_used = true
+	if body.is_in_group("player"):
+		if can_teleport:
+			await body.start_teleport()
+			teleport(body)
+			body.stop_teleport()
+			body.teleporting = false
+			is_portal_used = true
 
 
 func teleport(body: Node2D):
 	if not is_portal_used:
+		AudioManager.play("Portal")
 		is_portal_used = true 
 		body.global_position = next_portal_marker.global_position
 	

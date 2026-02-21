@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
 [ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="3_m5je1"]
-[ext_resource type="PackedScene" uid="uid://di2slgx3gxnhw" path="res://scenes/levels/titanic/illusion_layer.tscn" id="4_fit6c"]
+[ext_resource type="PackedScene" path="res://scenes/levels/titanic/illusion_layer.tscn" id="4_fit6c"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
 [ext_resource type="PackedScene" uid="uid://c4rrq0ri76xiy" path="res://scenes/stairs/stairs.tscn" id="5_0ceux"]
 [ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="5_i7j87"]
@@ -787,6 +787,7 @@ can_teleport = true
 position = Vector2(976, 1955)
 
 [node name="Portal2" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipEntrancePortal2" unique_id=1529517193 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+position = Vector2(33, -43)
 next_portal_marker = NodePath("../../../ForrestPortalMarkers/ForrestEntrance2")
 can_teleport = true
 
@@ -2891,7 +2892,7 @@ position = Vector2(27693, 100)
 target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
-position = Vector2(783, 1996)
+position = Vector2(776, 2021)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
