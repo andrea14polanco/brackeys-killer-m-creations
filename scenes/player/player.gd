@@ -7,6 +7,7 @@ const CLIMBING_SPEED = 100
 
 @onready var stamina_bar: ProgressBar = $"../../StaminaBar/ProgressBar"
 @onready var animated_sprite_2d = $AnimatedSprite2D
+var original_material: ShaderMaterial
 
 signal player_take_stairs
 
@@ -16,9 +17,14 @@ var is_jumping: bool = false
 var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
 var teleporting = false
+var is_moving = true
 
 func _ready() -> void:
-	AudioManager.play("WalkingMetal")
+	GameManager.player = self
+	#AudioManager.play("WalkingMetal")
+	original_material = animated_sprite_2d.material
+	animated_sprite_2d.material = null
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -42,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var horizontal_direction := Input.get_axis("move_left", "move_right")
 	play_walking_sfx(horizontal_direction)
-	if horizontal_direction:
+	if horizontal_direction and not teleporting:
 		velocity.x = horizontal_direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -81,11 +87,19 @@ func _physics_process(delta: float) -> void:
 	
 
 func start_teleport():
-	pass
-
+	teleporting = true
+	animated_sprite_2d.material = original_material
+	var tween = create_tween()
+	tween.tween_method(
+		func(v): animated_sprite_2d.material.set_shader_parameter("progress", v),
+		0.0, 1.0, 2.0
+	)
+	await tween.finished
+	
 func stop_teleport():
-	pass
-
+	teleporting = false
+	animated_sprite_2d.material = null
+	
 func play_walking_sfx(sfx):
 	if sfx != 0:
 		AudioManager.pause("WalkingMetal", false)

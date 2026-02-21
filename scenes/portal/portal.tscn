@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://cuuis64k4ga01" path="res://scenes/portal/portal.gd" id="1_2pe5p"]
 [ext_resource type="Shader" uid="uid://dnwctny1d7l6x" path="res://scenes/portal/portal.gdshader" id="2_8j420"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pe5p"]
-radius = 19.0
-height = 104.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8j420"]
 shader = ExtResource("2_8j420")
 shader_parameter/inner_color = Color(0.15, 0.08, 0.35, 1)
@@ -19,18 +15,22 @@ shader_parameter/open_progress = 1.0
 shader_parameter/capsule_radius = 0.35
 shader_parameter/capsule_height = 0.25
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pe5p"]
+radius = 46.0
+height = 206.0
+
 [node name="Portal" type="Area2D" unique_id=1988836095]
 script = ExtResource("1_2pe5p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312806211]
-shape = SubResource("CapsuleShape2D_2pe5p")
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2024658543]
 material = SubResource("ShaderMaterial_8j420")
-offset_left = -73.0
-offset_top = -159.0
-offset_right = -38.0
-offset_bottom = -129.0
-scale = Vector2(4.282468, 11.03899)
+offset_left = -149.99997
+offset_top = -282.0
+offset_right = -119.69998
+offset_bottom = -224.8
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312806211]
+shape = SubResource("CapsuleShape2D_2pe5p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	GameManager.player.set_physics_process(false)
 	AudioManager.stop("MainMenu")
 	AudioManager.stop("Cutscene")
 	AudioManager.play("TitanicMusic")
@@ -70,3 +71,4 @@ func next_chat(num):
 
 func close_chat():
 	$Player/Text_Panel.hide()
+	GameManager.player.set_physics_process(true)
