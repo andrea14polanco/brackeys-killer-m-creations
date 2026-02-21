@@ -31,10 +31,13 @@ func _on_next_button_pressed() -> void:
 	if text_count < array_count:
 		_panel_chat(name_var, current_array, option, final_action)
 	else:
+		text_count = 0
+		array_count = 0
 		if option == "next_scene":
 			get_tree().change_scene_to_file(final_action)
 		elif option == "next_chat":
-			text_count = 0
-			array_count = 0
 			$"..".next_chat(final_action)
-		
+		elif option == "next_chat2":
+			$"../..".next_chat(final_action)
+		elif option == "close_chat":
+			$"../..".close_chat()
