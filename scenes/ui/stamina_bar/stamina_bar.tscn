@@ -1,10 +1,22 @@
 [gd_scene format=3 uid="uid://7r3dc777wsuv"]
 
 [ext_resource type="Script" uid="uid://bi1081qycrdi3" path="res://scenes/ui/stamina_bar/stamina_bar.gd" id="1_pjgtd"]
+[ext_resource type="Texture2D" uid="uid://b4gvrri8xoh3e" path="res://assets/ui/bars/stamina_bar.png" id="2_a2c6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2c6d"]
+bg_color = Color(0.2862643, 0.60626066, 0.9842939, 1)
 
 [node name="StaminaBar" type="CanvasLayer" unique_id=126409719]
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1960133258]
-offset_right = 300.0
-offset_bottom = 27.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 294.0
+offset_bottom = 29.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_a2c6d")
 script = ExtResource("1_pjgtd")
+
+[node name="StaminaBar" type="Sprite2D" parent="." unique_id=856897197]
+position = Vector2(150, 15.000001)
+scale = Vector2(2.178832, 1.45)
+texture = ExtResource("2_a2c6d")
