@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
 [ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="3_m5je1"]
+[ext_resource type="PackedScene" uid="uid://c4rrq0ri76xiy" path="res://scenes/stairs/stairs.tscn" id="4_fit6c"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
 [ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="5_i7j87"]
 
@@ -36,7 +37,7 @@ size = Vector2(42.00003, 280.31284)
 size = Vector2(2245.5747, 37.256927)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ceux"]
-size = Vector2(1913.0544, 33.39415)
+size = Vector2(1866.5608, 33.39415)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85a1w"]
 size = Vector2(892.3978, 42.19528)
@@ -756,41 +757,41 @@ metadata/_edit_lock_ = true
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
 position = Vector2(-2, 0)
 
-[node name="Stairs" type="Area2D" parent="World/Deck1" unique_id=1770190822]
+[node name="Ladders" type="Area2D" parent="World/Deck1" unique_id=1770190822]
 scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=1452970308]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/Ladders" unique_id=1452970308]
 position = Vector2(61.999943, -166.49986)
 scale = Vector2(0.9999991, 0.9999991)
 shape = SubResource("RectangleShape2D_r0m0e")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=851245230]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck1/Ladders" unique_id=851245230]
 position = Vector2(-1038.9998, 1457.7498)
 scale = Vector2(0.99999905, 0.99999905)
 shape = SubResource("RectangleShape2D_ujs8o")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=2147329035]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Deck1/Ladders" unique_id=2147329035]
 position = Vector2(-572.0001, 1548.3748)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_mydk7")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=1592263447]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Deck1/Ladders" unique_id=1592263447]
 position = Vector2(-27.000122, 1569.0001)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_bvw18")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=1609659646]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck1/Ladders" unique_id=1609659646]
 position = Vector2(2712.9993, 1520.7655)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_42j8i")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=107159747]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck1/Ladders" unique_id=107159747]
 position = Vector2(2735.0002, 580.0002)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_hk082")
@@ -800,15 +801,14 @@ debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 position = Vector2(-922, 58)
 rotation = 0.03610947
 collision_layer = 2
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=1734527930]
 shape = SubResource("RectangleShape2D_fit6c")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=2012381219]
-position = Vector2(-185.18134, 341.21893)
+position = Vector2(-208.42767, 341.077)
 rotation = 0.006108914
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_0ceux")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=1039892288]
@@ -1061,6 +1061,7 @@ shape = SubResource("RectangleShape2D_1twrw")
 
 [node name="WallCollisions" type="StaticBody2D" parent="World/Deck1" unique_id=125162300]
 position = Vector2(-2185, -791.00006)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/WallCollisions" unique_id=1635849756]
 position = Vector2(-28.046875, 1360.1958)
@@ -1301,6 +1302,26 @@ rotation = 0.0034128486
 scale = Vector2(0.9999992, 0.9999992)
 shape = SubResource("RectangleShape2D_wnnd0")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
+
+[node name="Stairs" parent="World/Deck1" unique_id=279876297 instance=ExtResource("4_fit6c")]
+position = Vector2(-70, 540)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs" index="0" unique_id=1344604663]
+position = Vector2(-15, 28)
+
+[node name="DownStairCollision" parent="World/Deck1/Stairs/PlayerAtStairsDownAreaDetector" parent_id_path=PackedInt32Array(279876297, 1973704273) index="0" unique_id=1010576189]
+position = Vector2(170, 143)
+
+[node name="PlayerInStairsAreaDetector" parent="World/Deck1/Stairs" index="3" unique_id=1385768417]
+position = Vector2(53, -10)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/PlayerInStairsAreaDetector" index="0" unique_id=1286054706]
+position = Vector2(16, 10)
+
+[node name="CollisionShape2D2" parent="World/Deck1/Stairs/PlayerInStairsAreaDetector" index="1" unique_id=705324047]
+position = Vector2(-150.39821, -149.55591)
+rotation = 1.5438274
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Deck2" type="Node2D" parent="World" unique_id=642445485]
 position = Vector2(-26, 0)
@@ -1738,51 +1759,51 @@ scale = Vector2(0.99999875, 0.99999875)
 shape = SubResource("RectangleShape2D_gf4s8")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
-[node name="Stairs" type="Area2D" parent="World/Deck2" unique_id=1920406852]
+[node name="Ladders" type="Area2D" parent="World/Deck2" unique_id=1920406852]
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=24625241]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=24625241]
 position = Vector2(4496, 657.42206)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_mjqbs")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=499669342]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=499669342]
 position = Vector2(5960, 302.00027)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_mjqbs")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=1975262290]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=1975262290]
 position = Vector2(7466, 2141.7112)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_7kf8b")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=1363100249]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=1363100249]
 position = Vector2(4896, 2152.7112)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_6ik47")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=1479772581]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=1479772581]
 position = Vector2(4806, 1589.0002)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_br04x")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=459959837]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=459959837]
 position = Vector2(5698, 1589.0002)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_br04x")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=2101414190]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=2101414190]
 position = Vector2(6539, 1558.0002)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_br04x")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Deck2/Stairs" unique_id=1369256093]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Deck2/Ladders" unique_id=1369256093]
 position = Vector2(7654, 1531.0002)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_br04x")
@@ -2001,58 +2022,58 @@ scale = Vector2(0.9999981, 0.9999981)
 shape = SubResource("RectangleShape2D_kcctn")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
-[node name="Stairs" type="Area2D" parent="World/Deck3" unique_id=176072876]
+[node name="Ladders" type="Area2D" parent="World/Deck3" unique_id=176072876]
 position = Vector2(10249, 0.00044563762)
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=1697435352]
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=1697435352]
 position = Vector2(2203, 1491.7944)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_skx07")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=1287881224]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=1287881224]
 position = Vector2(-1546.0001, 1566)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_gmkol")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=1363118629]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=1363118629]
 position = Vector2(-1452, 2137)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_dtes1")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=1964225709]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=1964225709]
 position = Vector2(2293, 2077)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_vejr8")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=135548735]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=135548735]
 position = Vector2(-650, 1567)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_3lllq")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=1636491941]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=1636491941]
 position = Vector2(279, 1488)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_gemh8")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=637132239]
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=637132239]
 position = Vector2(-982, 964.99994)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_qkavh")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=448874589]
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=448874589]
 position = Vector2(1256, 1518.0001)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_tdtxm")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="World/Deck3/Stairs" unique_id=1944785464]
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="World/Deck3/Ladders" unique_id=1944785464]
 position = Vector2(3099, 1484.0001)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_543hq")
@@ -2713,47 +2734,47 @@ position = Vector2(-3559.8906, 1184.5175)
 shape = SubResource("RectangleShape2D_2pur0")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
-[node name="Stairs" type="Area2D" parent="World/Deck4" unique_id=520941910]
+[node name="Ladders" type="Area2D" parent="World/Deck4" unique_id=520941910]
 position = Vector2(-1620.6406, 1422.5175)
 
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=1120457124]
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=1120457124]
 position = Vector2(-824, 2071)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_sjcmj")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=422795871]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=422795871]
 position = Vector2(-703.0001, 1493)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_br04x")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=1786474364]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=1786474364]
 position = Vector2(4426, -1047.9998)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_7l4d0")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=1247376012]
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=1247376012]
 position = Vector2(4507, 1050.0002)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_vejr8")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=1830401683]
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=1830401683]
 position = Vector2(2121.5723, 1180.962)
 rotation = 1.5749838
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_ame57")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=1840640967]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=1840640967]
 position = Vector2(310, 1680.5889)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_52unw")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="World/Deck4/Stairs" unique_id=1099167188]
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="World/Deck4/Ladders" unique_id=1099167188]
 position = Vector2(183, -1019)
 scale = Vector2(0.9999988, 0.9999988)
 shape = SubResource("RectangleShape2D_06y38")
@@ -2795,17 +2816,23 @@ self_portal_position = Vector2(5850, -1368)
 next_portal_position = Vector2(-625, 0)
 
 [node name="Player" parent="." unique_id=330747409 instance=ExtResource("1_eqs6t")]
-position = Vector2(-936, 6)
+position = Vector2(38, 707)
 collision_mask = 6
+floor_constant_speed = true
+floor_max_angle = 1.0471976
+floor_snap_length = 60.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2008680599]
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
-[connection signal="area_entered" from="World/Deck1/Stairs" to="Player" method="_on_stairs_area_entered"]
-[connection signal="area_exited" from="World/Deck1/Stairs" to="Player" method="_on_stairs_area_exited"]
+[connection signal="area_entered" from="World/Deck1/Ladders" to="Player" method="_on_stairs_area_entered"]
+[connection signal="area_exited" from="World/Deck1/Ladders" to="Player" method="_on_stairs_area_exited"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint" to="World" method="_on_checkpoint_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_4_player_walked_through"]
+[connection signal="player_take_stairs" from="Player" to="World/Deck1/Stairs" method="_on_player_player_take_stairs"]
+
+[editable path="World/Deck1/Stairs"]

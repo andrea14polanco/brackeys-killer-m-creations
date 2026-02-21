@@ -7,19 +7,15 @@ const CLIMBING_SPEED = 100
 
 @onready var stamina_bar: ProgressBar = $"../StaminaBar/ProgressBar"
 
+signal player_take_stairs
+
 var is_on_ladder: bool = false
+var is_on_stairs: bool = false
 var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
 
 
 func _physics_process(delta: float) -> void:
-	var vertical_direction := Input.get_axis("move_up", "move_down")
-	if is_on_ladder:
-		if vertical_direction:
-			gravity = Vector2 (0, 0)
-			velocity.y = vertical_direction * CLIMBING_SPEED
-		else:
-			velocity.y = 0
 	# Add the gravity.
 	if not is_on_floor() and not is_on_ladder:
 		velocity += gravity * delta
@@ -31,12 +27,23 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
+	var horizontal_direction := Input.get_axis("move_left", "move_right")
+	if horizontal_direction:
+		velocity.x = horizontal_direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	var vertical_direction := Input.get_axis("move_up", "move_down")
+	if is_on_ladder:
+		if vertical_direction:
+			gravity = Vector2 (0, 0)
+			velocity.y = vertical_direction * CLIMBING_SPEED
+		else:
+			velocity.y = 0
+	elif is_on_stairs:
+		if vertical_direction:
+			player_take_stairs.emit()
+			
 	move_and_slide()
 	
 	# Sprite direction and smoke pos
@@ -56,9 +63,9 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("idle_right")
 		else:
 			$AnimatedSprite2D.play("idle_left")
-	print(velocity)
+	
+
 func _on_stairs_area_entered(area: Area2D) -> void:
-	print("ESTOY AQUI")
 	is_on_ladder = true
 
 
