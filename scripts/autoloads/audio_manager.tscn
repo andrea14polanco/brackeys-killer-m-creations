@@ -19,15 +19,12 @@ script = ExtResource("1_xskna")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="." unique_id=976659546]
 stream = ExtResource("2_q8g4a")
-bus = &"Music"
 
 [node name="Cutscene" type="AudioStreamPlayer" parent="." unique_id=294533778]
 stream = ExtResource("3_yknyo")
-bus = &"Music"
 
 [node name="Forest" type="AudioStreamPlayer" parent="." unique_id=1999356426]
 stream = ExtResource("4_ihifr")
-bus = &"Music"
 
 [node name="TitanicMusic" type="AudioStreamPlayer" parent="." unique_id=1074182793]
 stream = ExtResource("5_nnvwk")
