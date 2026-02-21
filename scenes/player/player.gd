@@ -17,6 +17,8 @@ var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
 var teleporting = false
 
+func _ready() -> void:
+	AudioManager.play("WalkingMetal")
 
 func _physics_process(delta: float) -> void:
 	
@@ -39,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var horizontal_direction := Input.get_axis("move_left", "move_right")
+	play_walking_sfx(horizontal_direction)
 	if horizontal_direction:
 		velocity.x = horizontal_direction * SPEED
 	else:
@@ -65,6 +68,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("idle_climb")
 	elif velocity.x > 0:
 		$AnimatedSprite2D.play("walk_right")
+		
 		facing_right = true
 	elif velocity.x < 0:
 		$AnimatedSprite2D.play("walk_left")
@@ -82,6 +86,12 @@ func start_teleport():
 func stop_teleport():
 	pass
 
+func play_walking_sfx(sfx):
+	if sfx != 0:
+		AudioManager.pause("WalkingMetal", false)
+	elif sfx == 0: 
+		AudioManager.pause("WalkingMetal", true)
+	
 func _on_stairs_area_entered(area: Area2D) -> void:
 	is_on_ladder = true
 
