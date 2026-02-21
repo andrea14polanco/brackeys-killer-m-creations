@@ -7,12 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c32ue4pk8iitc" path="res://assets/sprites/mc_walking_left.png" id="5_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://ddh0kj3o82ubw" path="res://assets/sprites/mc_walking.png" id="6_h17s1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
-size = Vector2(55, 104)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
-size = Vector2(54.5, 44.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_je7p5"]
 atlas = ExtResource("2_75vfm")
 region = Rect2(704, 0, 352, 352)
@@ -152,6 +146,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_je7p5")
+}],
+"loop": true,
+"name": &"idle_climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kvlxm")
 }, {
 "duration": 1.0,
@@ -237,30 +239,31 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
+size = Vector2(55, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
+size = Vector2(54.5, 44.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=330747409 groups=["player"]]
 collision_mask = 2
 script = ExtResource("1_8afob")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1809031588]
-visible = false
-offset_top = -75.0
-offset_right = 25.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=375379785]
+position = Vector2(29, -71)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wva7c")
+animation = &"idle_climb"
+autoplay = "idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129302553]
 position = Vector2(27.5, -52)
 shape = SubResource("RectangleShape2D_x7p2l")
 
 [node name="GrabArea" type="Area2D" parent="." unique_id=877180602]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=89080764]
 position = Vector2(27.75, -82.25)
 shape = SubResource("RectangleShape2D_8afob")
 debug_color = Color(0.28645247, 0.63035685, 0.04283432, 0.41960785)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=375379785]
-position = Vector2(30, -68)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_wva7c")
-animation = &"climb"
-autoplay = "idle_right"
-frame_progress = 0.27504778
