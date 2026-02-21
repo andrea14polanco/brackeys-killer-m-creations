@@ -4,7 +4,7 @@ signal stamina_depleted
 signal stamina_regenerated
 
 var current_stamina: float = 0.0
-var stamina_factor: float = .8
+var stamina_factor: float = 2
 var max_stamina: float = 100.0
 var is_draining = false
 

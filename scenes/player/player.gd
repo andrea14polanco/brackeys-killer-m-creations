@@ -11,19 +11,24 @@ signal player_take_stairs
 
 var is_on_ladder: bool = false
 var is_on_stairs: bool = false
+var is_jumping: bool = false
 var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
 
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor() and not is_on_ladder:
 		velocity += gravity * delta
 
 	# Handle jump.
-	if stamina_bar.value > 1 and Input.is_action_just_pressed("jump"):
-		velocity.y = JUMP_VELOCITY
-		stamina_bar.reduce_after_jump()
+	if stamina_bar.value > 1 and Input.is_action_just_pressed("jump") and not is_jumping:
+			is_jumping = true
+			velocity.y = JUMP_VELOCITY
+			stamina_bar.reduce_after_jump()
+	else:
+		is_jumping = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
