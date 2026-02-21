@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bc6w0sai26heq" path="res://scenes/cutscenes/intro_cut_scene.gd" id="1_4ckvm"]
 [ext_resource type="Texture2D" uid="uid://dxq6roxqb81ey" path="res://assets/backgrounds/intro_background.png" id="1_c4ryo"]
 [ext_resource type="PackedScene" uid="uid://byy8chrg0m4ho" path="res://scenes/cutscenes/text_panel.tscn" id="3_cxay5"]
+[ext_resource type="Texture2D" uid="uid://bbbxcxbyrw10w" path="res://assets/overlays/faceset_player_sad.png" id="3_f2h4h"]
+[ext_resource type="Texture2D" uid="uid://q68gu7d2w6s1" path="res://assets/overlays/faceset_antagonist_mad.png" id="4_f2h4h"]
 
 [node name="Intro_cut_scene" type="Control" unique_id=630923112]
 layout_mode = 3
@@ -13,12 +15,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ckvm")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2040348655]
+layout_mode = 0
+offset_right = 1282.0
+offset_bottom = 722.0
+color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+
 [node name="IntroBackground" type="Sprite2D" parent="." unique_id=318698596]
+visible = false
 position = Vector2(642.25, 362.25)
 scale = Vector2(1.279661, 1.1438792)
 texture = ExtResource("1_c4ryo")
 
+[node name="FacesetPlayer" type="Sprite2D" parent="." unique_id=1420747646]
+visible = false
+position = Vector2(312, 414)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_f2h4h")
+
+[node name="FacesetAntagonist" type="Sprite2D" parent="." unique_id=231572802]
+visible = false
+position = Vector2(880, 408)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_f2h4h")
+
 [node name="Text_Panel" parent="." unique_id=1245832575 instance=ExtResource("3_cxay5")]
+visible = false
 layout_mode = 1
 offset_top = -2.0
 offset_bottom = -2.0

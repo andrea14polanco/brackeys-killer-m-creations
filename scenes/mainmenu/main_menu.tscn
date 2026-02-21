@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxf7b2mrfisou" path="res://scenes/mainmenu/main_menu.gd" id="1_ysd44"]
 [ext_resource type="Texture2D" uid="uid://feniy04h51we" path="res://assets/backgrounds/main_menu.png" id="2_sq05c"]
+[ext_resource type="PackedScene" uid="uid://categ7jywyy4n" path="res://scenes/cutscenes/intro_cut_scene.tscn" id="3_jl081"]
 
 [node name="main_menu" type="Control" unique_id=143165144]
 layout_mode = 3
@@ -40,5 +41,15 @@ offset_top = 410.0
 offset_right = 982.0
 offset_bottom = 553.0
 theme_override_font_sizes/font_size = 43
+
+[node name="Intro_cut_scene" parent="." unique_id=630923112 instance=ExtResource("3_jl081")]
+layout_mode = 1
+offset_left = 1343.0
+offset_top = -4.0
+offset_right = 1343.0
+offset_bottom = -4.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=427899986]
+position = Vector2(640, 360)
 
 [connection signal="pressed" from="Start_Game_button" to="." method="_on_start_game_button_pressed"]
