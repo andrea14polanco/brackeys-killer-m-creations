@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bg1s07y1reia2"]
+
+[ext_resource type="Script" uid="uid://gaftvhal1uu8" path="res://scripts/autoloads/audio_manager.gd" id="1_xskna"]
+[ext_resource type="AudioStream" uid="uid://b8ihgbylx6kyu" path="res://assets/bgm/Main Menu.mp3" id="2_q8g4a"]
+[ext_resource type="AudioStream" uid="uid://b7hroe5kdi2m3" path="res://assets/bgm/Cutscene.mp3" id="3_yknyo"]
+[ext_resource type="AudioStream" uid="uid://cxuga07bldmqi" path="res://assets/bgm/forest.mp3" id="4_ihifr"]
+[ext_resource type="AudioStream" uid="uid://dssn0xpdk0cw5" path="res://assets/bgm/Titanic music.mp3" id="5_nnvwk"]
+
+[node name="AudioManager" type="Node" unique_id=881960081]
+script = ExtResource("1_xskna")
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="." unique_id=976659546]
+stream = ExtResource("2_q8g4a")
+bus = &"Music"
+
+[node name="Cutscene" type="AudioStreamPlayer" parent="." unique_id=294533778]
+stream = ExtResource("3_yknyo")
+bus = &"Music"
+
+[node name="Forest" type="AudioStreamPlayer" parent="." unique_id=1999356426]
+stream = ExtResource("4_ihifr")
+bus = &"Music"
+
+[node name="TitanicMusic" type="AudioStreamPlayer" parent="." unique_id=1074182793]
+stream = ExtResource("5_nnvwk")
+bus = &"Music"

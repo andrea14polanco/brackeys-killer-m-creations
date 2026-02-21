@@ -2787,6 +2787,7 @@ texture = ExtResource("3_b8k4h")
 sources/0 = SubResource("TileSetAtlasSource_vmf3k")
 
 [node name="forrest" type="Node2D" unique_id=1622900961]
+scale = Vector2(2, 2)
 
 [node name="Behind_ground" type="Node2D" parent="." unique_id=1063296415]
 
