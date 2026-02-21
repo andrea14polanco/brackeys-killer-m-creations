@@ -22,7 +22,6 @@ grow_vertical = 2
 script = ExtResource("1_vt0ad")
 
 [node name="bg_Panel" type="Panel" parent="." unique_id=1353678976]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -59,10 +58,10 @@ script = ExtResource("2_mxbvo")
 
 [node name="next_button" type="TextureButton" parent="bg_Panel" unique_id=889574382]
 layout_mode = 0
-offset_left = 1070.0
-offset_top = 48.0
-offset_right = 1133.0
-offset_bottom = 132.0
+offset_left = 1168.0
+offset_top = 61.0
+offset_right = 1231.0
+offset_bottom = 145.0
 texture_normal = ExtResource("3_vt0ad")
 
 [connection signal="pressed" from="bg_Panel/next_button" to="." method="_on_next_button_pressed"]

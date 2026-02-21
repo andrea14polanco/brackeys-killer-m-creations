@@ -4,7 +4,7 @@ extends Control
 @onready var array_count: = 0
 @onready var text_count: = 0
 @onready var option: = "none"
-@onready var final_action: = "none"
+@onready var final_action
 @onready var name_var: = "none"
 
 #func_option
@@ -33,3 +33,8 @@ func _on_next_button_pressed() -> void:
 	else:
 		if option == "next_scene":
 			get_tree().change_scene_to_file(final_action)
+		elif option == "next_chat":
+			text_count = 0
+			array_count = 0
+			$"..".next_chat(final_action)
+		

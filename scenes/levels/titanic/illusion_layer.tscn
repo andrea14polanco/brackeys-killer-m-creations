@@ -1147,6 +1147,7 @@ sources/1 = SubResource("TileSetAtlasSource_oxsrr")
 [node name="illusion_layer" type="Node2D" unique_id=1259653005]
 
 [node name="TitanicSection4Tileset" type="Sprite2D" parent="." unique_id=1916344362]
+visible = false
 rotation = -1.134464
 texture = ExtResource("1_hewvq")
 
