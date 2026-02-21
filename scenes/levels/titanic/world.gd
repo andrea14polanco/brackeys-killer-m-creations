@@ -22,4 +22,5 @@ func rotate_smoothly(angle):
 
 
 func _on_checkpoint_player_walked_through(angle: Variant) -> void:
+	AudioManager.play("MainMenu")
 	rotate_smoothly(angle)
