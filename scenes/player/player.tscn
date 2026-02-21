@@ -258,7 +258,8 @@ shape = SubResource("RectangleShape2D_8afob")
 debug_color = Color(0.28645247, 0.63035685, 0.04283432, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=375379785]
-position = Vector2(27, -151)
+position = Vector2(30, -68)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_wva7c")
 animation = &"climb"
 autoplay = "idle_right"
