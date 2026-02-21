@@ -15,7 +15,7 @@ load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a232
 load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0m0e"]
-size = Vector2(42.00003, 379.00018)
+size = Vector2(42.00003, 409.00055)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fit6c"]
 size = Vector2(2245.5747, 37.256927)
@@ -120,7 +120,7 @@ size = Vector2(1903.6396, 42.28633)
 size = Vector2(1805.6417, 43.441216)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvfp7"]
-size = Vector2(429.9824, 43.441216)
+size = Vector2(436.33704, 43.7267)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo0ks"]
 size = Vector2(109.19596, 29.938164)
@@ -353,8 +353,8 @@ scale = Vector2(0.99999994, 0.99999994)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/Stairs" unique_id=1452970308]
-position = Vector2(61.999992, -151.4999)
-scale = Vector2(0.9999995, 0.9999995)
+position = Vector2(61.999943, -166.49986)
+scale = Vector2(0.9999991, 0.9999991)
 shape = SubResource("RectangleShape2D_r0m0e")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
@@ -587,9 +587,9 @@ scale = Vector2(1.0000013, 1.0000013)
 shape = SubResource("RectangleShape2D_3a87h")
 
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=1791452502]
-position = Vector2(888.3744, -450.1881)
-rotation = -0.02550942
-scale = Vector2(1.0000014, 1.0000014)
+position = Vector2(893.487, -453.4083)
+rotation = -0.030294603
+scale = Vector2(1.0000015, 1.0000015)
 shape = SubResource("RectangleShape2D_rvfp7")
 one_way_collision = true
 
@@ -1089,10 +1089,14 @@ target_angle = -50.0
 position = Vector2(18259, 100)
 target_angle = -65.0
 
+[node name="Checkpoint5" parent="World/Checkpoints" unique_id=2120023032 instance=ExtResource("2_18k4y")]
+position = Vector2(27697, 100)
+target_angle = -90.0
+
 [node name="Portals" type="Node2D" parent="World" unique_id=1677388707]
 
 [node name="Portal" parent="World/Portals" unique_id=1988836095 instance=ExtResource("5_i7j87")]
-position = Vector2(-616, 0)
+position = Vector2(-619, -235)
 self_portal_position = Vector2(-625, 0)
 next_portal_position = Vector2(5850, -1368)
 
@@ -1116,3 +1120,4 @@ visible = false
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_4_player_walked_through"]
