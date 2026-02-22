@@ -3,17 +3,17 @@
 [ext_resource type="Script" uid="uid://8m053beixldf" path="res://scenes/stairs/stairs.gd" id="1_wnfav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnfav"]
-size = Vector2(491.6277, 12.28127)
+size = Vector2(456.23364, 12.28127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4apbe"]
-size = Vector2(520.0598, 47.91024)
+size = Vector2(520.0598, 25.2353)
 
 [node name="Stair" type="StaticBody2D" unique_id=279876297]
 collision_layer = 2
 script = ExtResource("1_wnfav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1344604663]
-position = Vector2(-8.340612, 0.8558998)
+position = Vector2(2.987071, 14.452523)
 rotation = 0.8761812
 shape = SubResource("RectangleShape2D_wnfav")
 one_way_collision = true
@@ -23,7 +23,7 @@ debug_color = Color(0.9899649, 0.67127377, 0.44095033, 0.41960785)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=1286054706]
-position = Vector2(13, -34)
+position = Vector2(4.28942, -26.743)
 rotation = 0.8761812
 shape = SubResource("RectangleShape2D_4apbe")
 debug_color = Color(0.95003873, 0.62221235, 0.9133241, 0.41960785)
