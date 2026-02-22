@@ -80,3 +80,5 @@ func close_bulkheads():
 	bulkhead_num += 1
 	if bulkhead_num == 1:
 		$Deck1/BulkHeads.show()
+	if bulkhead_num == 1:
+		$Deck2/BulkHeads.show()
