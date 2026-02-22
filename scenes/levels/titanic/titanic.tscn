@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
 [ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="3_m5je1"]
+[ext_resource type="Texture2D" uid="uid://vtm0dja8p3du" path="res://assets/tilesets/opening.png" id="4_1bg27"]
 [ext_resource type="PackedScene" uid="uid://di2slgx3gxnhw" path="res://scenes/levels/titanic/illusion_layer.tscn" id="4_fit6c"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
 [ext_resource type="PackedScene" uid="uid://c4rrq0ri76xiy" path="res://scenes/stairs/stairs.tscn" id="5_0ceux"]
@@ -131,7 +132,10 @@ size = Vector2(181.71735, 36.00534)
 size = Vector2(1393.2053, 29.168625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et6rx"]
-size = Vector2(2114.7104, 42.97086)
+size = Vector2(1096.7043, 34.222244)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa72x"]
+size = Vector2(881.8751, 37.10443)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0yob"]
 size = Vector2(725.9093, 32.67543)
@@ -234,6 +238,9 @@ size = Vector2(36.55007, 61.047318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjw1p"]
 size = Vector2(29.179485, 273.8505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btq3c"]
+size = Vector2(20, 328.94717)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fixnd"]
 size = Vector2(29.179485, 32.878876)
@@ -773,6 +780,11 @@ rotation = 0.0035211872
 texture = ExtResource("3_m5je1")
 metadata/_edit_lock_ = true
 
+[node name="Opening" type="Sprite2D" parent="World/Background" unique_id=1258305530]
+position = Vector2(-1031, -759)
+rotation = 1.5969763
+texture = ExtResource("4_1bg27")
+
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
 position = Vector2(-2, 0)
 
@@ -1166,10 +1178,16 @@ scale = Vector2(1.0000008, 1.0000008)
 shape = SubResource("RectangleShape2D_huyr2")
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=1000211441]
-position = Vector2(-214.9914, -800.4429)
-rotation = 0.00071224076
-scale = Vector2(1.0000018, 1.0000018)
+position = Vector2(-778.71454, -813.5343)
+rotation = 0.0007122255
+scale = Vector2(1.0000023, 1.0000023)
 shape = SubResource("RectangleShape2D_et6rx")
+
+[node name="CollisionShape2D50" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=2122550714]
+position = Vector2(401.3291, -810.60657)
+rotation = 0.00071222935
+scale = Vector2(1.0000021, 1.0000021)
+shape = SubResource("RectangleShape2D_pa72x")
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=2094141103]
 position = Vector2(1279.7101, -806.72546)
@@ -1262,6 +1280,14 @@ polygon = PackedVector2Array(-0.9993286, 0.036254883, 129.25232, 32.35498, 264.9
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="World/Deck1/PlatformsCollisions" unique_id=1017901366]
 position = Vector2(916.77386, 1916.1521)
 polygon = PackedVector2Array(0, 0, 72.6029, 15.389038, 152.02072, 25.528564, 181.18234, 29.478271, 178.3533, 6.5655518, 105.11207, 1.2061768, 47.716, -8.728149, -1.7213821, -19.950806)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="World/Deck1/PlatformsCollisions" unique_id=1625639261]
+position = Vector2(4811.958, -808.24646)
+polygon = PackedVector2Array(-0.036621094, -0.9992676, -6.369385, -37.794678, 2.5527344, -40.118286, 33.604492, -39.23871, 54.69922, -36.99884, 73.048584, -27.655151, 81.62109, -11.954407, 84.97998, -2.069275)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="World/Deck1/PlatformsCollisions" unique_id=1035514361]
+position = Vector2(4807.2417, -994.1973)
+polygon = PackedVector2Array(-0.9995117, 0.036010742, -7.0317383, -0.7467041, -0.28881836, -7.994812, 6.526123, -13.244324, 30.474365, -15.110046, 104.534424, -14.783508, 253.47339, -19.163391, 260.5857, 177.70819, 203.58667, 178.76666, 184.6726, 98.397095, 173.27124, 59.78351, 163.55493, 40.12152, 151.98462, 24.529053, 134.52637, 12.151245, 107.218994, 4.131897, 76.1311, 2.2529907, 43.080322, 1.4456177, -8.885742, 3.322876, -7.0317383, -0.7467041)
 
 [node name="WallCollisions" type="StaticBody2D" parent="World/Deck1" unique_id=125162300]
 position = Vector2(-2185, -791.00006)
@@ -1444,6 +1470,13 @@ scale = Vector2(0.9999991, 0.9999991)
 shape = SubResource("RectangleShape2D_jjw1p")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="World/Deck1/WallCollisions" unique_id=330060678]
+position = Vector2(4125.954, 417.4914)
+rotation = 0.0034128495
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_btq3c")
+debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
+
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="World/Deck1/WallCollisions" unique_id=622794830]
 position = Vector2(3066.4175, 575.5928)
 rotation = 0.003412849
@@ -1499,6 +1532,17 @@ rotation = 0.0034128486
 scale = Vector2(0.9999992, 0.9999992)
 shape = SubResource("RectangleShape2D_wnnd0")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Deck1/WallCollisions" unique_id=822926961]
+polygon = PackedVector2Array(-1, 2.000061, -28, -34.99994, -37, -61.99994, 270, -411.99994, 257, -425.99994, -209, -320.99994, -182, 70.00006, 15, 63.00006)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="World/Deck1/WallCollisions" unique_id=27692030]
+position = Vector2(5015, 554.00006)
+polygon = PackedVector2Array(-1, -71, 17, -79, 65, -84, 411, -81, 439, -78, 458, -69, 457, 2, 1, 0, -4, -3)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="World/Deck1/WallCollisions" unique_id=1503243510]
+position = Vector2(5559, 555.00006)
+polygon = PackedVector2Array(0, -1, 0, -209, 414, -208, 414, 5)
 
 [node name="Deck2" type="Node2D" parent="World" unique_id=642445485]
 position = Vector2(-26, 0)
