@@ -1,8 +1,5 @@
 extends Area2D
 
-#@export var self_portal_position: Vector2 = Vector2(0,0)
-#@export var next_portal_position: Vector2 = Vector2(0,0)
-#@export var next_portal: Area2D
 enum Location {
 	Forrest,
 	Ship
@@ -14,33 +11,14 @@ enum Location {
 var is_portal_used = false
 
 
-func _ready() -> void:
-	pass # self_portal_position = global_position
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		if can_teleport:
-			await body.start_teleport()
-			teleport(body)
-			body.stop_teleport()
-			body.teleporting = false
-			is_portal_used = true
-			
-			
-
-
-func teleport(body: Node2D):
-	if not is_portal_used:
+	if body.is_in_group("player") and can_teleport and not is_portal_used:
+		is_portal_used = true
+		await body.start_teleport()
 		AudioManager.play("Portal")
-		is_portal_used = true 
 		body.global_position = next_portal_marker.global_position
-		print(next_portal_location)
 		body.player_location = next_portal_location
-		
-	
+		body.stop_teleport()
+		# Allow reuse after player has moved away
+		await get_tree().create_timer(1.0).timeout
+		is_portal_used = false

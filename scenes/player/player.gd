@@ -5,11 +5,11 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const CLIMBING_SPEED = 100
 const SLOPE_SLIDE_THRESHOLD = deg_to_rad(10.0)
-const SLOPE_FULL_SLIDE_ANGLE = deg_to_rad(65.0)
-const MAX_SLIDE_SPEED = 600.0
-const UPHILL_SPEED_PENALTY = 0.7
+const SLOPE_FULL_SLIDE_ANGLE = deg_to_rad(55.0)
+const MAX_SLIDE_SPEED = 500.0
+const UPHILL_SPEED_PENALTY = 0.5
 const FLOOR_DETECT_BLEND_START = deg_to_rad(45.0)
-const FLOOR_DETECT_BLEND_END = deg_to_rad(60.0)
+const FLOOR_DETECT_BLEND_END = deg_to_rad(58.0)
 enum Location {
 	Forrest,
 	Ship
@@ -24,10 +24,8 @@ signal player_take_stairs
 var is_on_ladder: bool = false
 var is_on_stairs: bool = false
 var is_jumping: bool = false
-var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
 var teleporting = false
-var is_moving = true
 var player_location: Location = Location.Ship:
 	set(value):
 		if player_location != value:
@@ -145,16 +143,16 @@ func handle_slope_sliding(delta: float) -> void:
 	var slide_strength = sin(global_rotation) * get_gravity().length()
 	velocity.x += slide_strength * delta
 
-	# Cap slide speed when not pressing input
-	var horizontal_direction := Input.get_axis("move_left", "move_right")
-	if horizontal_direction == 0:
-		velocity.x = clampf(velocity.x, -MAX_SLIDE_SPEED, MAX_SLIDE_SPEED)
+	# Cap slide speed proportional to angle (gentle drift at small tilts, fast at steep)
+	var angle_ratio = sin(abs_angle) / sin(SLOPE_FULL_SLIDE_ANGLE)
+	var max_speed = MAX_SLIDE_SPEED * clampf(angle_ratio, 0.1, 1.0)
+	velocity.x = clampf(velocity.x, -max_speed, max_speed)
 
 func handle_jump():
 	if is_on_floor():
 		is_jumping = false
 		if stamina_bar.value > 1 and Input.is_action_just_pressed("jump"):
-				is_jumping = false
+				is_jumping = true
 				velocity.y = JUMP_VELOCITY
 				stamina_bar.reduce_after_jump()
 	
@@ -183,22 +181,18 @@ func handle_movement():
 		var effective_speed = get_slope_adjusted_speed(horizontal_direction)
 		velocity.x = move_toward(velocity.x, horizontal_direction * effective_speed, SPEED * 0.3)
 	else:
-		# Reduce friction on slopes so slide force can dominate
+		# On slopes: near-zero friction so slide force dominates
+		# On flat ground: instant stop (SPEED per frame)
 		var decel_rate = SPEED
 		if is_on_floor() and player_location == Location.Ship:
 			var abs_angle = abs(global_rotation)
 			if abs_angle > SLOPE_SLIDE_THRESHOLD:
-				var t = clampf(
-					(abs_angle - SLOPE_SLIDE_THRESHOLD) / (SLOPE_FULL_SLIDE_ANGLE - SLOPE_SLIDE_THRESHOLD),
-					0.0, 1.0
-				)
-				decel_rate = lerpf(SPEED, SPEED * 0.05, t)
+				decel_rate = 2.0
 		velocity.x = move_toward(velocity.x, 0, decel_rate)
 
 	var vertical_direction := Input.get_axis("move_up", "move_down")
 	if is_on_ladder:
 		if vertical_direction:
-			gravity = Vector2 (0, 0)
 			velocity.y = vertical_direction * CLIMBING_SPEED
 		else:
 			velocity.y = 0
@@ -233,14 +227,19 @@ func on_ladder():
 
 func off_ladder():
 	is_on_ladder = false
-	gravity = get_gravity()
 
+
+func on_stairs():
+	is_on_stairs = true
+
+func off_stairs():
+	is_on_stairs = false
 
 func _on_stairs_area_entered(area: Area2D) -> void:
-	on_ladder()
-	
+	on_stairs()
+
 func _on_stairs_area_exited(area: Area2D) -> void:
-	off_ladder()
+	off_stairs()
 
 func _on_ladders_area_entered(area: Area2D) -> void:
 	on_ladder()

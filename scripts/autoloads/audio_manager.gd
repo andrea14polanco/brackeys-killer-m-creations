@@ -4,15 +4,30 @@ func _ready() -> void:
 	play("MainMenu")
 
 func play(sound_name):
-	var player = get_node(sound_name)
-	if not player.is_playing():
-		player.play()
+	if sound_name == "":
+		return
+	var node = get_node_or_null(sound_name)
+	if node and not node.is_playing():
+		node.play()
 
 func stop(sound_name):
-	get_node(sound_name).stop()
+	if sound_name == "":
+		return
+	var node = get_node_or_null(sound_name)
+	if node:
+		node.stop()
 
 func pause(sound_name, flag):
-	get_node(sound_name).set_stream_paused(flag)
+	if sound_name == "":
+		return
+	var node = get_node_or_null(sound_name)
+	if node:
+		node.set_stream_paused(flag)
 
 func is_audio_playing(sound_name):
-	return get_node(sound_name).is_playing()
+	if sound_name == "":
+		return false
+	var node = get_node_or_null(sound_name)
+	if node:
+		return node.is_playing()
+	return false

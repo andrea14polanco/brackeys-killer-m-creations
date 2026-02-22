@@ -25,4 +25,4 @@ func type_text() -> void:
 		await get_tree().create_timer(char_delay).timeout
 		#
 	typing = false
-	emit_signal("typing_finished")
+	typing_finished.emit()

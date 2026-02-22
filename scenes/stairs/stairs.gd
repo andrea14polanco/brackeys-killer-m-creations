@@ -4,26 +4,24 @@ extends StaticBody2D
 
 const ROTATION_LIMIT = 45
 
-var is_player_on_stairs
-var is_rotated
-
 var player_nearby: bool = false
-var is_flat: bool = false
 
 
 func _ready() -> void:
 	collision_shape_2d.set_deferred("disabled", true)
 
 func _physics_process(delta: float) -> void:
+	if not is_instance_valid(GameManager.titanic):
+		return
 	var titanic_angle = abs(GameManager.titanic.global_rotation_degrees)
-	is_rotated = titanic_angle > ROTATION_LIMIT
+	var is_rotated = titanic_angle > ROTATION_LIMIT
 
 	if is_rotated:
 		collision_shape_2d.set_deferred("disabled", false)
 		return
 
 	var player: CharacterBody2D = GameManager.player
-	if player == null or player.is_on_ladder:
+	if not is_instance_valid(player) or player.is_on_ladder:
 		return
 
 	if not player_nearby:
