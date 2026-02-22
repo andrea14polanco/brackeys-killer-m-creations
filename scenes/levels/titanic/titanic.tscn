@@ -819,26 +819,22 @@ z_index = 1
 position = Vector2(888, 5518)
 
 [node name="Portal2" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance" unique_id=1935425047 instance=ExtResource("5_i7j87")]
-z_index = 20
 
 [node name="ForrestExit" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=1991081653]
 position = Vector2(1811, 5512)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestExit" unique_id=158729076 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
-z_index = 20
 next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal")
 
 [node name="ForrestEntrance2" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=382328280]
 position = Vector2(2079, 5510)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance2" unique_id=840849126 instance=ExtResource("5_i7j87")]
-z_index = 20
 
 [node name="ForrestEntrance3" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=1357263269]
 position = Vector2(2963, 5510)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance3" unique_id=1430089623 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
-z_index = 20
 next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal2")
 can_teleport = true
 
@@ -2896,6 +2892,7 @@ position = Vector2(27693, 100)
 target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
+z_index = 20
 position = Vector2(776, 2021)
 collision_mask = 6
 floor_constant_speed = true

@@ -49,6 +49,7 @@ func start_teleport():
 	AudioManager.stop("WalkingGround")
 	teleporting = true
 	animated_sprite_2d.material = original_material
+	AudioManager.play("TeleportCast")
 	var tween = create_tween()
 	tween.tween_method(
 		func(v): animated_sprite_2d.material.set_shader_parameter("progress", v),
