@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/water/rising_water.gd" id="1_script"]
+[ext_resource type="Shader" path="res://scenes/water/water.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_water"]
+shader = ExtResource("2_shader")
+shader_parameter/deep_color = Color(0.05, 0.15, 0.35, 0.85)
+shader_parameter/surface_color = Color(0.15, 0.45, 0.7, 0.7)
+shader_parameter/wave_speed = 1.5
+shader_parameter/wave_height = 0.015
+shader_parameter/wave2_height = 0.008
+shader_parameter/surface_band = 0.025
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_water"]
+size = Vector2(50000, 6000)
+
+[node name="RisingWater" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="WaterVisual" type="ColorRect" parent="."]
+z_index = 10
+material = SubResource("ShaderMaterial_water")
+offset_left = -25000.0
+offset_top = 0.0
+offset_right = 25000.0
+offset_bottom = 6000.0
+color = Color(0.1, 0.3, 0.6, 0.8)
+
+[node name="WaterBody" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBody"]
+position = Vector2(0, 3000)
+shape = SubResource("RectangleShape2D_water")
+
+[connection signal="body_entered" from="WaterBody" to="." method="_on_water_body_body_entered"]

@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const CLIMBING_SPEED = 100
 const SLOPE_SLIDE_THRESHOLD = deg_to_rad(10.0)
+const COYOTE_TIME: float = 0.12
 const SLOPE_FULL_SLIDE_ANGLE = deg_to_rad(55.0)
 const MAX_SLIDE_SPEED = 500.0
 const UPHILL_SPEED_PENALTY = 0.5
@@ -24,6 +25,7 @@ signal player_take_stairs
 var is_on_ladder: bool = false
 var is_on_stairs: bool = false
 var is_jumping: bool = false
+var coyote_timer: float = 0.0
 var facing_right = true
 var teleporting = false
 var player_location: Location = Location.Ship:
@@ -57,6 +59,12 @@ func _physics_process(delta: float) -> void:
 
 	# Convert global velocity to local (deck-relative) space
 	velocity = velocity.rotated(-global_rotation)
+
+	# Coyote time: grace period for jumping just after leaving a ledge
+	if is_on_floor():
+		coyote_timer = COYOTE_TIME
+	elif coyote_timer > 0:
+		coyote_timer -= delta
 
 	handle_jump()
 	handle_movement()
@@ -133,6 +141,7 @@ func handle_gravity(delta):
 	if not is_on_floor() and not is_on_ladder:
 		# Gravity in global space — real downward pull
 		velocity += get_gravity() * delta
+		velocity.y = minf(velocity.y, 800.0)
 		is_jumping = true
 	
 func handle_slope_sliding(delta: float) -> void:
@@ -153,12 +162,14 @@ func handle_slope_sliding(delta: float) -> void:
 	velocity.x = clampf(velocity.x, -max_speed, max_speed)
 
 func handle_jump():
-	if is_on_floor():
+	var can_jump = is_on_floor() or coyote_timer > 0
+	if can_jump:
 		is_jumping = false
 		if stamina_bar.value > 1 and Input.is_action_just_pressed("jump"):
-				is_jumping = true
-				velocity.y = JUMP_VELOCITY
-				stamina_bar.reduce_after_jump()
+			is_jumping = true
+			velocity.y = JUMP_VELOCITY
+			coyote_timer = 0.0
+			stamina_bar.reduce_after_jump()
 	
 func get_slope_adjusted_speed(horizontal_direction: float) -> float:
 	var abs_angle = abs(global_rotation)
@@ -207,7 +218,7 @@ func handle_movement():
 func handle_sprite_animations():
 	if is_on_ladder:
 		$AnimatedSprite2D.play("climb")
-		if velocity.y == 0:
+		if abs(velocity.y) < 10:
 			$AnimatedSprite2D.play("idle_climb")
 	elif velocity.x > 0:
 		$AnimatedSprite2D.play("walk_right")
@@ -226,33 +237,35 @@ func handle_forrest_background():
 	if player_location == Location.Forrest:
 		forrest_camera.global_position = global_position
 
-func on_ladder():
-	is_on_ladder = true
-
-func off_ladder():
-	is_on_ladder = false
-
-
 func on_stairs():
 	is_on_stairs = true
 
 func off_stairs():
 	is_on_stairs = false
 
-func _on_stairs_area_entered(area: Area2D) -> void:
-	on_ladder()
+# Single source of truth for ladder state — change ladder logic here only
+func _enter_ladder() -> void:
+	is_on_ladder = true
 
-func _on_stairs_area_exited(area: Area2D) -> void:
-	off_ladder()
+func _exit_ladder() -> void:
+	is_on_ladder = false
 
-func _on_ladders_area_entered(area: Area2D) -> void:
-	on_ladder()
+# --- Signal handlers wired in titanic.tscn (names are fixed by the .tscn) ---
 
-func _on_ladders_area_exited(area: Area2D) -> void:
-	off_ladder()
+func _on_ladders_area_entered(_area: Area2D) -> void:  # Deck1-4
+	_enter_ladder()
 
-func _on_ladder_area_entered(area: Area2D) -> void:
-	on_ladder()
+func _on_ladders_area_exited(_area: Area2D) -> void:
+	_exit_ladder()
 
-func _on_ladder_area_exited(area: Area2D) -> void:
-	off_ladder()
+func _on_ladder_area_entered(_area: Area2D) -> void:   # forrest
+	_enter_ladder()
+
+func _on_ladder_area_exited(_area: Area2D) -> void:
+	_exit_ladder()
+
+func _on_stairs_area_entered(_area: Area2D) -> void:   # area-based stair zones
+	on_stairs()
+
+func _on_stairs_area_exited(_area: Area2D) -> void:
+	off_stairs()

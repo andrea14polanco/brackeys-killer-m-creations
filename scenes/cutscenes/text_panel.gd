@@ -28,6 +28,11 @@ func _panel_chat(func_name, func_array, func_option, func_end) -> void:
 
 func _on_next_button_pressed() -> void:
 	AudioManager.play("MenuClick")
+	var label = $bg_Panel/text_label
+	if label.is_typing:
+		label.finish()   # show full text, stay on this line
+		return
+	# text fully shown — advance as before
 	text_count += 1
 	if text_count < array_count:
 		_panel_chat(name_var, current_array, option, final_action)

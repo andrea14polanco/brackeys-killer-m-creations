@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://byy8chrg0m4ho" path="res://scenes/cutscenes/text_panel.tscn" id="11_y8upj"]
 [ext_resource type="Texture2D" uid="uid://boged2cj6krs8" path="res://assets/overlays/paper_1.png" id="14_4ratq"]
 [ext_resource type="Texture2D" uid="uid://crixbent2ugj4" path="res://assets/overlays/reset.png" id="15_c14xy"]
+[ext_resource type="PackedScene" path="res://scenes/water/rising_water.tscn" id="16_water"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5je1"]
 load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a2326c2721eaf5a617a1.ctex"
@@ -4297,7 +4298,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(-1810, 332)
+position = Vector2(-1858, 210)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
@@ -4386,10 +4387,12 @@ position = Vector2(10, -3)
 next_portal_marker = NodePath("../../../../../../World/Deck2/Portals/TitanicPortalMarkers/ShipExitPortal2")
 can_teleport = true
 
+[node name="RisingWater" parent="." unique_id=1439383502 instance=ExtResource("16_water")]
+
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
-[connection signal="area_entered" from="World/Deck1/Ladders" to="World/Player" method="_on_stairs_area_entered"]
-[connection signal="area_exited" from="World/Deck1/Ladders" to="World/Player" method="_on_stairs_area_exited"]
+[connection signal="area_entered" from="World/Deck1/Ladders" to="World/Player" method="_on_ladders_area_entered"]
+[connection signal="area_exited" from="World/Deck1/Ladders" to="World/Player" method="_on_ladders_area_exited"]
 [connection signal="area_entered" from="World/Deck2/Ladders" to="World/Player" method="_on_ladders_area_entered"]
 [connection signal="area_exited" from="World/Deck2/Ladders" to="World/Player" method="_on_ladders_area_exited"]
 [connection signal="area_entered" from="World/Deck3/Ladders" to="World/Player" method="_on_ladders_area_entered"]

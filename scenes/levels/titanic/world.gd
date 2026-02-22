@@ -2,6 +2,7 @@ extends Node2D
 
 var bulkhead_num = 0
 var rotation_tween: Tween
+@onready var rising_water = $"../RisingWater"
 
 func _ready() -> void:
 	GameManager.titanic = self
@@ -14,26 +15,31 @@ func _ready() -> void:
 	next_chat(1)
 
 
-func _on_checkpoint_2_player_walked_through(angle: Variant) -> void:
+func _on_checkpoint_reached(angle: Variant) -> void:
 	rotate_smoothly(angle)
+	rising_water.raise_water()
+
+func _on_checkpoint_player_walked_through(angle: Variant) -> void:
+	_on_checkpoint_reached(angle)
+
+func _on_checkpoint_2_player_walked_through(angle: Variant) -> void:
+	_on_checkpoint_reached(angle)
 
 func _on_checkpoint_3_player_walked_through(angle: Variant) -> void:
-	rotate_smoothly(angle)
+	_on_checkpoint_reached(angle)
 
 func _on_checkpoint_4_player_walked_through(angle: Variant) -> void:
-	rotate_smoothly(angle)
+	_on_checkpoint_reached(angle)
 
 func _on_checkpoint_5_player_walked_through(angle: Variant) -> void:
-	rotate_smoothly(angle)
+	_on_checkpoint_reached(angle)
 
 func rotate_smoothly(angle):
 	if rotation_tween and rotation_tween.is_valid():
 		rotation_tween.kill()
 	rotation_tween = get_tree().create_tween()
-	rotation_tween.tween_property($".", "rotation_degrees", angle, 10.0)
-
-func _on_checkpoint_player_walked_through(angle: Variant) -> void:
-	rotate_smoothly(angle)
+	rotation_tween.tween_property($".", "rotation_degrees", angle, 10.0)\
+		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 
 func next_chat(num):
 	if GameManager.started == false:
@@ -57,7 +63,7 @@ func next_chat(num):
 			,4
 			)
 		elif num == 4:
-			$Player/Camera2D.shake_once()
+			await $Player/Camera2D.shake_once()
 			$Player/Text_Panel._panel_chat("Player",
 			["'!!!????!!!! What was that?'"]
 			,"next_chat2"
