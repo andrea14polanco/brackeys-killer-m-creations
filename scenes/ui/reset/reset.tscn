@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b26kdcjyskcrg"]
+
+[ext_resource type="Texture2D" uid="uid://boged2cj6krs8" path="res://assets/overlays/paper_1.png" id="1_sv6vw"]
+[ext_resource type="Texture2D" uid="uid://crixbent2ugj4" path="res://assets/overlays/reset.png" id="2_w7gkn"]
+
+[node name="Control" type="Control" unique_id=1936095317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Paper1" type="Sprite2D" parent="." unique_id=472440222]
+position = Vector2(111, 114)
+texture = ExtResource("1_sv6vw")
+
+[node name="Reset" type="Sprite2D" parent="." unique_id=196425614]
+position = Vector2(108, 121)
+scale = Vector2(0.15234375, 0.14648438)
+texture = ExtResource("2_w7gkn")
