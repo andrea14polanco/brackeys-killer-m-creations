@@ -20,6 +20,9 @@ load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a232
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7j87"]
 load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy0u2"]
+size = Vector2(476.8089, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ir43"]
 size = Vector2(379.46652, 20)
 
@@ -288,7 +291,7 @@ size = Vector2(35.010265, 194.81569)
 size = Vector2(36.55007, 396.05948)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bh4x"]
-size = Vector2(36.55007, 61.047318)
+size = Vector2(35.282116, 55.523415)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjw1p"]
 size = Vector2(29.179485, 273.8505)
@@ -363,7 +366,7 @@ size = Vector2(721.9751, 30.276625)
 size = Vector2(128.01416, 30.015045)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmjcm"]
-size = Vector2(589.51904, 37.54275)
+size = Vector2(624.99365, 31.131958)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ay4yk"]
 size = Vector2(597.761, 37.54275)
@@ -387,7 +390,7 @@ size = Vector2(513.0011, 22.758131)
 size = Vector2(1262.9645, 30.002695)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22abi"]
-size = Vector2(1034.0819, 24.659306)
+size = Vector2(1034.0819, 27.197573)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx2nj"]
 size = Vector2(235.89258, 25.629395)
@@ -459,7 +462,7 @@ size = Vector2(1531.8224, 24.629847)
 size = Vector2(1531.8224, 24.629847)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e12kv"]
-size = Vector2(842.8985, 32.317852)
+size = Vector2(864.99316, 32.317852)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b6wd"]
 size = Vector2(675.4568, 33.60962)
@@ -1042,9 +1045,7 @@ next_portal_location = 0
 position = Vector2(3381, 918)
 
 [node name="Portal" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=1252404529 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
-visible = false
 next_portal_marker = NodePath("../../ShipExitPortal2")
-can_teleport = true
 next_portal_location = 0
 
 [node name="ShipEntrancePortal2" type="Marker2D" parent="World/Deck1/Portals/TitanicPortalMarkers" unique_id=1052622724]
@@ -1121,7 +1122,8 @@ position = Vector2(681, 1543)
 position = Vector2(-31.230347, -27.223999)
 
 [node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair4/DetectionZone" parent_id_path=PackedInt32Array(1824200767, 1385768417) index="0" unique_id=1286054706]
-position = Vector2(-19.944641, -55.831177)
+position = Vector2(-20.788269, -56.843872)
+shape = SubResource("RectangleShape2D_sy0u2")
 
 [node name="Stair5" parent="World/Deck1/Stairs" unique_id=1658607084 instance=ExtResource("5_0ceux")]
 position = Vector2(86.00002, 1101.0001)
@@ -1796,9 +1798,9 @@ shape = SubResource("RectangleShape2D_83brg")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="World/Deck1/WallCollisions" unique_id=1187248775]
-position = Vector2(5008.9995, 3080.9998)
-rotation = 0.0034128511
-scale = Vector2(0.99999833, 0.99999833)
+position = Vector2(5008.3564, 3083.7595)
+rotation = 0.0034128516
+scale = Vector2(0.9999982, 0.9999982)
 shape = SubResource("RectangleShape2D_0bh4x")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
@@ -2091,7 +2093,7 @@ shape = SubResource("RectangleShape2D_i5o3g")
 one_way_collision = true
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=364113888]
-position = Vector2(2623.6084, 1941.4781)
+position = Vector2(2608.9463, 1935.6234)
 rotation = 0.019659799
 scale = Vector2(1.0000006, 1.0000006)
 shape = SubResource("RectangleShape2D_rmjcm")
@@ -2140,7 +2142,7 @@ shape = SubResource("RectangleShape2D_0chc7")
 one_way_collision = true
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=1504725868]
-position = Vector2(3451.414, 1944.8917)
+position = Vector2(3451.4185, 1943.6229)
 rotation = 0.0026834481
 scale = Vector2(1.0000006, 1.0000006)
 shape = SubResource("RectangleShape2D_22abi")
@@ -2300,9 +2302,9 @@ scale = Vector2(1.0000008, 1.0000008)
 shape = SubResource("RectangleShape2D_lelxj")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=944507390]
-position = Vector2(-168.97461, 2145.2568)
-rotation = 0.014179844
-scale = Vector2(1.0000011, 1.0000011)
+position = Vector2(-180.021, 2145.1)
+rotation = 0.0141798435
+scale = Vector2(1.0000012, 1.0000012)
 shape = SubResource("RectangleShape2D_e12kv")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Deck2/PlatformsCollisions" unique_id=803793995]
@@ -2789,6 +2791,55 @@ shape = SubResource("RectangleShape2D_c7ssl")
 position = Vector2(30.488281, -16.23816)
 scale = Vector2(1.000001, 1.000001)
 shape = SubResource("RectangleShape2D_y32bt")
+
+[node name="Portals" type="Node2D" parent="World/Deck2" unique_id=1186613026]
+position = Vector2(5260, -729)
+
+[node name="TitanicPortalMarkers" type="Node2D" parent="World/Deck2/Portals" unique_id=1608851418]
+
+[node name="ShipEntrancePortal" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=409486357]
+position = Vector2(-224, -674)
+
+[node name="forrest_portals#Portal" parent="World/Deck2/Portals/TitanicPortalMarkers/ShipEntrancePortal" unique_id=1269365366 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+next_portal_marker = NodePath("../../../../../../forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance")
+can_teleport = true
+next_portal_location = 0
+
+[node name="ShipExitPortal" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=2076279814]
+position = Vector2(3707, -515)
+
+[node name="Portal" parent="World/Deck2/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=1502004177 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+visible = false
+next_portal_marker = NodePath("../../ShipExitPortal2")
+can_teleport = true
+next_portal_location = 0
+
+[node name="ShipEntrancePortal2" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=673698529]
+position = Vector2(976, 1955)
+
+[node name="Portal2" parent="World/Deck2/Portals/TitanicPortalMarkers/ShipEntrancePortal2" unique_id=1110816822 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+position = Vector2(-40, -53)
+next_portal_marker = NodePath("../../../../../../forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance2")
+can_teleport = true
+next_portal_location = 0
+
+[node name="ShipExitPortal2" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=1363684042]
+position = Vector2(2569, 1739)
+
+[node name="Portal2" parent="World/Deck2/Portals/TitanicPortalMarkers/ShipExitPortal2" unique_id=1030195757 instance=ExtResource("5_i7j87")]
+next_portal_location = 0
+
+[node name="FirtPortalShip3" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=1451520402]
+position = Vector2(6267, 1228)
+
+[node name="Exit3" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=601230788]
+position = Vector2(7822, 1097)
+
+[node name="Exit4" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=1723963009]
+position = Vector2(7478, -351)
+
+[node name="FirtPortalShip4" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=916739051]
+position = Vector2(5242, -379)
 
 [node name="Deck3" type="Node2D" parent="World" unique_id=928176815]
 position = Vector2(-54, 0)
@@ -3914,6 +3965,44 @@ scale = Vector2(0.9999991, 0.9999991)
 [node name="CollisionShape2D3" parent="forrest/Player_level/Ladder" parent_id_path=PackedInt32Array(1622900961, 2075135124) index="2" unique_id=1659187455]
 position = Vector2(2025.9995, -118.25)
 scale = Vector2(0.99999905, 0.99999905)
+
+[node name="Deck2" type="Node2D" parent="forrest" unique_id=216367329]
+position = Vector2(-382.5, -2789)
+scale = Vector2(0.5, 0.5)
+
+[node name="Portals" type="Node2D" parent="forrest/Deck2" unique_id=1427934677]
+position = Vector2(5272, -721)
+
+[node name="ForrestPortalMarkers" type="Node2D" parent="forrest/Deck2/Portals" unique_id=1079921923]
+z_index = 1
+
+[node name="ForrestEntrance" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=840703881]
+position = Vector2(420, 6236)
+
+[node name="Portal2" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance" unique_id=1848958275 instance=ExtResource("5_i7j87")]
+position = Vector2(-83, -22)
+
+[node name="ForrestExit" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=615502719]
+position = Vector2(1309, 6236)
+
+[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestExit" unique_id=1018234223 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+position = Vector2(-7, -21)
+next_portal_marker = NodePath("")
+can_teleport = true
+
+[node name="ForrestEntrance2" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=1611406660]
+position = Vector2(1623, 6233)
+
+[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance2" unique_id=1622879944 instance=ExtResource("5_i7j87")]
+position = Vector2(-69, -14)
+
+[node name="ForrestEntrance3" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=591984754]
+position = Vector2(2371, 6149)
+
+[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance3" unique_id=2083440787 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+position = Vector2(10, -3)
+next_portal_marker = NodePath("")
+can_teleport = true
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
