@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxf7b2mrfisou" path="res://scenes/mainmenu/main_menu.gd" id="1_ysd44"]
 [ext_resource type="Texture2D" uid="uid://feniy04h51we" path="res://assets/backgrounds/main_menu.png" id="2_sq05c"]
 [ext_resource type="PackedScene" uid="uid://categ7jywyy4n" path="res://scenes/cutscenes/intro_cut_scene.tscn" id="3_jl081"]
+[ext_resource type="PackedScene" uid="uid://r43plmw3kguo" path="res://scenes/ui/settings/volume_slider.tscn" id="3_ukhca"]
 
 [node name="main_menu" type="Control" unique_id=143165144]
 layout_mode = 3
@@ -34,13 +35,106 @@ text = "TITLE OF GAME"
 position = Vector2(639, 362)
 texture = ExtResource("2_sq05c")
 
-[node name="Start_Game_button" type="Button" parent="." unique_id=472672011]
+[node name="MainFlow" type="Control" parent="." unique_id=1786645367]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start_Game_button" type="Button" parent="MainFlow" unique_id=472672011]
 layout_mode = 0
 offset_left = 296.0
 offset_top = 410.0
 offset_right = 982.0
 offset_bottom = 553.0
 theme_override_font_sizes/font_size = 43
+
+[node name="SettingsButton" type="Button" parent="MainFlow" unique_id=9779993]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 566.0
+offset_right = 982.0
+offset_bottom = 709.0
+theme_override_font_sizes/font_size = 43
+
+[node name="SettingsFlow" type="Control" parent="." unique_id=1002532463]
+anchors_preset = 0
+offset_left = 296.0
+offset_top = 409.0
+offset_right = 336.0
+offset_bottom = 449.0
+
+[node name="ColorRect" type="ColorRect" parent="SettingsFlow" unique_id=274299341]
+layout_mode = 0
+offset_right = 1161.0
+offset_bottom = 655.0
+scale = Vector2(0.590229, 0.45961878)
+color = Color(0.13333334, 0.08627451, 0.09019608, 0.9764706)
+
+[node name="SettingsPanel" type="Panel" parent="SettingsFlow" unique_id=2128287765]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(17.200003, 7.3599977)
+
+[node name="Button" type="Button" parent="SettingsFlow" unique_id=534400080]
+modulate = Color(2.7259471, 2.7259471, 2.7259471, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 268.0
+offset_right = 203.0
+offset_bottom = 299.0
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsFlow" unique_id=1740184104]
+modulate = Color(0.11372549, 0.09411765, 0.09411765, 1)
+layout_mode = 0
+offset_left = 306.0
+offset_top = 60.0
+offset_right = 656.0
+offset_bottom = 254.0
+
+[node name="Label" type="Label" parent="SettingsFlow/VBoxContainer" unique_id=778103529]
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 25
+text = "Master Volume"
+
+[node name="Master" parent="SettingsFlow/VBoxContainer" unique_id=351355481 instance=ExtResource("3_ukhca")]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="SettingsFlow/VBoxContainer" unique_id=1759918427]
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 25
+text = "Music Volume"
+
+[node name="Music" parent="SettingsFlow/VBoxContainer" unique_id=759042021 instance=ExtResource("3_ukhca")]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="SettingsFlow/VBoxContainer" unique_id=960712517]
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 25
+text = "SFX Volume"
+
+[node name="SFX" parent="SettingsFlow/VBoxContainer" unique_id=662483025 instance=ExtResource("3_ukhca")]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="SettingsFlow" unique_id=621121239]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 1.0
+offset_right = 360.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_font_sizes/font_size = 30
+text = "Settings"
 
 [node name="Intro_cut_scene" parent="." unique_id=630923112 instance=ExtResource("3_jl081")]
 layout_mode = 1
@@ -52,4 +146,9 @@ offset_bottom = -4.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=427899986]
 position = Vector2(640, 360)
 
-[connection signal="pressed" from="Start_Game_button" to="." method="_on_start_game_button_pressed"]
+[connection signal="mouse_entered" from="MainFlow/Start_Game_button" to="." method="_on_start_game_button_mouse_entered"]
+[connection signal="pressed" from="MainFlow/Start_Game_button" to="." method="_on_start_game_button_pressed"]
+[connection signal="mouse_entered" from="MainFlow/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="pressed" from="MainFlow/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="SettingsFlow/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="SettingsFlow/Button" to="." method="_on_button_pressed"]

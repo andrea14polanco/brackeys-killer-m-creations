@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://c41li1268tha3" path="res://assets/sfx/Portal.ogg" id="11_1r4kc"]
 [ext_resource type="AudioStream" uid="uid://grttqsiwyujn" path="res://assets/sfx/WalkingGround.ogg" id="12_qn1ld"]
 [ext_resource type="AudioStream" uid="uid://khvylk2s66fd" path="res://assets/sfx/WalkingMetal.ogg" id="13_cdkeo"]
+[ext_resource type="AudioStream" uid="uid://tletj3emqvw4" path="res://assets/sfx/VolumeSlider.ogg" id="14_sa3du"]
+[ext_resource type="AudioStream" uid="uid://btyw85v61ep8b" path="res://assets/sfx/ButtonHover.ogg" id="15_ep5b4"]
 
 [node name="AudioManager" type="Node" unique_id=881960081]
 script = ExtResource("1_xskna")
@@ -68,3 +70,11 @@ parameters/looping = true
 stream = ExtResource("13_cdkeo")
 bus = &"SFX"
 parameters/looping = true
+
+[node name="VolumeSlider" type="AudioStreamPlayer" parent="." unique_id=1607540795]
+stream = ExtResource("14_sa3du")
+bus = &"SFX"
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=610802061]
+stream = ExtResource("15_ep5b4")
+bus = &"SFX"
