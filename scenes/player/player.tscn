@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i04aicow4204"]
 
 [ext_resource type="Script" uid="uid://k2dbexs1qdav" path="res://scenes/player/player.gd" id="1_8afob"]
-[ext_resource type="Shader" path="res://scenes/player/character_teleport.gdshader" id="2_0owmy"]
+[ext_resource type="Shader" uid="uid://u4jpsc3jbkeo" path="res://scenes/player/character_teleport.gdshader" id="2_0owmy"]
 [ext_resource type="Texture2D" uid="uid://cky3p22japds6" path="res://assets/sprites/mc_climb2.png" id="2_75vfm"]
 [ext_resource type="Texture2D" uid="uid://6t4og1flfppt" path="res://assets/sprites/mc_idle_left.png" id="3_0owmy"]
 [ext_resource type="Texture2D" uid="uid://bcpehs524d7cf" path="res://assets/sprites/mc_idle.png" id="4_qek5x"]
@@ -259,7 +259,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
-size = Vector2(55, 104)
+size = Vector2(55, 95)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0owmy"]
+radius = 9.0
+height = 55.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
 size = Vector2(54.5, 19)
@@ -278,8 +282,13 @@ animation = &"idle_right"
 autoplay = "idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129302553]
-position = Vector2(27.5, -52)
+position = Vector2(27.5, -56.5)
 shape = SubResource("RectangleShape2D_x7p2l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1137933052]
+position = Vector2(27.5, -9)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0owmy")
 
 [node name="GrabArea" type="Area2D" parent="." unique_id=877180602]
 position = Vector2(0, 45)
