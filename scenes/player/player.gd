@@ -151,9 +151,28 @@ func handle_forrest_background():
 	if player_location == Location.Forrest:
 		forrest_camera.global_position = global_position
 
-func _on_stairs_area_entered(area: Area2D) -> void:
+func on_ladder():
 	is_on_ladder = true
-	
-func _on_stairs_area_exited(area: Area2D) -> void:
+
+func off_ladder():
 	is_on_ladder = false
 	gravity = get_gravity()
+
+
+func _on_stairs_area_entered(area: Area2D) -> void:
+	on_ladder()
+	
+func _on_stairs_area_exited(area: Area2D) -> void:
+	off_ladder()
+
+func _on_ladders_area_entered(area: Area2D) -> void:
+	on_ladder()
+
+func _on_ladders_area_exited(area: Area2D) -> void:
+	off_ladder()
+
+func _on_ladder_area_entered(area: Area2D) -> void:
+	on_ladder()
+
+func _on_ladder_area_exited(area: Area2D) -> void:
+	off_ladder()

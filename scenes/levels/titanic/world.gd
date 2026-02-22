@@ -1,5 +1,7 @@
 extends Node2D
 
+var bulkhead_num = 0
+
 func _ready() -> void:
 	GameManager.titanic = self
 	GameManager.player.set_physics_process(false)
@@ -12,19 +14,25 @@ func _ready() -> void:
 
 func _on_checkpoint_2_player_walked_through(angle: Variant) -> void:
 	rotate_smoothly(angle)
+	anti_rotate_smoothly(angle)
 
 
 func _on_checkpoint_3_player_walked_through(angle: Variant) -> void:
 	rotate_smoothly(angle)
+	anti_rotate_smoothly(angle)
 
 
 func _on_checkpoint_4_player_walked_through(angle: Variant) -> void:
 	rotate_smoothly(angle)
+	anti_rotate_smoothly(angle)
 
 func rotate_smoothly(angle):
 	var tween = get_tree().create_tween()
 	tween.tween_property($".", "rotation_degrees", angle, 10.0)
-	
+
+func anti_rotate_smoothly(angle):
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property($Player, "rotation_degrees", angle * -1, 10.0)
 
 func _on_checkpoint_player_walked_through(angle: Variant) -> void:
 	#AudioManager.play("MainMenu")
@@ -73,3 +81,11 @@ func next_chat(num):
 func close_chat():
 	$Player/Text_Panel.hide()
 	GameManager.player.set_physics_process(true)
+
+func close_bulkheads():
+	AudioManager.play("MetalDoorClosing")
+	bulkhead_num += 1
+	if bulkhead_num == 1:
+		$Deck1/BulkHeads.show()
+	if bulkhead_num == 1:
+		$Deck2/BulkHeads.show()
