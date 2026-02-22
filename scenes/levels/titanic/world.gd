@@ -95,6 +95,7 @@ func next_chat(num):
 
 func close_chat():
 	$Player/Text_Panel.hide()
+	$Player/Reset_Button.show()
 	GameManager.player.set_physics_process(true)
 
 func close_bulkheads():
@@ -112,3 +113,8 @@ func close_bulkheads():
 
 func reload_level():
 	get_tree().reload_current_scene()
+
+
+func _on_reset_button_pressed() -> void:
+	AudioManager.play("PageTurning")
+	reload_level()

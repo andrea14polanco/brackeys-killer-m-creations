@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dnqi608wvhec0" path="res://scenes/levels/forrest/forrest.tscn" id="8_wl2br"]
 [ext_resource type="Script" uid="uid://mw567w0rbmd5" path="res://scenes/levels/titanic/camera_2d.gd" id="9_rmxbi"]
 [ext_resource type="PackedScene" uid="uid://byy8chrg0m4ho" path="res://scenes/cutscenes/text_panel.tscn" id="11_y8upj"]
+[ext_resource type="Texture2D" uid="uid://boged2cj6krs8" path="res://assets/overlays/paper_1.png" id="14_4ratq"]
+[ext_resource type="Texture2D" uid="uid://crixbent2ugj4" path="res://assets/overlays/reset.png" id="15_c14xy"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5je1"]
 load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a2326c2721eaf5a617a1.ctex"
@@ -4295,7 +4297,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(2945, 82)
+position = Vector2(-1810, 332)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
@@ -4310,6 +4312,27 @@ offset_left = -642.0
 offset_top = 350.0
 offset_right = 638.0
 offset_bottom = 350.0
+
+[node name="Reset_Button" type="Control" parent="World/Player" unique_id=145712261]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Paper1" type="Sprite2D" parent="World/Player/Reset_Button" unique_id=1551226229]
+position = Vector2(568.94995, -277.99997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("14_4ratq")
+
+[node name="ResetButton" type="TextureButton" parent="World/Player/Reset_Button" unique_id=1553406060]
+layout_mode = 0
+offset_left = 527.94995
+offset_top = -313.99997
+offset_right = 1039.95
+offset_bottom = 198.00003
+scale = Vector2(0.155, 0.155)
+texture_normal = ExtResource("15_c14xy")
 
 [node name="forrest" parent="." unique_id=1622900961 instance=ExtResource("8_wl2br")]
 position = Vector2(731, 5554)
@@ -4374,6 +4397,7 @@ can_teleport = true
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_4_player_walked_through"]
+[connection signal="pressed" from="World/Player/Reset_Button/ResetButton" to="World" method="_on_reset_button_pressed"]
 [connection signal="area_entered" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_entered"]
 [connection signal="area_exited" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_exited"]
 
