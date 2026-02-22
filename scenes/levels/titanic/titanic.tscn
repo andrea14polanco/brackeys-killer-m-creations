@@ -45,7 +45,7 @@ size = Vector2(551.1161, 20)
 size = Vector2(381.395, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkbet"]
-size = Vector2(444.005, 20)
+size = Vector2(410.70453, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0m0e"]
 size = Vector2(42.00003, 457.00076)
@@ -633,7 +633,7 @@ size = Vector2(1961, 20)
 size = Vector2(1957.75, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xam06"]
-size = Vector2(4127, 30)
+size = Vector2(4134.5, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qk8dj"]
 size = Vector2(3312.0073, 26)
@@ -737,8 +737,11 @@ size = Vector2(26.0074, 116.504814)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hte3f"]
 size = Vector2(26.701942, 556.20966)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7523p"]
+size = Vector2(25.99707, 133.98926)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6eng"]
-size = Vector2(26.007029, 135.11546)
+size = Vector2(22.00742, 418.55298)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcctn"]
 size = Vector2(29.974892, 1184.9275)
@@ -861,7 +864,7 @@ size = Vector2(34.00722, 1066.8394)
 size = Vector2(31.999851, 2164.8394)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6mwr"]
-size = Vector2(25.999996, 176)
+size = Vector2(27.999998, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy8ui"]
 size = Vector2(36, 68.00006)
@@ -954,7 +957,7 @@ size = Vector2(23.999998, 129.99956)
 size = Vector2(22.999998, 50.50029)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1fg"]
-size = Vector2(25.999996, 117)
+size = Vector2(28.999998, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pur0"]
 size = Vector2(29.49999, 487)
@@ -1075,23 +1078,26 @@ position = Vector2(5242, -379)
 z_index = 1
 
 [node name="ForrestEntrance" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=2115433738]
-position = Vector2(888, 5518)
+position = Vector2(993, 5498)
 
 [node name="Portal2" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance" unique_id=1935425047 instance=ExtResource("5_i7j87")]
+position = Vector2(17, -11)
 
 [node name="ForrestExit" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=1991081653]
 position = Vector2(1811, 5512)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestExit" unique_id=158729076 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+position = Vector2(1199, -22)
 next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal")
+can_teleport = true
 
 [node name="ForrestEntrance2" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=382328280]
-position = Vector2(2079, 5510)
+position = Vector2(3294, 5485)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance2" unique_id=840849126 instance=ExtResource("5_i7j87")]
 
 [node name="ForrestEntrance3" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=1357263269]
-position = Vector2(2963, 5510)
+position = Vector2(5307, 5482)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance3" unique_id=1430089623 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
 next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal2")
@@ -1113,6 +1119,9 @@ position = Vector2(681, 1543)
 
 [node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair4" index="0" unique_id=1344604663]
 position = Vector2(-31.230347, -27.223999)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair4/DetectionZone" parent_id_path=PackedInt32Array(1824200767, 1385768417) index="0" unique_id=1286054706]
+position = Vector2(-19.944641, -55.831177)
 
 [node name="Stair5" parent="World/Deck1/Stairs" unique_id=1658607084 instance=ExtResource("5_0ceux")]
 position = Vector2(86.00002, 1101.0001)
@@ -1201,7 +1210,7 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_3ek8r")
 
 [node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair11/DetectionZone" parent_id_path=PackedInt32Array(883281747, 1385768417) index="0" unique_id=1286054706]
-position = Vector2(29.62268, -12.929077)
+position = Vector2(40.280396, -0.13671875)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_jkbet")
 
@@ -2809,7 +2818,7 @@ position = Vector2(955.5, 657)
 shape = SubResource("RectangleShape2D_xam06")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="World/Deck3/PlatformsCollisions" unique_id=1705666872]
-position = Vector2(951, 983)
+position = Vector2(954.75, 983)
 shape = SubResource("RectangleShape2D_xam06")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="World/Deck3/PlatformsCollisions" unique_id=214682369]
@@ -3050,9 +3059,16 @@ shape = SubResource("RectangleShape2D_hte3f")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
 [node name="CollisionShape2D66" type="CollisionShape2D" parent="World/Deck3/WallsCollisions" unique_id=2124546690]
-position = Vector2(8931.005, -1534.5544)
-rotation = 0.0034128535
-scale = Vector2(0.9999976, 0.9999976)
+position = Vector2(8931.01, -1537.0154)
+rotation = 0.003412854
+scale = Vector2(0.9999974, 0.9999974)
+shape = SubResource("RectangleShape2D_7523p")
+debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
+
+[node name="CollisionShape2D77" type="CollisionShape2D" parent="World/Deck3/WallsCollisions" unique_id=1789330126]
+position = Vector2(10894.517, -1347.2891)
+rotation = 0.003412854
+scale = Vector2(0.9999975, 0.9999975)
 shape = SubResource("RectangleShape2D_v6eng")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
@@ -3125,6 +3141,7 @@ debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 position = Vector2(16591.64, -1422.5168)
 
 [node name="IllusionLayer" parent="World/Deck4" unique_id=1259653005 instance=ExtResource("4_fit6c")]
+visible = false
 position = Vector2(-37.640625, 1160.5168)
 rotation = 1.1344641
 metadata/_edit_lock_ = true
@@ -3335,7 +3352,7 @@ shape = SubResource("RectangleShape2D_m65uv")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
 [node name="CollisionShape2D76" type="CollisionShape2D" parent="World/Deck4/WallCollisions" unique_id=1004667493]
-position = Vector2(-3557.6406, 664.5174)
+position = Vector2(-3558.6406, 664.5174)
 shape = SubResource("RectangleShape2D_w6mwr")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
@@ -3786,7 +3803,7 @@ shape = SubResource("RectangleShape2D_63r6c")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 
 [node name="CollisionShape2D78" type="CollisionShape2D" parent="World/Deck4/WallCollisions" unique_id=1664844016]
-position = Vector2(-3556.6406, 331.01746)
+position = Vector2(-3558.1406, 331.01746)
 shape = SubResource("RectangleShape2D_mo1fg")
 debug_color = Color(0.39212576, 0.6087161, 0.1493938, 0.41960785)
 

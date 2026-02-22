@@ -32,7 +32,8 @@ theme_override_font_sizes/font_size = 65
 text = "TITLE OF GAME"
 
 [node name="MainMenu" type="Sprite2D" parent="." unique_id=166494481]
-position = Vector2(639, 362)
+position = Vector2(1312.5, 357.25)
+scale = Vector2(1.4138116, 1.3857143)
 texture = ExtResource("2_sq05c")
 
 [node name="MainFlow" type="Control" parent="." unique_id=1786645367]
