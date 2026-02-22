@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6xhafq484y2j" path="res://scenes/checkpoint/checkpoint.tscn" id="2_18k4y"]
 [ext_resource type="Texture2D" uid="uid://dwb4gri7s0s2u" path="res://assets/sprites/titanic_section1_tileset.png" id="2_p0xke"]
 [ext_resource type="Texture2D" uid="uid://ccrnt76ewijmf" path="res://assets/sprites/titanic_section4_tileset.png" id="3_m5je1"]
-[ext_resource type="PackedScene" path="res://scenes/levels/titanic/illusion_layer.tscn" id="4_fit6c"]
+[ext_resource type="PackedScene" uid="uid://di2slgx3gxnhw" path="res://scenes/levels/titanic/illusion_layer.tscn" id="4_fit6c"]
 [ext_resource type="PackedScene" uid="uid://7r3dc777wsuv" path="res://scenes/ui/stamina_bar/stamina_bar.tscn" id="4_god6p"]
 [ext_resource type="PackedScene" uid="uid://c4rrq0ri76xiy" path="res://scenes/stairs/stairs.tscn" id="5_0ceux"]
 [ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="5_i7j87"]
@@ -18,6 +18,9 @@ load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a232
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7j87"]
 load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ir43"]
+size = Vector2(379.46652, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0m0e"]
 size = Vector2(42.00003, 409.00055)
@@ -110,7 +113,7 @@ size = Vector2(225.42892, 36.00534)
 size = Vector2(273.63934, 36.00534)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jifi"]
-size = Vector2(131.88895, 36.00534)
+size = Vector2(178.042, 36.00534)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vex7j"]
 size = Vector2(179.64014, 36.00534)
@@ -860,7 +863,12 @@ position = Vector2(86.00002, 1101.0001)
 rotation = -1.808126
 
 [node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair5" index="0" unique_id=1344604663]
-position = Vector2(-31.230347, -27.223999)
+position = Vector2(-55.56128, -37.31244)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_3ir43")
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair5/DetectionZone" parent_id_path=PackedInt32Array(1658607084, 1385768417) index="0" unique_id=1286054706]
+position = Vector2(3.4320936, -26.948498)
 
 [node name="Stair6" parent="World/Deck1/Stairs" unique_id=96194476 instance=ExtResource("5_0ceux")]
 position = Vector2(486.0001, 1165.9999)
@@ -1116,9 +1124,9 @@ scale = Vector2(1.0000007, 1.0000007)
 shape = SubResource("RectangleShape2D_a0cty")
 
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=314172785]
-position = Vector2(1255.1865, 924.2883)
-rotation = -0.018953254
-scale = Vector2(1.000001, 1.000001)
+position = Vector2(1217.2166, 925.0082)
+rotation = -0.01895325
+scale = Vector2(1.0000012, 1.0000012)
 shape = SubResource("RectangleShape2D_2jifi")
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="World/Deck1/PlatformsCollisions" unique_id=698735016]
@@ -1208,6 +1216,10 @@ shape = SubResource("RectangleShape2D_aqxrg")
 position = Vector2(-905.53937, 1150.9415)
 rotation = -0.037713178
 shape = SubResource("RectangleShape2D_1twrw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Deck1/PlatformsCollisions" unique_id=1656762281]
+position = Vector2(-1236.856, 1909.8976)
+polygon = PackedVector2Array(-0.9995117, 0.035888672, 5.7316895, -35.230103, 43.285156, -20.576294, 97.971924, -2.5388184, 250.71484, 42.976563, 365.8318, 71.8396, 553.624, 118.08984, 746.0519, 154.16675, 1027.9633, 202.02051, 1230.9868, 226.70679, 1478.054, 251.80396, 1718.8362, 269.1223, 1929.1326, 273.5332, 2127.473, 279.3767, 2321.6714, 281.36694, 2608.5925, 274.0039, 2608.1953, 263.01123, 2638.1758, 261.92822, 2643.87, 308.75293, 2295.9524, 317.3191, 1582.9003, 301.05078, 409.79004, 125.28735)
 
 [node name="WallCollisions" type="StaticBody2D" parent="World/Deck1" unique_id=125162300]
 position = Vector2(-2185, -791.00006)
@@ -2957,7 +2969,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(73, 700)
+position = Vector2(-1805, 336)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
