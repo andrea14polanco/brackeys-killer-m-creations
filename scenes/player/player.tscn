@@ -259,11 +259,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7p2l"]
-size = Vector2(55, 95)
+size = Vector2(55, 81)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0owmy"]
-radius = 9.0
-height = 55.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_0owmy"]
+radius = 27.354158
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
 size = Vector2(54.5, 19)
@@ -282,13 +281,13 @@ animation = &"idle_right"
 autoplay = "idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129302553]
-position = Vector2(27.5, -56.5)
+position = Vector2(27.5, -63.5)
 shape = SubResource("RectangleShape2D_x7p2l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1137933052]
-position = Vector2(27.5, -9)
+position = Vector2(27.5, -27.215)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_0owmy")
+shape = SubResource("CircleShape2D_0owmy")
 
 [node name="GrabArea" type="Area2D" parent="." unique_id=877180602]
 position = Vector2(0, 45)
