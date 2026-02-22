@@ -30,6 +30,10 @@ Variable="*uid://dx7y0sdo61hsw"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[gui]
+
+theme/custom_font="uid://dm24q1nb1av55"
+
 [input]
 
 move_left={
