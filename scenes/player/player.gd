@@ -147,7 +147,8 @@ func handle_sprite_animations():
 			$AnimatedSprite2D.play("idle_left")
 	
 func handle_forrest_background():
-	forrest_camera.global_position = global_position
+	if player_location == Location.Forrest:
+		forrest_camera.global_position = global_position
 
 func _on_stairs_area_entered(area: Area2D) -> void:
 	is_on_ladder = true

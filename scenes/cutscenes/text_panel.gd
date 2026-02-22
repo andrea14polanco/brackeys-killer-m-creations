@@ -27,6 +27,7 @@ func _panel_chat(func_name, func_array, func_option, func_end) -> void:
 	$bg_Panel/text_label.type_text()
 
 func _on_next_button_pressed() -> void:
+	AudioManager.play("MenuClick")
 	text_count += 1
 	if text_count < array_count:
 		_panel_chat(name_var, current_array, option, final_action)
