@@ -3985,9 +3985,8 @@ position = Vector2(-83, -22)
 [node name="ForrestExit" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=615502719]
 position = Vector2(1309, 6236)
 
-[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestExit" unique_id=1018234223 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestExit" unique_id=1018234223 instance=ExtResource("5_i7j87")]
 position = Vector2(-7, -21)
-next_portal_marker = NodePath("")
 can_teleport = true
 
 [node name="ForrestEntrance2" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=1611406660]
@@ -3999,9 +3998,8 @@ position = Vector2(-69, -14)
 [node name="ForrestEntrance3" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=591984754]
 position = Vector2(2371, 6149)
 
-[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance3" unique_id=2083440787 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestEntrance3" unique_id=2083440787 instance=ExtResource("5_i7j87")]
 position = Vector2(10, -3)
-next_portal_marker = NodePath("")
 can_teleport = true
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]

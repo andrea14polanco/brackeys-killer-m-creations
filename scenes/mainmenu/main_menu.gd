@@ -7,18 +7,9 @@ func _ready() -> void:
 	settings_flow.visible = false
 
 
-func _on_settings_button_pressed() -> void:
-	settings_flow.visible = true
-	AudioManager.play("MenuClick")
-
-
 func _on_button_pressed() -> void:
 	settings_flow.visible = false
 	AudioManager.play("MenuClick")
-
-
-func _on_settings_button_mouse_entered() -> void:
-	AudioManager.play("ButtonHover")
 
 
 func _on_button_mouse_entered() -> void:
@@ -41,8 +32,9 @@ func _on_start_button_mouse_entered() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	pass # Replace with function body.
+	settings_flow.visible = true
+	AudioManager.play("MenuClick")
 
 
 func _on_texture_button_mouse_entered() -> void:
-	pass # Replace with function body.
+	AudioManager.play("ButtonHover")

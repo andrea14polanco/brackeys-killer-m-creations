@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://r43plmw3kguo" path="res://scenes/ui/settings/volume_slider.tscn" id="3_ukhca"]
 [ext_resource type="Texture2D" uid="uid://8ci6qc8y421y" path="res://assets/overlays/br_book_5.png" id="3_yn0lx"]
 [ext_resource type="Texture2D" uid="uid://dfcy66evwdlhq" path="res://assets/ui/buttons/start02.png" id="4_l3hwl"]
+[ext_resource type="Texture2D" uid="uid://bvrft6y7riwp8" path="res://assets/ui/buttons/options01.png" id="5_otieh"]
+[ext_resource type="Texture2D" uid="uid://baqxgucwog4y6" path="res://assets/ui/buttons/optrions02.png" id="6_n3o3g"]
+[ext_resource type="Texture2D" uid="uid://rl8iig8swglj" path="res://assets/overlays/title_art.png" id="7_n3o3g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n1md"]
 
@@ -46,14 +49,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SettingsButton" type="Button" parent="MainFlow" unique_id=9779993]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 566.0
-offset_right = 982.0
-offset_bottom = 709.0
-theme_override_font_sizes/font_size = 43
-
 [node name="StartButton" type="TextureButton" parent="MainFlow" unique_id=1322449172]
 layout_mode = 0
 offset_left = 316.0
@@ -62,6 +57,19 @@ offset_right = 960.0
 offset_bottom = 556.0
 texture_normal = ExtResource("3_a3yut")
 texture_pressed = ExtResource("4_l3hwl")
+
+[node name="TextureButton" type="TextureButton" parent="MainFlow" unique_id=395574638]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 567.0
+offset_right = 959.0
+offset_bottom = 708.0
+texture_normal = ExtResource("5_otieh")
+texture_pressed = ExtResource("6_n3o3g")
+
+[node name="TitleArt" type="Sprite2D" parent="MainFlow" unique_id=1496882161]
+position = Vector2(648, 315)
+texture = ExtResource("7_n3o3g")
 
 [node name="SettingsFlow" type="Control" parent="." unique_id=1002532463]
 visible = false
@@ -160,9 +168,9 @@ offset_bottom = -4.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=427899986]
 position = Vector2(640, 360)
 
-[connection signal="mouse_entered" from="MainFlow/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
-[connection signal="pressed" from="MainFlow/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="mouse_entered" from="MainFlow/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="MainFlow/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="MainFlow/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="MainFlow/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="mouse_entered" from="SettingsFlow/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="SettingsFlow/Button" to="." method="_on_button_pressed"]
