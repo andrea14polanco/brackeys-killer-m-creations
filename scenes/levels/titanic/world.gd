@@ -77,6 +77,7 @@ func close_chat():
 	GameManager.player.set_physics_process(true)
 
 func close_bulkheads():
+	AudioManager.play("MetalDoorClosing")
 	bulkhead_num += 1
 	if bulkhead_num == 1:
 		$Deck1/BulkHeads.show()
