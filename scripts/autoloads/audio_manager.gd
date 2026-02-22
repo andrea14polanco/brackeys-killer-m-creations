@@ -11,3 +11,6 @@ func stop(sound_name):
 
 func pause(sound_name, flag):
 	get_node(sound_name).set_stream_paused(flag)
+
+func is_audio_playing(sound_name):
+	return get_node(sound_name).is_playing()

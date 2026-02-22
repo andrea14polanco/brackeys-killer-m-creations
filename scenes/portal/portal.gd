@@ -3,8 +3,13 @@ extends Area2D
 #@export var self_portal_position: Vector2 = Vector2(0,0)
 #@export var next_portal_position: Vector2 = Vector2(0,0)
 #@export var next_portal: Area2D
+enum Location {
+	Forrest,
+	Ship
+}
 @export var next_portal_marker: Marker2D
 @export var can_teleport: bool
+@export var next_portal_location: Location = Location.Ship
 
 var is_portal_used = false
 
@@ -26,6 +31,8 @@ func _on_body_entered(body: Node2D) -> void:
 			body.stop_teleport()
 			body.teleporting = false
 			is_portal_used = true
+			
+			
 
 
 func teleport(body: Node2D):
@@ -33,4 +40,7 @@ func teleport(body: Node2D):
 		AudioManager.play("Portal")
 		is_portal_used = true 
 		body.global_position = next_portal_marker.global_position
+		print(next_portal_location)
+		body.player_location = next_portal_location
+		
 	

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/WalkingMetal.ogg-e4970b0f97c0620fcc26582f4b04
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=20.0
 beat_count=0
 bar_beats=4
