@@ -88,7 +88,10 @@ func close_bulkheads():
 	bulkhead_num += 1
 	if bulkhead_num == 1:
 		$Deck1/BulkHeads.show()
+		$Deck1/BulkHeads/StaticBody2D.PROCESS_MODE_ALWAYS
 	if bulkhead_num == 2:
 		$Deck2/BulkHeads.show()
+		$Deck2/BulkHeads/StaticBody2D.PROCESS_MODE_ALWAYS
 	if bulkhead_num == 3:
 		$Deck3/BulkHeads.show()
+		$Deck3/BulkHeads/StaticBody2D.PROCESS_MODE_ALWAYS
