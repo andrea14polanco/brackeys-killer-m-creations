@@ -952,6 +952,13 @@ script = ExtResource("1_itb0x")
 [node name="Background" type="Node2D" parent="World" unique_id=747145777]
 metadata/_edit_lock_ = true
 
+[node name="ColorRect" type="ColorRect" parent="World/Background" unique_id=214770079]
+offset_left = -3684.0
+offset_top = -3173.0
+offset_right = 20750.0
+offset_bottom = 3322.0
+color = Color(0, 0, 0.11372549, 1)
+
 [node name="TitanicSection1Tileset" type="Sprite2D" parent="World/Background" unique_id=2049143091]
 texture = ExtResource("2_p0xke")
 metadata/_edit_lock_ = true
@@ -993,7 +1000,7 @@ position = Vector2(2, 0)
 [node name="ShipEntrancePortal" type="Marker2D" parent="World/Deck1/Portals/TitanicPortalMarkers" unique_id=931277476]
 position = Vector2(946, 919)
 
-[node name="Portal" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipEntrancePortal" unique_id=1988836095 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+[node name="forrest_portals#Portal" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipEntrancePortal" unique_id=1988836095 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
 next_portal_marker = NodePath("../../../ForrestPortalMarkers/ForrestEntrance")
 can_teleport = true
 next_portal_location = 0
@@ -1002,6 +1009,7 @@ next_portal_location = 0
 position = Vector2(3381, 918)
 
 [node name="Portal" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=1252404529 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+visible = false
 next_portal_marker = NodePath("../../ShipExitPortal2")
 can_teleport = true
 next_portal_location = 0
@@ -3789,18 +3797,6 @@ offset_bottom = 350.0
 
 [node name="forrest" parent="." unique_id=1622900961 instance=ExtResource("8_wl2br")]
 position = Vector2(731, 5554)
-
-[node name="Portal" parent="forrest/portals" parent_id_path=PackedInt32Array(1622900961, 52049251) index="0" unique_id=1988836095]
-visible = false
-
-[node name="Portal2" parent="forrest/portals" parent_id_path=PackedInt32Array(1622900961, 52049251) index="1" unique_id=1305934844]
-visible = false
-
-[node name="Portal3" parent="forrest/portals" parent_id_path=PackedInt32Array(1622900961, 52049251) index="2" unique_id=664533657]
-visible = false
-
-[node name="Portal4" parent="forrest/portals" parent_id_path=PackedInt32Array(1622900961, 52049251) index="3" unique_id=1139065061]
-visible = false
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 

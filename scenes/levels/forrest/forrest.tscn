@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ce0du8ohstid" path="res://assets/tilesets/Vine3.png" id="5_2gn6l"]
 [ext_resource type="Texture2D" uid="uid://c53q4t6jwnhuq" path="res://assets/tilesets/ForestTilesBG16x16.png" id="5_ummo1"]
 [ext_resource type="Texture2D" uid="uid://dws40ruccc50f" path="res://assets/tilesets/Tree_02.png" id="6_b8k4h"]
-[ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="7_hhiep"]
 [ext_resource type="Texture2D" uid="uid://caarrj3mw7735" path="res://assets/tilesets/detail_0004_grass5.png" id="8_p55ph"]
 [ext_resource type="Texture2D" uid="uid://ct67peaq0exs" path="res://assets/tilesets/detail_0005_grass6.png" id="9_2wpv7"]
 [ext_resource type="Texture2D" uid="uid://ddki2swnqwfgi" path="res://assets/tilesets/detail_0006_grass7.png" id="10_7cl1w"]
@@ -2959,60 +2958,6 @@ position = Vector2(4270.999, -416.49973)
 scale = Vector2(0.99999887, 0.99999887)
 shape = SubResource("RectangleShape2D_lir1f")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
-
-[node name="portals" type="Node2D" parent="." unique_id=52049251]
-
-[node name="Portal" parent="portals" unique_id=1988836095 instance=ExtResource("7_hhiep")]
-position = Vector2(155, -21)
-script = null
-
-[node name="Portal2" parent="portals" unique_id=1305934844 instance=ExtResource("7_hhiep")]
-position = Vector2(1103, -30)
-script = null
-
-[node name="Portal3" parent="portals" unique_id=664533657 instance=ExtResource("7_hhiep")]
-position = Vector2(1345, -29)
-script = null
-
-[node name="Portal4" parent="portals" unique_id=1139065061 instance=ExtResource("7_hhiep")]
-position = Vector2(2231, -29)
-script = null
-
-[node name="Portal5" parent="portals" unique_id=562034355 instance=ExtResource("7_hhiep")]
-position = Vector2(2455, -29)
-script = null
-
-[node name="Portal6" parent="portals" unique_id=1001434493 instance=ExtResource("7_hhiep")]
-position = Vector2(2455, -29)
-script = null
-
-[node name="Portal7" parent="portals" unique_id=1142676832 instance=ExtResource("7_hhiep")]
-position = Vector2(2854, -22)
-script = null
-
-[node name="Portal8" parent="portals" unique_id=1957696906 instance=ExtResource("7_hhiep")]
-position = Vector2(3033, -27)
-script = null
-
-[node name="Portal9" parent="portals" unique_id=1760275846 instance=ExtResource("7_hhiep")]
-position = Vector2(3414, -44)
-script = null
-
-[node name="Portal10" parent="portals" unique_id=1770876406 instance=ExtResource("7_hhiep")]
-position = Vector2(3581, -40)
-script = null
-
-[node name="Portal11" parent="portals" unique_id=2046796735 instance=ExtResource("7_hhiep")]
-position = Vector2(3936, -149)
-script = null
-
-[node name="Portal12" parent="portals" unique_id=677982224 instance=ExtResource("7_hhiep")]
-position = Vector2(4093, -215)
-script = null
-
-[node name="Portal13" parent="portals" unique_id=1740498603 instance=ExtResource("7_hhiep")]
-position = Vector2(4477, -332)
-script = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=352321352]
 position = Vector2(642, -174)
