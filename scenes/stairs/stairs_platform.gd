@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var col: CollisionShape2D = $StairCol
 @onready var detection_area: Area2D = $DetectionZone
 
-const LIMIT_DEGREES = 25
+const ROTATION_LIMIT = 45
 
 var player_nearby: bool = false
 var player_using_stair: bool = false
@@ -50,8 +50,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_flat_state() -> void:
-	var angle = abs(fmod(global_rotation_degrees, 180.0))
-	is_flat = angle < LIMIT_DEGREES or angle > (180.0 - LIMIT_DEGREES)
+	if not is_instance_valid(GameManager.titanic):
+		return
+	var titanic_angle = abs(GameManager.titanic.global_rotation_degrees)
+	is_flat = titanic_angle <= ROTATION_LIMIT
 
 
 func _on_detection_zone_body_entered(body: Node2D) -> void:

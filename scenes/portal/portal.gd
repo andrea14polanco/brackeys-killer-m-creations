@@ -13,9 +13,14 @@ var is_portal_used = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and can_teleport and not is_portal_used:
+		if not next_portal_marker:
+			push_error("Portal: next_portal_marker not set!")
+			is_portal_used = false
+			return
 		is_portal_used = true
 		await body.start_teleport()
 		AudioManager.play("Portal")
+		body.velocity = Vector2.ZERO
 		body.global_position = next_portal_marker.global_position
 		body.player_location = next_portal_location
 		body.stop_teleport()
