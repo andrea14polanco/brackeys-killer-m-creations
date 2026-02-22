@@ -827,53 +827,438 @@ tile_map_data = PackedByteArray("AAD+/0wAAAAkABwAAAD+/00AAAAkAB0AAAD+/04AAAAkAB4
 tile_set = SubResource("TileSet_hvq5g")
 
 [node name="vine1" type="Node2D" parent="Forest" unique_id=1590706116]
+position = Vector2(111, 2436)
 
 [node name="Vine6" type="Sprite2D" parent="Forest/vine1" unique_id=350367480]
-position = Vector2(138, 2533)
+position = Vector2(24, 91)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine7" type="Sprite2D" parent="Forest/vine1" unique_id=339963643]
-position = Vector2(139, 2595)
+position = Vector2(25, 153)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine8" type="Sprite2D" parent="Forest/vine1" unique_id=884087110]
-position = Vector2(139, 2658)
+position = Vector2(25, 216)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine9" type="Sprite2D" parent="Forest/vine1" unique_id=703354976]
-position = Vector2(140, 2720)
+position = Vector2(26, 278)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine10" type="Sprite2D" parent="Forest/vine1" unique_id=1899583503]
-position = Vector2(141, 2782)
+position = Vector2(27, 340)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine11" type="Sprite2D" parent="Forest/vine1" unique_id=1389429424]
-position = Vector2(141, 2843)
+position = Vector2(27, 401)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine12" type="Sprite2D" parent="Forest/vine1" unique_id=945900738]
-position = Vector2(142, 2905)
+position = Vector2(28, 463)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine13" type="Sprite2D" parent="Forest/vine1" unique_id=1985140996]
-position = Vector2(143, 2966)
+position = Vector2(29, 524)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine14" type="Sprite2D" parent="Forest/vine1" unique_id=1476550095]
-position = Vector2(143, 3028)
+position = Vector2(29, 586)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vbkdw")
 
 [node name="Vine6Bottom" type="Sprite2D" parent="Forest/vine1" unique_id=369045090]
-position = Vector2(145, 3091)
+position = Vector2(31, 649)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="vine2" type="Node2D" parent="Forest" unique_id=1251834788]
+position = Vector2(231, 1169)
+
+[node name="Vine6" type="Sprite2D" parent="Forest/vine2" unique_id=1169619571]
+position = Vector2(24, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine7" type="Sprite2D" parent="Forest/vine2" unique_id=525258406]
+position = Vector2(25, 153)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine8" type="Sprite2D" parent="Forest/vine2" unique_id=60383295]
+position = Vector2(25, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine9" type="Sprite2D" parent="Forest/vine2" unique_id=488731145]
+position = Vector2(26, 278)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine10" type="Sprite2D" parent="Forest/vine2" unique_id=1621751846]
+position = Vector2(27, 340)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine11" type="Sprite2D" parent="Forest/vine2" unique_id=291198377]
+position = Vector2(27, 401)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine12" type="Sprite2D" parent="Forest/vine2" unique_id=255864944]
+position = Vector2(28, 463)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine13" type="Sprite2D" parent="Forest/vine2" unique_id=920348780]
+position = Vector2(29, 524)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine14" type="Sprite2D" parent="Forest/vine2" unique_id=1130705039]
+position = Vector2(29, 586)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom" type="Sprite2D" parent="Forest/vine2" unique_id=2147154313]
+position = Vector2(31, 649)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="Vine15" type="Sprite2D" parent="Forest/vine2" unique_id=375632737]
+position = Vector2(30, 679)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine16" type="Sprite2D" parent="Forest/vine2" unique_id=1090066407]
+position = Vector2(31, 741)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine17" type="Sprite2D" parent="Forest/vine2" unique_id=708233214]
+position = Vector2(31, 804)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine18" type="Sprite2D" parent="Forest/vine2" unique_id=214225859]
+position = Vector2(32, 866)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine19" type="Sprite2D" parent="Forest/vine2" unique_id=486025230]
+position = Vector2(33, 928)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine20" type="Sprite2D" parent="Forest/vine2" unique_id=434335111]
+position = Vector2(33, 989)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine21" type="Sprite2D" parent="Forest/vine2" unique_id=912322125]
+position = Vector2(34, 1051)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine22" type="Sprite2D" parent="Forest/vine2" unique_id=912906445]
+position = Vector2(35, 1112)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine23" type="Sprite2D" parent="Forest/vine2" unique_id=1775152371]
+position = Vector2(35, 1174)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom2" type="Sprite2D" parent="Forest/vine2" unique_id=387227886]
+position = Vector2(37, 1237)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="Vine24" type="Sprite2D" parent="Forest/vine2" unique_id=1926639212]
+position = Vector2(36, 1267)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine25" type="Sprite2D" parent="Forest/vine2" unique_id=761140829]
+position = Vector2(37, 1329)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine26" type="Sprite2D" parent="Forest/vine2" unique_id=441994979]
+position = Vector2(38, 1390)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine27" type="Sprite2D" parent="Forest/vine2" unique_id=772755602]
+position = Vector2(38, 1452)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom3" type="Sprite2D" parent="Forest/vine2" unique_id=892066570]
+position = Vector2(40, 1515)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="vine3" type="Node2D" parent="Forest" unique_id=1975354020]
+position = Vector2(600, 1609)
+
+[node name="Vine6" type="Sprite2D" parent="Forest/vine3" unique_id=877210688]
+position = Vector2(24, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine7" type="Sprite2D" parent="Forest/vine3" unique_id=2028030427]
+position = Vector2(25, 153)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine8" type="Sprite2D" parent="Forest/vine3" unique_id=197277705]
+position = Vector2(25, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine9" type="Sprite2D" parent="Forest/vine3" unique_id=292881756]
+position = Vector2(26, 278)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine10" type="Sprite2D" parent="Forest/vine3" unique_id=1579143547]
+position = Vector2(27, 340)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine11" type="Sprite2D" parent="Forest/vine3" unique_id=1400031612]
+position = Vector2(27, 401)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine12" type="Sprite2D" parent="Forest/vine3" unique_id=1792938687]
+position = Vector2(28, 463)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine13" type="Sprite2D" parent="Forest/vine3" unique_id=342553813]
+position = Vector2(29, 524)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine14" type="Sprite2D" parent="Forest/vine3" unique_id=1756457307]
+position = Vector2(29, 586)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom" type="Sprite2D" parent="Forest/vine3" unique_id=2142125811]
+position = Vector2(31, 649)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="Vine15" type="Sprite2D" parent="Forest/vine3" unique_id=1975387797]
+position = Vector2(30, 679)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine16" type="Sprite2D" parent="Forest/vine3" unique_id=751090047]
+position = Vector2(31, 741)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine17" type="Sprite2D" parent="Forest/vine3" unique_id=845435804]
+position = Vector2(31, 804)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine18" type="Sprite2D" parent="Forest/vine3" unique_id=383527726]
+position = Vector2(32, 866)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine19" type="Sprite2D" parent="Forest/vine3" unique_id=1425514400]
+position = Vector2(33, 928)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine20" type="Sprite2D" parent="Forest/vine3" unique_id=1790107688]
+position = Vector2(33, 989)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine21" type="Sprite2D" parent="Forest/vine3" unique_id=1649079523]
+position = Vector2(34, 1051)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine22" type="Sprite2D" parent="Forest/vine3" unique_id=448180697]
+position = Vector2(35, 1112)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine23" type="Sprite2D" parent="Forest/vine3" unique_id=3114819]
+position = Vector2(35, 1174)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom2" type="Sprite2D" parent="Forest/vine3" unique_id=690591718]
+position = Vector2(37, 1237)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="Vine24" type="Sprite2D" parent="Forest/vine3" unique_id=814303503]
+position = Vector2(36, 1267)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine25" type="Sprite2D" parent="Forest/vine3" unique_id=480756546]
+position = Vector2(37, 1329)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine26" type="Sprite2D" parent="Forest/vine3" unique_id=377247215]
+position = Vector2(38, 1390)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine27" type="Sprite2D" parent="Forest/vine3" unique_id=852733681]
+position = Vector2(38, 1452)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom3" type="Sprite2D" parent="Forest/vine3" unique_id=1183558344]
+position = Vector2(40, 1515)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="vine4" type="Node2D" parent="Forest" unique_id=475605102]
+position = Vector2(818, -66)
+
+[node name="Vine6" type="Sprite2D" parent="Forest/vine4" unique_id=1976618815]
+position = Vector2(24, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine7" type="Sprite2D" parent="Forest/vine4" unique_id=487574241]
+position = Vector2(25, 153)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine8" type="Sprite2D" parent="Forest/vine4" unique_id=1237734635]
+position = Vector2(25, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine9" type="Sprite2D" parent="Forest/vine4" unique_id=2123807666]
+position = Vector2(26, 278)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine10" type="Sprite2D" parent="Forest/vine4" unique_id=568061845]
+position = Vector2(27, 340)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine11" type="Sprite2D" parent="Forest/vine4" unique_id=1697438804]
+position = Vector2(27, 401)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine12" type="Sprite2D" parent="Forest/vine4" unique_id=1948244654]
+position = Vector2(28, 463)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine13" type="Sprite2D" parent="Forest/vine4" unique_id=182486702]
+position = Vector2(29, 524)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine14" type="Sprite2D" parent="Forest/vine4" unique_id=1614487615]
+position = Vector2(29, 586)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom" type="Sprite2D" parent="Forest/vine4" unique_id=2045073241]
+position = Vector2(31, 649)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="Vine15" type="Sprite2D" parent="Forest/vine4" unique_id=1042962506]
+position = Vector2(30, 679)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine16" type="Sprite2D" parent="Forest/vine4" unique_id=815861466]
+position = Vector2(31, 741)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine17" type="Sprite2D" parent="Forest/vine4" unique_id=1999903506]
+position = Vector2(31, 804)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine18" type="Sprite2D" parent="Forest/vine4" unique_id=158070081]
+position = Vector2(32, 866)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine19" type="Sprite2D" parent="Forest/vine4" unique_id=1987624087]
+position = Vector2(33, 928)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine20" type="Sprite2D" parent="Forest/vine4" unique_id=749301565]
+position = Vector2(33, 989)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine21" type="Sprite2D" parent="Forest/vine4" unique_id=1169319600]
+position = Vector2(34, 1051)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine22" type="Sprite2D" parent="Forest/vine4" unique_id=773770360]
+position = Vector2(35, 1112)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine23" type="Sprite2D" parent="Forest/vine4" unique_id=707547451]
+position = Vector2(35, 1174)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom2" type="Sprite2D" parent="Forest/vine4" unique_id=1666782791]
+position = Vector2(37, 1237)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1jxlo")
+
+[node name="Vine24" type="Sprite2D" parent="Forest/vine4" unique_id=102032771]
+position = Vector2(36, 1267)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine25" type="Sprite2D" parent="Forest/vine4" unique_id=1253413096]
+position = Vector2(37, 1329)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine26" type="Sprite2D" parent="Forest/vine4" unique_id=2035795838]
+position = Vector2(38, 1390)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine27" type="Sprite2D" parent="Forest/vine4" unique_id=1872086420]
+position = Vector2(38, 1452)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vbkdw")
+
+[node name="Vine6Bottom3" type="Sprite2D" parent="Forest/vine4" unique_id=390531109]
+position = Vector2(40, 1515)
 scale = Vector2(2, 2)
 texture = ExtResource("4_1jxlo")
