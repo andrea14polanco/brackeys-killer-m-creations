@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var player: CharacterBody2D = GameManager.player
-	if player == null:
+	if not is_instance_valid(player):
 		return
 
 	if player.is_on_ladder:

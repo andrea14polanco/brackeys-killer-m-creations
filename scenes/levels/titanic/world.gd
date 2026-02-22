@@ -1,10 +1,12 @@
 extends Node2D
 
 var bulkhead_num = 0
+var rotation_tween: Tween
 
 func _ready() -> void:
 	GameManager.titanic = self
-	GameManager.player.set_physics_process(false)
+	if GameManager.player:
+		GameManager.player.set_physics_process(false)
 	AudioManager.stop("MainMenu")
 	AudioManager.stop("Cutscene")
 	AudioManager.play("TitanicMusic")
@@ -14,24 +16,23 @@ func _ready() -> void:
 
 func _on_checkpoint_2_player_walked_through(angle: Variant) -> void:
 	rotate_smoothly(angle)
-	#anti_rotate_smoothly(angle)
-
 
 func _on_checkpoint_3_player_walked_through(angle: Variant) -> void:
 	rotate_smoothly(angle)
-	#anti_rotate_smoothly(angle)
-
 
 func _on_checkpoint_4_player_walked_through(angle: Variant) -> void:
 	rotate_smoothly(angle)
-	#anti_rotate_smoothly(angle)
+
+func _on_checkpoint_5_player_walked_through(angle: Variant) -> void:
+	rotate_smoothly(angle)
 
 func rotate_smoothly(angle):
-	var tween = get_tree().create_tween()
-	tween.tween_property($".", "rotation_degrees", angle, 10.0)
+	if rotation_tween and rotation_tween.is_valid():
+		rotation_tween.kill()
+	rotation_tween = get_tree().create_tween()
+	rotation_tween.tween_property($".", "rotation_degrees", angle, 10.0)
 
 func _on_checkpoint_player_walked_through(angle: Variant) -> void:
-	#AudioManager.play("MainMenu")
 	rotate_smoothly(angle)
 
 func next_chat(num):
@@ -107,6 +108,7 @@ func close_bulkheads():
 		$Deck3/BulkHeads/StaticBody2D.set_all_collision_shapes_enabled(true)
 
 func reload_level():
+	GameManager.reset_level_state()
 	get_tree().reload_current_scene()
 
 

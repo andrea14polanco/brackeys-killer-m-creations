@@ -5,5 +5,5 @@ func set_all_collision_shapes_enabled(enabled: bool) -> void:
 	for child in root.get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", not enabled)
-		else:
-			set_all_collision_shapes_enabled(enabled)
+		elif child.has_method("set_all_collision_shapes_enabled"):
+			child.set_all_collision_shapes_enabled(enabled)

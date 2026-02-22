@@ -4400,7 +4400,7 @@ can_teleport = true
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint2" to="World" method="_on_checkpoint_2_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
-[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_4_player_walked_through"]
+[connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_5_player_walked_through"]
 [connection signal="pressed" from="World/Player/Reset_Button/ResetButton" to="World" method="_on_reset_button_pressed"]
 [connection signal="area_entered" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_entered"]
 [connection signal="area_exited" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_exited"]
