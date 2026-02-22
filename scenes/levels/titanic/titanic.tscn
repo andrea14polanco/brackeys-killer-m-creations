@@ -819,31 +819,91 @@ z_index = 1
 position = Vector2(888, 5518)
 
 [node name="Portal2" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance" unique_id=1935425047 instance=ExtResource("5_i7j87")]
-z_index = 20
 
 [node name="ForrestExit" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=1991081653]
 position = Vector2(1811, 5512)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestExit" unique_id=158729076 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
-z_index = 20
 next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal")
 
 [node name="ForrestEntrance2" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=382328280]
 position = Vector2(2079, 5510)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance2" unique_id=840849126 instance=ExtResource("5_i7j87")]
-z_index = 20
 
 [node name="ForrestEntrance3" type="Marker2D" parent="World/Deck1/Portals/ForrestPortalMarkers" unique_id=1357263269]
 position = Vector2(2963, 5510)
 
 [node name="Portal" parent="World/Deck1/Portals/ForrestPortalMarkers/ForrestEntrance3" unique_id=1430089623 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
-z_index = 20
 next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal2")
 can_teleport = true
 
-[node name="Stairs" parent="World/Deck1" unique_id=279876297 instance=ExtResource("5_0ceux")]
+[node name="Stairs" type="Node2D" parent="World/Deck1" unique_id=298194700]
+
+[node name="Stair" parent="World/Deck1/Stairs" unique_id=279876297 instance=ExtResource("5_0ceux")]
 position = Vector2(-67, 564)
+
+[node name="Stair2" parent="World/Deck1/Stairs" unique_id=747048303 instance=ExtResource("5_0ceux")]
+position = Vector2(688, 510)
+
+[node name="Stair3" parent="World/Deck1/Stairs" unique_id=68778455 instance=ExtResource("5_0ceux")]
+position = Vector2(576, 844)
+
+[node name="Stair4" parent="World/Deck1/Stairs" unique_id=1824200767 instance=ExtResource("5_0ceux")]
+position = Vector2(681, 1543)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair4" index="0" unique_id=1344604663]
+position = Vector2(-31.230347, -27.223999)
+
+[node name="Stair5" parent="World/Deck1/Stairs" unique_id=1658607084 instance=ExtResource("5_0ceux")]
+position = Vector2(86.00002, 1101.0001)
+rotation = -1.808126
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair5" index="0" unique_id=1344604663]
+position = Vector2(-31.230347, -27.223999)
+
+[node name="Stair6" parent="World/Deck1/Stairs" unique_id=96194476 instance=ExtResource("5_0ceux")]
+position = Vector2(486.0001, 1165.9999)
+rotation = -1.808126
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair6" index="0" unique_id=1344604663]
+position = Vector2(-31.230347, -27.223999)
+
+[node name="Stair7" parent="World/Deck1/Stairs" unique_id=155356937 instance=ExtResource("5_0ceux")]
+position = Vector2(635.99994, 85.999985)
+rotation = -1.808126
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair7" index="0" unique_id=1344604663]
+position = Vector2(-40.521576, -38.37628)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair7/DetectionZone" parent_id_path=PackedInt32Array(155356937, 1385768417) index="0" unique_id=1286054706]
+position = Vector2(-8.452411, -58.630646)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Stair8" parent="World/Deck1/Stairs" unique_id=63464938 instance=ExtResource("5_0ceux")]
+position = Vector2(1554.9999, 245)
+rotation = -1.808126
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair8" index="0" unique_id=1344604663]
+position = Vector2(-40.521576, -38.37628)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair8/DetectionZone" parent_id_path=PackedInt32Array(63464938, 1385768417) index="0" unique_id=1286054706]
+position = Vector2(-8.452411, -58.630646)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Stair9" parent="World/Deck1/Stairs" unique_id=1758617954 instance=ExtResource("5_0ceux")]
+position = Vector2(1069, 177)
+rotation = 0.058125734
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair9" index="0" unique_id=1344604663]
+position = Vector2(-40.521576, -38.37628)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="CollisionShape2D" parent="World/Deck1/Stairs/Stair9/DetectionZone" parent_id_path=PackedInt32Array(1758617954, 1385768417) index="0" unique_id=1286054706]
+position = Vector2(-8.452411, -58.630646)
+scale = Vector2(1.0000001, 1.0000001)
 
 [node name="Ladders" type="Area2D" parent="World/Deck1" unique_id=1770190822]
 scale = Vector2(0.99999994, 0.99999994)
@@ -2896,7 +2956,8 @@ position = Vector2(27693, 100)
 target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
-position = Vector2(776, 2021)
+z_index = 20
+position = Vector2(73, 700)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
@@ -2937,4 +2998,10 @@ visible = false
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_4_player_walked_through"]
 
+[editable path="World/Deck1/Stairs/Stair4"]
+[editable path="World/Deck1/Stairs/Stair5"]
+[editable path="World/Deck1/Stairs/Stair6"]
+[editable path="World/Deck1/Stairs/Stair7"]
+[editable path="World/Deck1/Stairs/Stair8"]
+[editable path="World/Deck1/Stairs/Stair9"]
 [editable path="forrest"]

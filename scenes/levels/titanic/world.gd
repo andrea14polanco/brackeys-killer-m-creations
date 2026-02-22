@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	GameManager.titanic = self
 	GameManager.player.set_physics_process(false)
 	AudioManager.stop("MainMenu")
 	AudioManager.stop("Cutscene")
