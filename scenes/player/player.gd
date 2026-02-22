@@ -41,6 +41,7 @@ func _ready() -> void:
 	current_sfx_name = ""
 	current_bgm_name = ""
 	floor_constant_speed = false
+	play_bgm()
 	
 
 func _physics_process(delta: float) -> void:
@@ -73,6 +74,10 @@ func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 
 	move_and_slide()
+
+	# Restart BGM if it finished (non-looping tracks)
+	if current_bgm_name != "" and not AudioManager.is_audio_playing(current_bgm_name):
+		AudioManager.play(current_bgm_name)
 	
 
 func start_teleport():
@@ -106,9 +111,8 @@ func play_walking_sfx(walking_direction):
 
 	if walking_direction != 0:
 		AudioManager.play(current_sfx_name)
-		AudioManager.pause(current_sfx_name, false)
 	else:
-		AudioManager.pause(current_sfx_name, true)
+		AudioManager.stop(current_sfx_name)
 	
 func play_bgm():
 	var new_music_name = ""
@@ -236,10 +240,10 @@ func off_stairs():
 	is_on_stairs = false
 
 func _on_stairs_area_entered(area: Area2D) -> void:
-	on_stairs()
+	on_ladder()
 
 func _on_stairs_area_exited(area: Area2D) -> void:
-	off_stairs()
+	off_ladder()
 
 func _on_ladders_area_entered(area: Area2D) -> void:
 	on_ladder()
