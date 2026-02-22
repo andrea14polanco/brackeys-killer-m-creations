@@ -1,5 +1,7 @@
 extends Node2D
 
+var bulkhead_num = 0
+
 func _ready() -> void:
 	GameManager.titanic = self
 	GameManager.player.set_physics_process(false)
@@ -73,3 +75,8 @@ func next_chat(num):
 func close_chat():
 	$Player/Text_Panel.hide()
 	GameManager.player.set_physics_process(true)
+
+func close_bulkheads():
+	bulkhead_num += 1
+	if bulkhead_num == 1:
+		$Deck1/BulkHeads.show()
