@@ -2,59 +2,31 @@
 
 [ext_resource type="Script" uid="uid://8m053beixldf" path="res://scenes/stairs/stairs.gd" id="1_wnfav"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4apbe"]
-size = Vector2(396.85077, 13.056253)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_alho4"]
-size = Vector2(8.4375, 46.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnfav"]
-size = Vector2(45.5, 45)
+size = Vector2(390.14618, 13.056253)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysjrw"]
-size = Vector2(61.111084, 95.066216)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4apbe"]
+size = Vector2(454.7685, 47.91024)
 
 [node name="Stairs" type="StaticBody2D" unique_id=279876297]
 collision_layer = 2
 script = ExtResource("1_wnfav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1344604663]
-position = Vector2(-6.1948423, 3.431469)
+position = Vector2(-8.340612, 0.8558998)
 rotation = 0.8761812
-shape = SubResource("RectangleShape2D_4apbe")
+shape = SubResource("RectangleShape2D_wnfav")
 one_way_collision = true
 debug_color = Color(0.9899649, 0.67127377, 0.44095033, 0.41960785)
 
-[node name="PlayerAtStairsDownAreaDetector" type="Area2D" parent="." unique_id=1973704273]
+[node name="DetectionZone" type="Area2D" parent="." unique_id=1385768417]
 collision_layer = 2
 
-[node name="DownStairCollision" type="CollisionShape2D" parent="PlayerAtStairsDownAreaDetector" unique_id=1010576189]
-position = Vector2(206, 143)
-shape = SubResource("RectangleShape2D_alho4")
-
-[node name="PlayerAtStairsUpAreaDetector" type="Area2D" parent="." unique_id=680822697]
-collision_layer = 2
-
-[node name="UpStairCollision" type="CollisionShape2D" parent="PlayerAtStairsUpAreaDetector" unique_id=1271291208]
-position = Vector2(-162, -157)
-shape = SubResource("RectangleShape2D_wnfav")
-
-[node name="PlayerInStairsAreaDetector" type="Area2D" parent="." unique_id=1385768417]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInStairsAreaDetector" unique_id=1286054706]
-position = Vector2(3, -4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=1286054706]
+position = Vector2(13, -34)
 rotation = 0.8761812
 shape = SubResource("RectangleShape2D_4apbe")
 debug_color = Color(0.95003873, 0.62221235, 0.9133241, 0.41960785)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerInStairsAreaDetector" unique_id=705324047]
-position = Vector2(3, -4)
-rotation = 0.8761812
-shape = SubResource("RectangleShape2D_ysjrw")
-debug_color = Color(0.95003873, 0.62221235, 0.9133241, 0.41960785)
-
-[connection signal="body_entered" from="PlayerAtStairsDownAreaDetector" to="." method="_on_player_at_stairs_down_area_detector_body_entered"]
-[connection signal="body_exited" from="PlayerAtStairsDownAreaDetector" to="." method="_on_player_at_stairs_down_area_detector_body_exited"]
-[connection signal="body_entered" from="PlayerAtStairsUpAreaDetector" to="." method="_on_player_at_stairs_up_area_detector_body_entered"]
-[connection signal="body_exited" from="PlayerInStairsAreaDetector" to="." method="_on_player_in_stairs_area_detector_body_exited"]
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

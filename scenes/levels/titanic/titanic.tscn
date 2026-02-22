@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3npx73rkmpc5" path="res://scenes/portal/portal.tscn" id="5_i7j87"]
 [ext_resource type="PackedScene" uid="uid://dnqi608wvhec0" path="res://scenes/levels/forrest/forrest.tscn" id="8_wl2br"]
 [ext_resource type="Script" uid="uid://mw567w0rbmd5" path="res://scenes/levels/titanic/camera_2d.gd" id="9_rmxbi"]
+[ext_resource type="PackedScene" uid="uid://bbjaxa7fm36al" path="res://scenes/stairs/StairsPlatform.tscn" id="11_1bg27"]
 [ext_resource type="PackedScene" uid="uid://byy8chrg0m4ho" path="res://scenes/cutscenes/text_panel.tscn" id="11_y8upj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5je1"]
@@ -2893,7 +2894,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(776, 2021)
+position = Vector2(73, 700)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
@@ -2908,6 +2909,9 @@ offset_left = -642.0
 offset_top = 350.0
 offset_right = 638.0
 offset_bottom = 350.0
+
+[node name="StairsPlatform" parent="World" unique_id=337554601 instance=ExtResource("11_1bg27")]
+position = Vector2(1427, 330)
 
 [node name="forrest" parent="." unique_id=1622900961 instance=ExtResource("8_wl2br")]
 position = Vector2(731, 5554)
