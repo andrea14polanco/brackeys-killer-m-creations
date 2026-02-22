@@ -63,8 +63,8 @@ func next_chat(num):
 			)
 		elif num == 2:
 			$Player/Text_Panel._panel_chat("Mysterious Person",
-			["'You are on the titanic, I suppose a much more interactive environment would be helpful 
-			for such... minds.'"]
+			["'You are on the titanic, I suppose a much more interactive 
+			environment would be helpful for such... minds.'"]
 			,"next_chat2"
 			,3
 			)
@@ -83,7 +83,9 @@ func next_chat(num):
 			)
 		elif num == 5:
 			$Player/Text_Panel._panel_chat("Mysterious Person",
-			["'Oh that? It's the exciting part! Also I added a surprise from your other book too!'", "'Well I should let you be now.'"]
+			["'Oh that? It's the exciting part! Also I added a surprise 
+			from your other book too!'"
+			, "'Well I should let you be now.'"]
 			,"next_chat2"
 			,6
 			)
