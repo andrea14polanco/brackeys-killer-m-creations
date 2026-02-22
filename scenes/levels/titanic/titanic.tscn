@@ -2021,6 +2021,7 @@ position = Vector2(5559, 555.00006)
 polygon = PackedVector2Array(0, -1, 0, -209, 414, -208, 414, 5)
 
 [node name="BulkHeads" type="Node2D" parent="World/Deck1" unique_id=887718780]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World/Deck1/BulkHeads" unique_id=1718608087]
 collision_layer = 3
@@ -2029,6 +2030,7 @@ script = ExtResource("8_eo0ks")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=1618554094]
 position = Vector2(2823.75, 2190)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D" unique_id=422160127]
@@ -2041,6 +2043,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=713005970]
 position = Vector2(2823.5, 1639)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D2" unique_id=1705984585]
@@ -2053,6 +2056,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=1778091618]
 position = Vector2(2823, 1285)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D3" unique_id=1016917794]
@@ -2065,6 +2069,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=1109544082]
 position = Vector2(2823, 951)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D4" unique_id=1092398355]
@@ -2077,6 +2082,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=1099701523]
 position = Vector2(2823, 665)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D5" unique_id=372353856]
@@ -2089,6 +2095,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=1616525892]
 position = Vector2(2823, 365)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D6" unique_id=1472927488]
@@ -2101,6 +2108,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Deck1/BulkHeads/StaticBody2D" unique_id=1990162150]
 position = Vector2(2823, 36)
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck1/BulkHeads/StaticBody2D/CollisionShape2D7" unique_id=1353691218]
@@ -2114,6 +2122,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 position = Vector2(2263.0002, -1038.0001)
 rotation = -0.2617994
 shape = SubResource("RectangleShape2D_havjo")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Deck2" type="Node2D" parent="World" unique_id=642445485]
@@ -2750,14 +2759,17 @@ shape = SubResource("RectangleShape2D_br04x")
 debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 
 [node name="BulkHeads" type="Node2D" parent="World/Deck2" unique_id=437444601]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World/Deck2/BulkHeads" unique_id=1489490460]
 position = Vector2(8083, -217)
 collision_layer = 3
+script = ExtResource("8_eo0ks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck2/BulkHeads/StaticBody2D" unique_id=1029161326]
 position = Vector2(436.5, 1244.5)
 shape = SubResource("RectangleShape2D_fvkr6")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D" unique_id=1388971104]
@@ -2771,6 +2783,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 position = Vector2(219.5, 1072.625)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_eytvb")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D2" unique_id=2025439200]
@@ -2783,6 +2796,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Deck2/BulkHeads/StaticBody2D" unique_id=1991729882]
 position = Vector2(69, 281)
 shape = SubResource("RectangleShape2D_dcx58")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D3" unique_id=648561437]
@@ -2795,6 +2809,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Deck2/BulkHeads/StaticBody2D" unique_id=946014483]
 position = Vector2(69, -106)
 shape = SubResource("RectangleShape2D_dcx58")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D4" unique_id=1142922201]
@@ -2807,6 +2822,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck2/BulkHeads/StaticBody2D" unique_id=1142357258]
 position = Vector2(68, -413)
 shape = SubResource("RectangleShape2D_dcx58")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D5" unique_id=986755417]
@@ -2819,6 +2835,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck2/BulkHeads/StaticBody2D" unique_id=120026378]
 position = Vector2(68, -777)
 shape = SubResource("RectangleShape2D_dcx58")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D6" unique_id=309184722]
@@ -2831,6 +2848,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Deck2/BulkHeads/StaticBody2D" unique_id=2144890630]
 position = Vector2(69, -1176)
 shape = SubResource("RectangleShape2D_dcx58")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck2/BulkHeads/StaticBody2D/CollisionShape2D7" unique_id=836944134]
@@ -3312,10 +3330,12 @@ debug_color = Color(0.9230604, 5.3136348e-05, 0.6870967, 0.41960785)
 [node name="StaticBody2D" type="StaticBody2D" parent="World/Deck3/BulkHeads" unique_id=1769412044]
 position = Vector2(12647, -490)
 collision_layer = 3
+script = ExtResource("8_eo0ks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=204124400]
 position = Vector2(435.5, 1232.5)
 shape = SubResource("RectangleShape2D_fvkr6")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D" unique_id=453431070]
@@ -3328,6 +3348,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=1510979590]
 position = Vector2(679.375, 1367)
 shape = SubResource("RectangleShape2D_q0dfm")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D7" unique_id=1027575179]
@@ -3340,6 +3361,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=1755534821]
 position = Vector2(438, 915.5)
 shape = SubResource("RectangleShape2D_y8s8v")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D2" unique_id=441379965]
@@ -3352,6 +3374,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=2014222854]
 position = Vector2(439, 593)
 shape = SubResource("RectangleShape2D_y8s8v")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D3" unique_id=2137003664]
@@ -3364,6 +3387,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=984535099]
 position = Vector2(440, -86)
 shape = SubResource("RectangleShape2D_y8s8v")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D4" unique_id=946562418]
@@ -3376,6 +3400,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=746185528]
 position = Vector2(441, -450)
 shape = SubResource("RectangleShape2D_y8s8v")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D5" unique_id=1072387265]
@@ -3388,6 +3413,7 @@ color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck3/BulkHeads/StaticBody2D" unique_id=707356690]
 position = Vector2(828, 2594.5)
 shape = SubResource("RectangleShape2D_lk1on")
+disabled = true
 debug_color = Color(0.7132693, 0.48287064, 0.102907784, 0.41960785)
 
 [node name="Bulkhead1_2" type="ColorRect" parent="World/Deck3/BulkHeads/StaticBody2D/CollisionShape2D6" unique_id=1662477123]
@@ -4269,7 +4295,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(8394, 805)
+position = Vector2(2945, 82)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
