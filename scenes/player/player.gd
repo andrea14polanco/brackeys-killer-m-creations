@@ -7,8 +7,8 @@ const CLIMBING_SPEED = 100
 const SLOPE_SLIDE_THRESHOLD = deg_to_rad(10.0)
 const COYOTE_TIME: float = 0.12
 const SLOPE_FULL_SLIDE_ANGLE = deg_to_rad(55.0)
-const MAX_SLIDE_SPEED = 500.0
-const UPHILL_SPEED_PENALTY = 0.5
+const MAX_SLIDE_SPEED = 150.0
+const UPHILL_SPEED_PENALTY = 0.65
 const FLOOR_DETECT_BLEND_START = deg_to_rad(45.0)
 const FLOOR_DETECT_BLEND_END = deg_to_rad(58.0)
 enum Location {
@@ -28,6 +28,7 @@ var is_jumping: bool = false
 var coyote_timer: float = 0.0
 var facing_right = true
 var teleporting = false
+var _horizontal_input: float = 0.0
 var player_location: Location = Location.Ship:
 	set(value):
 		if player_location != value:
@@ -47,18 +48,20 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	# Blend up_direction: track deck at low angles, fade to global UP at steep angles
-	var abs_angle = abs(global_rotation)
-	if abs_angle < FLOOR_DETECT_BLEND_START:
-		up_direction = Vector2.UP.rotated(global_rotation)
-	elif abs_angle > FLOOR_DETECT_BLEND_END:
-		up_direction = Vector2.UP
+	if player_location == Location.Ship:
+		# Blend up_direction: track deck at low angles, fade to global UP at steep angles
+		var abs_angle = abs(global_rotation)
+		if abs_angle < FLOOR_DETECT_BLEND_START:
+			up_direction = Vector2.UP.rotated(global_rotation)
+		elif abs_angle > FLOOR_DETECT_BLEND_END:
+			up_direction = Vector2.UP
+		else:
+			var blend_t = (abs_angle - FLOOR_DETECT_BLEND_START) / (FLOOR_DETECT_BLEND_END - FLOOR_DETECT_BLEND_START)
+			up_direction = Vector2.UP.rotated(global_rotation).lerp(Vector2.UP, blend_t).normalized()
+		# Convert global velocity to local (deck-relative) space
+		velocity = velocity.rotated(-global_rotation)
 	else:
-		var blend_t = (abs_angle - FLOOR_DETECT_BLEND_START) / (FLOOR_DETECT_BLEND_END - FLOOR_DETECT_BLEND_START)
-		up_direction = Vector2.UP.rotated(global_rotation).lerp(Vector2.UP, blend_t).normalized()
-
-	# Convert global velocity to local (deck-relative) space
-	velocity = velocity.rotated(-global_rotation)
+		up_direction = Vector2.UP
 
 	# Coyote time: grace period for jumping just after leaving a ledge
 	if is_on_floor():
@@ -75,8 +78,9 @@ func _physics_process(delta: float) -> void:
 	# Keep sprite visually upright while ship tilts
 	animated_sprite_2d.rotation = -global_rotation
 
-	# Convert local velocity back to global for move_and_slide
-	velocity = velocity.rotated(global_rotation)
+	if player_location == Location.Ship:
+		# Convert local velocity back to global for move_and_slide
+		velocity = velocity.rotated(global_rotation)
 
 	# Apply gravity in GLOBAL space when airborne
 	handle_gravity(delta)
@@ -191,6 +195,7 @@ func get_slope_adjusted_speed(horizontal_direction: float) -> float:
 
 func handle_movement():
 	var horizontal_direction := Input.get_axis("move_left", "move_right")
+	_horizontal_input = horizontal_direction
 	play_walking_sfx(horizontal_direction)
 	if horizontal_direction and not teleporting:
 		var effective_speed = get_slope_adjusted_speed(horizontal_direction)
@@ -220,14 +225,13 @@ func handle_sprite_animations():
 		$AnimatedSprite2D.play("climb")
 		if abs(velocity.y) < 10:
 			$AnimatedSprite2D.play("idle_climb")
-	elif velocity.x > 0:
+	elif _horizontal_input > 0:
 		$AnimatedSprite2D.play("walk_right")
-		
 		facing_right = true
-	elif velocity.x < 0:
+	elif _horizontal_input < 0:
 		$AnimatedSprite2D.play("walk_left")
 		facing_right = false
-	elif velocity.x == 0 and not is_on_ladder:
+	else:
 		if facing_right:
 			$AnimatedSprite2D.play("idle_right")
 		else:

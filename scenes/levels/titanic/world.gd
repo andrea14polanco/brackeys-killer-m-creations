@@ -16,8 +16,20 @@ func _ready() -> void:
 
 
 func _on_checkpoint_reached(angle: Variant) -> void:
+	var camera = $Player/Camera2D
+	if camera and camera.has_method("shake_once"):
+		camera.shake_once(25.0, 0.3)
 	rotate_smoothly(angle)
+	_rumble_during_rotation(camera)
+	await get_tree().create_timer(3.0).timeout
 	rising_water.raise_water()
+
+func _rumble_during_rotation(camera: Camera2D) -> void:
+	for i in 4:
+		await get_tree().create_timer(2.0).timeout
+		if not is_instance_valid(camera):
+			return
+		camera.shake_once(8.0, 0.15)
 
 func _on_checkpoint_player_walked_through(angle: Variant) -> void:
 	_on_checkpoint_reached(angle)
