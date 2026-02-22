@@ -2949,10 +2949,7 @@ next_portal_location = 0
 [node name="ShipExitPortal" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=2076279814]
 position = Vector2(3707, -515)
 
-[node name="Portal" parent="World/Deck2/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=1502004177 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
-next_portal_marker = NodePath("../../ShipExitPortal2")
-can_teleport = true
-next_portal_location = 0
+[node name="Portal" parent="World/Deck2/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=1502004177 instance=ExtResource("5_i7j87")]
 
 [node name="ShipEntrancePortal2" type="Marker2D" parent="World/Deck2/Portals/TitanicPortalMarkers" unique_id=673698529]
 position = Vector2(976, 1955)
@@ -3441,6 +3438,38 @@ shape = SubResource("RectangleShape2D_4x2ks")
 position = Vector2(10.541016, -42.83203)
 scale = Vector2(1.0000008, 1.0000008)
 shape = SubResource("RectangleShape2D_hmqis")
+
+[node name="Portals" type="Node2D" parent="World/Deck3" unique_id=701000001]
+
+[node name="TitanicPortalMarkers" type="Node2D" parent="World/Deck3/Portals" unique_id=701000002]
+
+[node name="ShipEntrancePortal" type="Marker2D" parent="World/Deck3/Portals/TitanicPortalMarkers" unique_id=701000003]
+position = Vector2(10500, -1600)
+
+[node name="Portal" parent="World/Deck3/Portals/TitanicPortalMarkers/ShipEntrancePortal" unique_id=701000004 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+next_portal_marker = NodePath("../../ForrestPortalMarkers/ForrestEntrance")
+can_teleport = true
+next_portal_location = 0
+
+[node name="ShipExitPortal" type="Marker2D" parent="World/Deck3/Portals/TitanicPortalMarkers" unique_id=701000005]
+position = Vector2(12000, -1600)
+
+[node name="Portal" parent="World/Deck3/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=701000006 instance=ExtResource("5_i7j87")]
+
+[node name="ForrestPortalMarkers" type="Node2D" parent="World/Deck3/Portals" unique_id=701000007]
+z_index = 1
+
+[node name="ForrestEntrance" type="Marker2D" parent="World/Deck3/Portals/ForrestPortalMarkers" unique_id=701000008]
+position = Vector2(7000, 5490)
+
+[node name="Portal" parent="World/Deck3/Portals/ForrestPortalMarkers/ForrestEntrance" unique_id=701000009 instance=ExtResource("5_i7j87")]
+
+[node name="ForrestExit" type="Marker2D" parent="World/Deck3/Portals/ForrestPortalMarkers" unique_id=701000010]
+position = Vector2(8400, 5490)
+
+[node name="Portal" parent="World/Deck3/Portals/ForrestPortalMarkers/ForrestExit" unique_id=701000011 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal")
+can_teleport = true
 
 [node name="Deck4" type="Node2D" parent="World" unique_id=1984327176]
 position = Vector2(16591.64, -1422.5168)
@@ -4335,6 +4364,38 @@ offset_bottom = 198.00003
 scale = Vector2(0.155, 0.155)
 texture_normal = ExtResource("15_c14xy")
 
+[node name="Portals" type="Node2D" parent="World/Deck4" unique_id=702000001]
+
+[node name="TitanicPortalMarkers" type="Node2D" parent="World/Deck4/Portals" unique_id=702000002]
+
+[node name="ShipEntrancePortal" type="Marker2D" parent="World/Deck4/Portals/TitanicPortalMarkers" unique_id=702000003]
+position = Vector2(17000, -1200)
+
+[node name="Portal" parent="World/Deck4/Portals/TitanicPortalMarkers/ShipEntrancePortal" unique_id=702000004 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+next_portal_marker = NodePath("../../ForrestPortalMarkers/ForrestEntrance")
+can_teleport = true
+next_portal_location = 0
+
+[node name="ShipExitPortal" type="Marker2D" parent="World/Deck4/Portals/TitanicPortalMarkers" unique_id=702000005]
+position = Vector2(19000, -1200)
+
+[node name="Portal" parent="World/Deck4/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=702000006 instance=ExtResource("5_i7j87")]
+
+[node name="ForrestPortalMarkers" type="Node2D" parent="World/Deck4/Portals" unique_id=702000007]
+z_index = 1
+
+[node name="ForrestEntrance" type="Marker2D" parent="World/Deck4/Portals/ForrestPortalMarkers" unique_id=702000008]
+position = Vector2(9500, 5490)
+
+[node name="Portal" parent="World/Deck4/Portals/ForrestPortalMarkers/ForrestEntrance" unique_id=702000009 instance=ExtResource("5_i7j87")]
+
+[node name="ForrestExit" type="Marker2D" parent="World/Deck4/Portals/ForrestPortalMarkers" unique_id=702000010]
+position = Vector2(10900, 5490)
+
+[node name="Portal" parent="World/Deck4/Portals/ForrestPortalMarkers/ForrestExit" unique_id=702000011 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
+next_portal_marker = NodePath("../../../TitanicPortalMarkers/ShipExitPortal")
+can_teleport = true
+
 [node name="forrest" parent="." unique_id=1622900961 instance=ExtResource("8_wl2br")]
 position = Vector2(731, 5554)
 
@@ -4369,8 +4430,9 @@ position = Vector2(-83, -22)
 [node name="ForrestExit" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=615502719]
 position = Vector2(1309, 6236)
 
-[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestExit" unique_id=1018234223 instance=ExtResource("5_i7j87")]
+[node name="Portal" parent="forrest/Deck2/Portals/ForrestPortalMarkers/ForrestExit" unique_id=1018234223 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
 position = Vector2(-7, -21)
+next_portal_marker = NodePath("../../../../../../World/Deck2/Portals/TitanicPortalMarkers/ShipExitPortal")
 can_teleport = true
 
 [node name="ForrestEntrance2" type="Marker2D" parent="forrest/Deck2/Portals/ForrestPortalMarkers" unique_id=1611406660]
