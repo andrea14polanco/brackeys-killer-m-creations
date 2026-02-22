@@ -4,10 +4,14 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const CLIMBING_SPEED = 100
-
+enum Location {
+	Forrest,
+	Ship
+}
 @onready var stamina_bar: ProgressBar = $"../../StaminaBar/ProgressBar"
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var original_material: ShaderMaterial
+@onready var forrest_camera: Camera2D = $"../../forrest/Camera2D"
 
 signal player_take_stairs
 
@@ -18,34 +22,94 @@ var gravity: Vector2 = Vector2(0.0, 980.0)
 var facing_right = true
 var teleporting = false
 var is_moving = true
+var player_location: Location = Location.Ship
+var current_sfx_name: String = ""
+var current_bgm_name: String = ""
 
 func _ready() -> void:
 	GameManager.player = self
-	#AudioManager.play("WalkingMetal")
 	original_material = animated_sprite_2d.material
 	animated_sprite_2d.material = null
+	current_sfx_name = ""
+	current_bgm_name = ""
 	
 
 func _physics_process(delta: float) -> void:
+	play_bgm()
+	handle_gravity(delta)
+	handle_jump()
+	handle_movement()
+	move_and_slide()
+	handle_sprite_animations()
+	handle_forrest_background()
 	
-	# Add the gravity.
-	if not is_on_floor() and not is_on_ladder:
-		velocity += gravity * delta
-		is_jumping = true
-		
 
-	# Handle jump.
+func start_teleport():
+	AudioManager.stop("WalkingMetal")
+	AudioManager.stop("WalkingGround")
+	teleporting = true
+	animated_sprite_2d.material = original_material
+	var tween = create_tween()
+	tween.tween_method(
+		func(v): animated_sprite_2d.material.set_shader_parameter("progress", v),
+		0.0, 1.0, 2.0
+	)
+	await tween.finished
+	
+func stop_teleport():
+	teleporting = false
+	animated_sprite_2d.material = null
+	
+func play_walking_sfx(walking_direction):
+	var new_audio_name = ""
+	if player_location == Location.Ship:
+		new_audio_name = "WalkingMetal"
+	elif player_location == Location.Forrest:
+		new_audio_name = "WalkingGround"
+	
+	if current_sfx_name != new_audio_name and current_sfx_name != "":
+		AudioManager.stop(current_sfx_name)
+		
+	current_sfx_name = new_audio_name
+	
+	if walking_direction != 0:	
+		if not AudioManager.is_audio_playing(current_sfx_name):
+			AudioManager.play(current_sfx_name)
+		else:
+			AudioManager.pause(current_sfx_name, false)
+	else:
+		if AudioManager.is_audio_playing(current_sfx_name):
+			AudioManager.pause(current_sfx_name, true)
+	
+func play_bgm():
+	var new_music_name = ""
+	
+	if player_location == Location.Ship:
+		new_music_name = "TitanicMusic"
+	elif player_location == Location.Forrest:
+		new_music_name = "Forest"
+	print(new_music_name)
+	if current_bgm_name != new_music_name and current_bgm_name != "":
+		AudioManager.stop(current_bgm_name)
+	
+	current_bgm_name = new_music_name
+	if not AudioManager.is_audio_playing(current_bgm_name):
+		AudioManager.play(current_bgm_name)
+	
+func handle_gravity(delta):
+	if not is_on_floor() and not is_on_ladder:
+		velocity += get_gravity() * delta
+		is_jumping = true
+	
+func handle_jump():
 	if is_on_floor():
 		is_jumping = false
-		print(stamina_bar)
 		if stamina_bar.value > 1 and Input.is_action_just_pressed("jump"):
 				is_jumping = false
 				velocity.y = JUMP_VELOCITY
 				stamina_bar.reduce_after_jump()
-
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	
+func handle_movement():
 	var horizontal_direction := Input.get_axis("move_left", "move_right")
 	play_walking_sfx(horizontal_direction)
 	if horizontal_direction and not teleporting:
@@ -63,11 +127,8 @@ func _physics_process(delta: float) -> void:
 	elif is_on_stairs:
 		if vertical_direction:
 			player_take_stairs.emit()
-			
-	move_and_slide()
 	
-	# Sprite direction and smoke pos
-	
+func handle_sprite_animations():
 	if is_on_ladder:
 		$AnimatedSprite2D.play("climb")
 		if velocity.y == 0:
@@ -85,32 +146,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("idle_left")
 	
+func handle_forrest_background():
+	forrest_camera.global_position = global_position
 
-func start_teleport():
-	teleporting = true
-	animated_sprite_2d.material = original_material
-	var tween = create_tween()
-	tween.tween_method(
-		func(v): animated_sprite_2d.material.set_shader_parameter("progress", v),
-		0.0, 1.0, 2.0
-	)
-	await tween.finished
-	
-func stop_teleport():
-	teleporting = false
-	animated_sprite_2d.material = null
-	
-func play_walking_sfx(sfx):
-	if sfx != 0:
-		AudioManager.pause("WalkingMetal", false)
-	elif sfx == 0: 
-		AudioManager.pause("WalkingMetal", true)
-	
 func _on_stairs_area_entered(area: Area2D) -> void:
 	is_on_ladder = true
-
-
-
+	
 func _on_stairs_area_exited(area: Area2D) -> void:
 	is_on_ladder = false
-	gravity = Vector2 (0, 980)
+	gravity = get_gravity()

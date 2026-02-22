@@ -23,7 +23,6 @@ func _on_player_in_stairs_area_detector_body_exited(body: Node2D) -> void:
 
 func _on_player_at_stairs_down_area_detector_body_exited(body: Node2D) -> void:
 	if not is_player_on_stairs:
-		print("KLK")
 		collision_shape_2d.set_deferred("disabled", true)
 		is_player_on_stairs = false
 

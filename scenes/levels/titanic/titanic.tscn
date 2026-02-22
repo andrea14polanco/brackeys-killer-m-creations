@@ -775,6 +775,7 @@ position = Vector2(946, 919)
 [node name="Portal" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipEntrancePortal" unique_id=1988836095 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
 next_portal_marker = NodePath("../../../ForrestPortalMarkers/ForrestEntrance")
 can_teleport = true
+next_portal_location = 0
 
 [node name="ShipExitPortal" type="Marker2D" parent="World/Deck1/Portals/TitanicPortalMarkers" unique_id=1003511946]
 position = Vector2(3381, 918)
@@ -782,6 +783,7 @@ position = Vector2(3381, 918)
 [node name="Portal" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipExitPortal" unique_id=1252404529 node_paths=PackedStringArray("next_portal_marker") instance=ExtResource("5_i7j87")]
 next_portal_marker = NodePath("../../ShipExitPortal2")
 can_teleport = true
+next_portal_location = 0
 
 [node name="ShipEntrancePortal2" type="Marker2D" parent="World/Deck1/Portals/TitanicPortalMarkers" unique_id=1052622724]
 position = Vector2(976, 1955)
@@ -790,11 +792,13 @@ position = Vector2(976, 1955)
 position = Vector2(33, -43)
 next_portal_marker = NodePath("../../../ForrestPortalMarkers/ForrestEntrance2")
 can_teleport = true
+next_portal_location = 0
 
 [node name="ShipExitPortal2" type="Marker2D" parent="World/Deck1/Portals/TitanicPortalMarkers" unique_id=703507342]
 position = Vector2(2943, 1921)
 
 [node name="Portal2" parent="World/Deck1/Portals/TitanicPortalMarkers/ShipExitPortal2" unique_id=1506184099 instance=ExtResource("5_i7j87")]
+next_portal_location = 0
 
 [node name="FirtPortalShip3" type="Marker2D" parent="World/Deck1/Portals/TitanicPortalMarkers" unique_id=554848474]
 position = Vector2(6267, 1228)
