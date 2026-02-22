@@ -1197,13 +1197,13 @@ size = Vector2(445.9994, 27.999975)
 size = Vector2(50.046124, 533.49225)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmo5h"]
-size = Vector2(24.000252, 194.00012)
+size = Vector2(24.000252, 208.00006)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvjhc"]
-size = Vector2(20, 254.0002)
+size = Vector2(20, 271.5001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhs2i"]
-size = Vector2(20, 127.00009)
+size = Vector2(20, 145.50029)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lir1f"]
 size = Vector2(29.998962, 245.00038)

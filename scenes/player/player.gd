@@ -165,9 +165,14 @@ func _on_stairs_area_entered(area: Area2D) -> void:
 func _on_stairs_area_exited(area: Area2D) -> void:
 	off_ladder()
 
-
 func _on_ladders_area_entered(area: Area2D) -> void:
 	on_ladder()
 
 func _on_ladders_area_exited(area: Area2D) -> void:
+	off_ladder()
+
+func _on_ladder_area_entered(area: Area2D) -> void:
+	on_ladder()
+
+func _on_ladder_area_exited(area: Area2D) -> void:
 	off_ladder()

@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://feniy04h51we" path="res://assets/backgrounds/main_menu.png" id="2_sq05c"]
 [ext_resource type="PackedScene" uid="uid://categ7jywyy4n" path="res://scenes/cutscenes/intro_cut_scene.tscn" id="3_jl081"]
 [ext_resource type="PackedScene" uid="uid://r43plmw3kguo" path="res://scenes/ui/settings/volume_slider.tscn" id="3_ukhca"]
+[ext_resource type="Texture2D" uid="uid://8ci6qc8y421y" path="res://assets/overlays/br_book_5.png" id="3_yn0lx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n1md"]
 
 [node name="main_menu" type="Control" unique_id=143165144]
 layout_mode = 3
@@ -71,25 +74,31 @@ offset_bottom = 655.0
 scale = Vector2(0.590229, 0.45961878)
 color = Color(0.13333334, 0.08627451, 0.09019608, 0.9764706)
 
+[node name="BrBook5" type="Sprite2D" parent="SettingsFlow" unique_id=1744137903]
+position = Vector2(347, 165.99994)
+scale = Vector2(1.03125, 1.0013889)
+texture = ExtResource("3_yn0lx")
+
 [node name="SettingsPanel" type="Panel" parent="SettingsFlow" unique_id=2128287765]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(17.200003, 7.3599977)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3n1md")
 
 [node name="Button" type="Button" parent="SettingsFlow" unique_id=534400080]
 modulate = Color(2.7259471, 2.7259471, 2.7259471, 1)
 layout_mode = 0
-offset_left = 3.0
-offset_top = 268.0
-offset_right = 203.0
-offset_bottom = 299.0
+offset_left = 64.0
+offset_top = 260.0
+offset_right = 264.0
+offset_bottom = 291.0
 text = "Back"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsFlow" unique_id=1740184104]
 modulate = Color(0.11372549, 0.09411765, 0.09411765, 1)
 layout_mode = 0
-offset_left = 306.0
+offset_left = 372.0
 offset_top = 60.0
 offset_right = 656.0
 offset_bottom = 254.0
@@ -129,10 +138,10 @@ bus_name = "SFX"
 
 [node name="Label" type="Label" parent="SettingsFlow" unique_id=621121239]
 layout_mode = 0
-offset_left = 244.0
-offset_top = 1.0
-offset_right = 360.0
-offset_bottom = 43.0
+offset_left = 449.0
+offset_top = 7.0
+offset_right = 565.0
+offset_bottom = 49.0
 theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
 theme_override_font_sizes/font_size = 30
 text = "Settings"

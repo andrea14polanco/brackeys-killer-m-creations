@@ -3903,6 +3903,18 @@ offset_bottom = 350.0
 [node name="forrest" parent="." unique_id=1622900961 instance=ExtResource("8_wl2br")]
 position = Vector2(731, 5554)
 
+[node name="CollisionShape2D" parent="forrest/Player_level/Ladder" parent_id_path=PackedInt32Array(1622900961, 2075135124) index="0" unique_id=951041526]
+position = Vector2(1517.999, -125)
+scale = Vector2(0.99999917, 0.99999917)
+
+[node name="CollisionShape2D2" parent="forrest/Player_level/Ladder" parent_id_path=PackedInt32Array(1622900961, 2075135124) index="1" unique_id=2076978930]
+position = Vector2(1864.9995, -153.25)
+scale = Vector2(0.9999991, 0.9999991)
+
+[node name="CollisionShape2D3" parent="forrest/Player_level/Ladder" parent_id_path=PackedInt32Array(1622900961, 2075135124) index="2" unique_id=1659187455]
+position = Vector2(2025.9995, -118.25)
+scale = Vector2(0.99999905, 0.99999905)
+
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
 [connection signal="area_entered" from="World/Deck1/Ladders" to="World/Player" method="_on_stairs_area_entered"]
@@ -3914,6 +3926,8 @@ position = Vector2(731, 5554)
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_4_player_walked_through"]
+[connection signal="area_entered" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_entered"]
+[connection signal="area_exited" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_exited"]
 
 [editable path="World/Deck1/Stairs/Stair4"]
 [editable path="World/Deck1/Stairs/Stair5"]
