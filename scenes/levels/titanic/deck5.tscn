@@ -803,6 +803,48 @@ sources/0 = SubResource("TileSetAtlasSource_sycri")
 
 [node name="background" type="Node2D" parent="." unique_id=1147541049]
 
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=2135145568]
+offset_left = 2416.0
+offset_top = -3657.0
+offset_right = 3080.0
+offset_bottom = 4130.0
+color = Color(0, 0, 0.22352941, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="background" unique_id=1013742649]
+offset_left = 2016.0
+offset_top = -3653.0
+offset_right = 2680.0
+offset_bottom = -1119.0
+color = Color(0, 0, 0.22352941, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="background" unique_id=579173884]
+offset_left = -2741.0
+offset_top = -4723.0
+offset_right = 3090.0
+offset_bottom = -2189.0
+color = Color(0, 0, 0.22352941, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="background" unique_id=1292395461]
+offset_left = -2738.0
+offset_top = -2624.0
+offset_right = -386.0
+offset_bottom = 2158.0
+color = Color(0, 0, 0.22352941, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="background" unique_id=547412551]
+offset_left = -2444.0
+offset_top = 577.0
+offset_right = -13.0
+offset_bottom = 2158.0
+color = Color(0, 0, 0.22352941, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="background" unique_id=253636521]
+offset_left = -2738.0
+offset_top = 2084.0
+offset_right = -730.0
+offset_bottom = 4126.0
+color = Color(0, 0, 0.22352941, 1)
+
 [node name="Back_forest" type="Node2D" parent="." unique_id=887344963]
 
 [node name="TreeLayerx2" type="TileMapLayer" parent="Back_forest" unique_id=576821886]
