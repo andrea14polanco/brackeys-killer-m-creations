@@ -4,7 +4,9 @@ func _ready() -> void:
 	play("MainMenu")
 
 func play(sound_name):
-	get_node(sound_name).play()
+	var player = get_node(sound_name)
+	if not player.is_playing():
+		player.play()
 
 func stop(sound_name):
 	get_node(sound_name).stop()

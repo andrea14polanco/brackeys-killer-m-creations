@@ -30,17 +30,12 @@ func rotate_smoothly(angle):
 	var tween = get_tree().create_tween()
 	tween.tween_property($".", "rotation_degrees", angle, 10.0)
 
-func anti_rotate_smoothly(angle):
-	pass
-	#var tween2 = get_tree().create_tween()
-	#tween2.tween_property($Player, "rotation_degrees", (angle * -1), 10.0)
-
 func _on_checkpoint_player_walked_through(angle: Variant) -> void:
 	#AudioManager.play("MainMenu")
 	rotate_smoothly(angle)
 
 func next_chat(num):
-	if Variable.started == false:
+	if GameManager.started == false:
 		if num == 1:
 			$Player/Text_Panel._panel_chat("Player",
 			["'Woah where are we?'"]
@@ -74,7 +69,7 @@ func next_chat(num):
 			,6
 			)
 		elif num == 6:
-			Variable.started = true
+			GameManager.started = true
 			$Player/Text_Panel._panel_chat("Player",
 			["'Hey! NO! WAIT DONT LEAVE ME!'"]
 			,"close_chat"
