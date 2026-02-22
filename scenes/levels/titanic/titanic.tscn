@@ -4269,7 +4269,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(-1805, 336)
+position = Vector2(8394, 805)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
