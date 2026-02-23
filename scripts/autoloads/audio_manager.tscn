@@ -16,8 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://tletj3emqvw4" path="res://assets/sfx/VolumeSlider.ogg" id="14_sa3du"]
 [ext_resource type="AudioStream" uid="uid://btyw85v61ep8b" path="res://assets/sfx/ButtonHover.ogg" id="15_ep5b4"]
 [ext_resource type="AudioStream" uid="uid://by8m7kxb465fr" path="res://assets/sfx/TeleportCast.ogg" id="16_qqdue"]
-[ext_resource type="AudioStream" path="res://assets/sfx/WaterDrown.ogg" id="17_water1"]
-[ext_resource type="AudioStream" path="res://assets/sfx/WaterAmbient.ogg" id="18_water2"]
+[ext_resource type="AudioStream" uid="uid://dsi0ytnvuvspk" path="res://assets/sfx/WaterDrown.ogg" id="17_water1"]
+[ext_resource type="AudioStream" uid="uid://ds160iwl6mwaw" path="res://assets/sfx/WaterAmbient.ogg" id="18_water2"]
 
 [node name="AudioManager" type="Node" unique_id=881960081]
 script = ExtResource("1_xskna")
@@ -86,11 +86,11 @@ bus = &"SFX"
 stream = ExtResource("16_qqdue")
 bus = &"SFX"
 
-[node name="WaterDrown" type="AudioStreamPlayer" parent="."]
+[node name="WaterDrown" type="AudioStreamPlayer" parent="." unique_id=79180991]
 stream = ExtResource("17_water1")
 bus = &"SFX"
 
-[node name="WaterAmbient" type="AudioStreamPlayer" parent="."]
+[node name="WaterAmbient" type="AudioStreamPlayer" parent="." unique_id=1120723487]
 stream = ExtResource("18_water2")
 bus = &"SFX"
 parameters/looping = true

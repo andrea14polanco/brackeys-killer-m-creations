@@ -80,3 +80,30 @@ func next_chat(num):
 		,"next_scene"
 		,"res://scenes/levels/titanic/titanic.tscn"
 		)
+	elif num == 21:
+		$FacesetPlayer.texture = mc_faceset04
+		$Text_Panel._panel_chat("Player",
+		["'Yeah, no thanks to you, but it was kind of fun.'"]
+		,"next_chat"
+		,22
+		)
+	elif num == 22:
+		$FacesetPlayer.texture = mc_faceset03
+		$Text_Panel._panel_chat("Player",
+		["'Well, sometimes you have to explore strange worlds in books 
+		yourself to truly grasp the knowledge.'"]
+		,"close_chat"
+		,23
+		)
+
+func start_chat2():
+	$Text_Panel.show()
+	$FacesetPlayer.texture = mc_faceset03
+	$FacesetPlayer.show()
+	$FacesetAntagonist.texture = mage_faceset02
+	$FacesetAntagonist.show()
+	$Text_Panel._panel_chat("Mysterious Person",
+	["'You survived the adventure.'"]
+	,"next_chat"
+	,21
+	)
