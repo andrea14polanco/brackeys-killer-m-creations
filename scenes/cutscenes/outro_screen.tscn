@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://br7tawbd05yqp"]
+
+[ext_resource type="Texture2D" uid="uid://feniy04h51we" path="res://assets/backgrounds/main_menu.png" id="1_6tb01"]
+[ext_resource type="Script" uid="uid://b3ghwgnk3t5t0" path="res://scenes/cutscenes/outro_screen.gd" id="1_clk7f"]
+[ext_resource type="PackedScene" uid="uid://categ7jywyy4n" path="res://scenes/cutscenes/intro_cut_scene.tscn" id="2_clk7f"]
+[ext_resource type="Texture2D" uid="uid://dwok4c4sr52th" path="res://assets/ui/tables/2.png" id="4_ui028"]
+[ext_resource type="Texture2D" uid="uid://ve0uqulaqhq7" path="res://assets/overlays/titanic-silhouette.png" id="5_sleux"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6fiv"]
+texture = ExtResource("4_ui028")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[node name="OutroScreen" type="Control" unique_id=571366492]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clk7f")
+
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=1878973246]
+position = Vector2(-39, 363.99997)
+scale = Vector2(1.4138116, 1.3857143)
+texture = ExtResource("1_6tb01")
+
+[node name="Intro_cut_scene" parent="." unique_id=630923112 instance=ExtResource("2_clk7f")]
+layout_mode = 1
+
+[node name="bg_Panel" type="Panel" parent="." unique_id=772834768]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 10.0
+offset_right = -70.0
+offset_bottom = 2010.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_w6fiv")
+
+[node name="title" type="Label" parent="bg_Panel" unique_id=103874543]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 47.0
+offset_right = 837.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 61
+text = "Credits
+-----------------"
+horizontal_alignment = 1
+
+[node name="roles" type="Label" parent="bg_Panel" unique_id=526035082]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 191.0
+offset_right = 1063.0
+offset_bottom = 716.0
+theme_override_font_sizes/font_size = 40
+text = "Producer - Killer M Niko
+Primary Programmer - LuMon
+Secondary Programmer - Killer M Niko
+Designer - Gie
+Character Artist - Mariz
+Animation Artist - Mariz
+UI Artist - Gie
+Tileset Artist - Killer M Niko
+Asset Artist - Czardus
+Composer - B4RO
+Sound Effect Artist - LuMon"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="bg_Panel" unique_id=272715023]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 870.0
+offset_right = 1021.0
+offset_bottom = 1007.0
+theme_override_font_sizes/font_size = 61
+text = "Additional Credits
+---------------------------"
+horizontal_alignment = 1
+
+[node name="title2" type="Label" parent="bg_Panel/title2" unique_id=1889128263]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 588.0
+offset_right = 876.0
+offset_bottom = 725.0
+theme_override_font_sizes/font_size = 50
+text = "Special Thank you
+To Brackeys Game Jam
+2026.1
+"
+horizontal_alignment = 1
+
+[node name="roles2" type="Label" parent="bg_Panel" unique_id=2110176898]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 992.0
+offset_right = 936.0
+offset_bottom = 1517.0
+theme_override_font_sizes/font_size = 40
+text = "Forest Assets - salgueiroAzul
+Tree Assets - Anokolisa
+Vine Assets - Pixelina
+Book UI - Humblepixel
+Inspired by Szadi Assets"
+horizontal_alignment = 1
+
+[node name="TitanicSilhouette" type="Sprite2D" parent="bg_Panel" unique_id=1790830640]
+position = Vector2(545, 1759)
+texture = ExtResource("5_sleux")

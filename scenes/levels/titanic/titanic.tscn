@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://byy8chrg0m4ho" path="res://scenes/cutscenes/text_panel.tscn" id="11_y8upj"]
 [ext_resource type="Texture2D" uid="uid://boged2cj6krs8" path="res://assets/overlays/paper_1.png" id="14_4ratq"]
 [ext_resource type="Texture2D" uid="uid://crixbent2ugj4" path="res://assets/overlays/reset.png" id="15_c14xy"]
+[ext_resource type="Texture2D" uid="uid://b7i2er4667dao" path="res://assets/sprites/icon.png" id="16_312hg"]
 [ext_resource type="PackedScene" path="res://scenes/water/rising_water.tscn" id="16_water"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5je1"]
@@ -25,9 +26,6 @@ load_path = "res://.godot/imported/titanic_section2_tileset.png-da5fede87142a232
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7j87"]
 load_path = "res://.godot/imported/titanic_section3_tileset.png-c55604db7b63e58d6182476772dba2b0.ctex"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_clmoo"]
-size = Vector2(320, 84)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy0u2"]
 size = Vector2(476.8089, 20)
@@ -1088,6 +1086,12 @@ size = Vector2(42.00003, 968.4123)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06y38"]
 size = Vector2(42.00003, 277.4115)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1v1a"]
+size = Vector2(89, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clmoo"]
+size = Vector2(320, 84)
+
 [node name="Titanic" type="Node2D" unique_id=1739797682]
 
 [node name="World" type="Node2D" parent="." unique_id=389389109]
@@ -1139,80 +1143,6 @@ texture = ExtResource("5_pa72x")
 
 [node name="Deck1" type="Node2D" parent="World" unique_id=18460099]
 position = Vector2(-2, 0)
-
-[node name="Blockers" type="Node2D" parent="World/Deck1" unique_id=303221450]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Deck1/Blockers" unique_id=1027000379]
-collision_layer = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=661866491]
-position = Vector2(-2015, -394)
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D" unique_id=1774377633]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=868856143]
-position = Vector2(-2053, 497)
-rotation = -1.5358897
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D2" unique_id=763938915]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=576225623]
-position = Vector2(73, 1048)
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D3" unique_id=372126573]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=1544556965]
-position = Vector2(491.00003, 1057.9999)
-rotation = 0.05235988
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D4" unique_id=184768024]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=1405072512]
-position = Vector2(3293, 304)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D5" unique_id=1744251042]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=1520521847]
-position = Vector2(8302, 574)
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D6" unique_id=518489242]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=1534212297]
-position = Vector2(8910, 404)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D7" unique_id=1021760235]
-texture = ExtResource("6_s0ic8")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/Deck1/Blockers/StaticBody2D" unique_id=483674118]
-position = Vector2(8910, -299)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_clmoo")
-debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
-
-[node name="Blocking" type="Sprite2D" parent="World/Deck1/Blockers/StaticBody2D/CollisionShape2D8" unique_id=369007876]
-texture = ExtResource("6_s0ic8")
 
 [node name="Portals" type="Node2D" parent="World/Deck1" unique_id=1677388707]
 position = Vector2(2, 0)
@@ -4458,7 +4388,7 @@ target_angle = -90.0
 
 [node name="Player" parent="World" unique_id=330747409 instance=ExtResource("1_eqs6t")]
 z_index = 20
-position = Vector2(-1858, 210)
+position = Vector2(-1811, 336)
 collision_mask = 6
 floor_constant_speed = true
 floor_max_angle = 1.0471976
@@ -4474,26 +4404,109 @@ offset_top = 350.0
 offset_right = 638.0
 offset_bottom = 350.0
 
-[node name="Reset_Button" type="Control" parent="World/Player" unique_id=145712261]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BookEnd" type="Area2D" parent="World" unique_id=2093062446]
 
-[node name="Paper1" type="Sprite2D" parent="World/Player/Reset_Button" unique_id=1551226229]
-position = Vector2(568.94995, -277.99997)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("14_4ratq")
+[node name="Icon" type="Sprite2D" parent="World/BookEnd" unique_id=1818471935]
+position = Vector2(12873, 143)
+texture = ExtResource("16_312hg")
 
-[node name="ResetButton" type="TextureButton" parent="World/Player/Reset_Button" unique_id=1553406060]
-layout_mode = 0
-offset_left = 527.94995
-offset_top = -313.99997
-offset_right = 1039.95
-offset_bottom = 198.00003
-scale = Vector2(0.155, 0.155)
-texture_normal = ExtResource("15_c14xy")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BookEnd" unique_id=1264547426]
+position = Vector2(12872.5, 144)
+shape = SubResource("RectangleShape2D_j1v1a")
+debug_color = Color(0.941323, 0.19314608, 0.38409802, 0.41960785)
+
+[node name="Blockers" type="Node2D" parent="World" unique_id=303221450]
+position = Vector2(-2, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/Blockers" unique_id=1027000379]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=661866491]
+position = Vector2(-2015, -394)
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D" unique_id=1774377633]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=868856143]
+position = Vector2(-2053, 497)
+rotation = -1.5358897
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D2" unique_id=763938915]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=576225623]
+position = Vector2(73, 1048)
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D3" unique_id=372126573]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=1544556965]
+position = Vector2(491.00003, 1057.9999)
+rotation = 0.05235988
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D4" unique_id=184768024]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=1405072512]
+position = Vector2(3293, 304)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D5" unique_id=1744251042]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=1520521847]
+position = Vector2(8302, 574)
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D6" unique_id=518489242]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=1534212297]
+position = Vector2(8910, 404)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D7" unique_id=1021760235]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=483674118]
+position = Vector2(8910, -299)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D8" unique_id=369007876]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=265990116]
+position = Vector2(8906, -637)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D9" unique_id=78850903]
+texture = ExtResource("6_s0ic8")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World/Blockers/StaticBody2D" unique_id=512096242]
+position = Vector2(13005, 67)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_clmoo")
+debug_color = Color(0.24751857, 0.51768315, 0.9632041, 0.41960785)
+
+[node name="Blocking" type="Sprite2D" parent="World/Blockers/StaticBody2D/CollisionShape2D10" unique_id=1072425875]
+texture = ExtResource("6_s0ic8")
 
 [node name="forrest" parent="." unique_id=1622900961 instance=ExtResource("8_wl2br")]
 position = Vector2(731, 5554)
@@ -4553,6 +4566,23 @@ visible = false
 
 [node name="StaminaBar" parent="." unique_id=126409719 instance=ExtResource("4_god6p")]
 
+[node name="Reset_Button" type="CanvasLayer" parent="." unique_id=573293426]
+
+[node name="ResetArt" type="Sprite2D" parent="Reset_Button" unique_id=1551226229]
+visible = false
+position = Vector2(1204, 84.00001)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("14_4ratq")
+
+[node name="ResetButton" type="TextureButton" parent="Reset_Button/ResetArt" unique_id=1553406060]
+offset_left = -58.57141
+offset_top = -51.428562
+offset_right = 453.4286
+offset_bottom = 460.57144
+scale = Vector2(0.23, 0.23)
+texture_normal = ExtResource("15_c14xy")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="area_entered" from="World/Deck1/Ladders" to="World/Player" method="_on_ladders_area_entered"]
 [connection signal="area_exited" from="World/Deck1/Ladders" to="World/Player" method="_on_ladders_area_exited"]
 [connection signal="area_entered" from="World/Deck2/Ladders" to="World/Player" method="_on_ladders_area_entered"]
@@ -4566,9 +4596,9 @@ visible = false
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_5_player_walked_through"]
-[connection signal="pressed" from="World/Player/Reset_Button/ResetButton" to="World" method="_on_reset_button_pressed"]
 [connection signal="area_entered" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_entered"]
 [connection signal="area_exited" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_exited"]
+[connection signal="pressed" from="Reset_Button/ResetArt/ResetButton" to="World" method="_on_reset_button_pressed"]
 
 [editable path="World/Deck1/Stairs/Stair4"]
 [editable path="World/Deck1/Stairs/Stair5"]

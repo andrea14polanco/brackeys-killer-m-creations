@@ -85,14 +85,14 @@ func next_chat(num):
 			$Player/Text_Panel._panel_chat("Mysterious Person",
 			["'Oh that? It's the exciting part! Also I added a surprise 
 			from your other book too!'"
-			, "'Well I should let you be now.'"]
+			, "'Well I should let you be now. Find the book to exit.'"]
 			,"next_chat2"
 			,6
 			)
 		elif num == 6:
 			GameManager.started = true
 			$Player/Text_Panel._panel_chat("Player",
-			["'Hey! NO! WAIT DONT LEAVE ME!'"]
+			["'Hey! NO! WAIT DONT LEAVE ME! This boat sinks!'"]
 			,"close_chat"
 			,7
 			)
@@ -111,7 +111,9 @@ func next_chat(num):
 
 func close_chat():
 	$Player/Text_Panel.hide()
-	$Player/Reset_Button.show()
+	$Player/Camera2D.pan_camera_to_icon()
+	await get_tree().create_timer(6.0).timeout
+	$"../Reset_Button/ResetArt".show()
 	GameManager.player.set_physics_process(true)
 
 func close_bulkheads():
