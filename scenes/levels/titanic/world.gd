@@ -137,3 +137,8 @@ func reload_level():
 func _on_reset_button_pressed() -> void:
 	AudioManager.play("PageTurning")
 	reload_level()
+
+
+func _on_book_end_area_entered(area: Area2D) -> void:
+	AudioManager.play("PageTurning")
+	get_tree().change_scene_to_file("res://scenes/cutscenes/outro_screen.tscn")

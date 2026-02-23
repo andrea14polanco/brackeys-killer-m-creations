@@ -1087,7 +1087,7 @@ size = Vector2(42.00003, 968.4123)
 size = Vector2(42.00003, 277.4115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1v1a"]
-size = Vector2(89, 108)
+size = Vector2(65, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clmoo"]
 size = Vector2(320, 84)
@@ -4411,7 +4411,7 @@ position = Vector2(12873, 143)
 texture = ExtResource("16_312hg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/BookEnd" unique_id=1264547426]
-position = Vector2(12872.5, 144)
+position = Vector2(12872.5, 143)
 shape = SubResource("RectangleShape2D_j1v1a")
 debug_color = Color(0.941323, 0.19314608, 0.38409802, 0.41960785)
 
@@ -4596,6 +4596,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint3" to="World" method="_on_checkpoint_3_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint4" to="World" method="_on_checkpoint_4_player_walked_through"]
 [connection signal="player_walked_through" from="World/Checkpoints/Checkpoint5" to="World" method="_on_checkpoint_5_player_walked_through"]
+[connection signal="area_entered" from="World/BookEnd" to="World" method="_on_book_end_area_entered"]
 [connection signal="area_entered" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_entered"]
 [connection signal="area_exited" from="forrest/Player_level/Ladder" to="World/Player" method="_on_ladder_area_exited"]
 [connection signal="pressed" from="Reset_Button/ResetArt/ResetButton" to="World" method="_on_reset_button_pressed"]
