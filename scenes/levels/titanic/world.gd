@@ -2,7 +2,6 @@ extends Node2D
 
 var bulkhead_num = 0
 var rotation_tween: Tween
-@onready var rising_water = $"../RisingWater"
 
 func _ready() -> void:
 	GameManager.titanic = self
@@ -21,8 +20,6 @@ func _on_checkpoint_reached(angle: Variant) -> void:
 		camera.shake_once(25.0, 0.3)
 	rotate_smoothly(angle)
 	_rumble_during_rotation(camera)
-	await get_tree().create_timer(3.0).timeout
-	rising_water.raise_water()
 
 func _rumble_during_rotation(camera: Camera2D) -> void:
 	for i in 4:
