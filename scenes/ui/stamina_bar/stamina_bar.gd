@@ -5,7 +5,7 @@ signal stamina_regenerated
 
 var max_stamina: float = 100.0
 var stamina_regen_rate: float = 15.0      # points per second
-var jump_cost: float = 25.0               # stamina lost per jump
+var jump_cost: float = 15.0               # stamina lost per jump
 var regen_delay: float = 1.5              # seconds before regen starts
 var drain_duration: float = 0.4           # how fast the bar animates down
 

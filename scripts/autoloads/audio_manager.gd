@@ -31,3 +31,13 @@ func is_audio_playing(sound_name):
 	if node:
 		return node.is_playing()
 	return false
+
+func set_pitch(sound_name: String, pitch: float) -> void:
+	var node = get_node_or_null(sound_name)
+	if node:
+		node.pitch_scale = pitch
+
+func set_volume(sound_name: String, db: float) -> void:
+	var node = get_node_or_null(sound_name)
+	if node:
+		node.volume_db = db
